@@ -22,14 +22,15 @@ const showUserPicker = logicAnd(
               <NavSide command />
               <div flex-auto />
               <div v-if="isMastoInitialised" flex flex-col>
-                <div hidden xl:block>
-                  <UserSignInEntry v-if="!currentUser" />
+                <div v-if="isGuest" hidden xl:block>
+                  <UserSignInEntry />
                 </div>
                 <div v-if="currentUser" p6 pb8 w-full>
                   <div hidden xl-block>
                     <UserPicker v-if="showUserPicker" />
                     <div v-else flex="~" items-center justify-between>
                       <NuxtLink
+                        v-if="checkAuth(currentUser)"
                         hidden xl:block
                         rounded-3 text-primary text-start w-full
                         hover:bg-active cursor-pointer transition-100
@@ -37,6 +38,8 @@ const showUserPicker = logicAnd(
                       >
                         <AccountInfo :account="currentUser.account" md:break-words square />
                       </NuxtLink>
+                      <AccountGuest v-else :user="currentUser" />
+
                       <UserDropdown />
                     </div>
                   </div>

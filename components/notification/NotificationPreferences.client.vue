@@ -25,7 +25,7 @@ let subscribeError = $ref<string>('')
 let showSubscribeError = $ref<boolean>(false)
 
 const hideNotification = () => {
-  const key = currentUser.value?.account?.acct
+  const key = currentUser.value.account?.acct
   if (key)
     hiddenNotification.value[key] = true
 }
@@ -36,7 +36,7 @@ const showWarning = $computed(() => {
 
   return isSupported
       && (!isSubscribed.value || !notificationPermission.value || notificationPermission.value === 'prompt')
-      && !(hiddenNotification.value[currentUser.value?.account?.acct ?? ''] === true)
+      && !(hiddenNotification.value[currentUser.value.account?.acct ?? ''] === true)
 })
 
 const saveSettings = async () => {

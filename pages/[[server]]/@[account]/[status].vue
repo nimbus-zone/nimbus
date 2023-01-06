@@ -76,7 +76,7 @@ onReactivated(() => {
           :actions="status.visibility !== 'direct'"
         />
         <PublishWidget
-          v-if="currentUser"
+          v-if="!isGuest"
           ref="publishWidget"
           border="y base"
           :draft-key="replyDraft!.key"

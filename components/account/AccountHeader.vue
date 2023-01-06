@@ -59,7 +59,7 @@ watchEffect(() => {
   iconFields.value = icons
 })
 
-const isSelf = $computed(() => currentUser.value?.account.id === account.id)
+const isSelf = $computed(() => checkAuth(currentUser.value) && currentUser.value.account.id === account.id)
 </script>
 
 <template>

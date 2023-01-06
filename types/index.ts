@@ -1,6 +1,7 @@
 import type { Account, AccountCredentials, Attachment, CreateStatusParams, Emoji, Instance, MastoClient, Notification, PushSubscription, Status } from 'masto'
 import type { Ref } from 'vue'
 import type { MarkNonNullable, Mutable } from './utils'
+import type { LoginTo } from '~/composables/users'
 
 export interface AppInfo {
   id: string
@@ -12,16 +13,25 @@ export interface AppInfo {
   vapid_key: string
 }
 
-export interface UserLogin {
-  server: string
-  token?: string
+interface UserLoginWithToken {
   account: AccountCredentials
-  vapidKey?: string
-  pushSubscription?: PushSubscription
+  guest: false
 }
 
+interface UserLoginGuest {
+  account?: undefined
+  guest: true
+}
+
+export type UserLogin<WithToken extends boolean = boolean> = {
+  server: string
+  token?: string
+  vapidKey?: string
+  pushSubscription?: PushSubscription
+} & ((WithToken extends false ? UserLoginGuest : never) | (WithToken extends true ? UserLoginWithToken : never))
+
 export interface ElkMasto extends MastoClient {
-  loginTo (user?: Omit<UserLogin, 'account'> & { account?: AccountCredentials }): Promise<MastoClient>
+  loginTo: LoginTo
   loggedIn: Ref<boolean>
 }
 

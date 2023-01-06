@@ -1,4 +1,5 @@
 import type { Account } from 'masto'
+import type { UserLogin } from '~/types'
 
 export function getDisplayName(account?: Account, options?: { rich?: boolean }) {
   const displayName = account?.displayName || account?.username || ''
@@ -20,7 +21,11 @@ export function getServerName(account: Account) {
   return currentInstance.value?.uri || ''
 }
 
-export function getFullHandle(account: Account) {
+export function getFullHandle(_account: Account | UserLogin) {
+  if ('guest' in _account && _account.guest)
+    return `${GUEST_ID}@${_account.server}`
+
+  const account = 'server' in _account ? _account.account : _account
   const handle = `@${account.acct}`
   if (!currentUser.value || account.acct.includes('@'))
     return handle

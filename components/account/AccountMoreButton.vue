@@ -7,7 +7,7 @@ const { account } = defineProps<{
 }>()
 let relationship = $(useRelationship(account))
 
-const isSelf = $computed(() => currentUser.value?.account.id === account.id)
+const isSelf = $computed(() => checkAuth(currentUser.value) && currentUser.value.account.id === account.id)
 
 const masto = useMasto()
 const toggleMute = async () => {
@@ -53,7 +53,7 @@ const toggleBlockDomain = async () => {
         />
       </NuxtLink>
 
-      <template v-if="currentUser">
+      <template v-if="!isGuest">
         <template v-if="!isSelf">
           <CommonDropdownItem
             :text="$t('menu.mention_account', [`@${account.acct}`])"

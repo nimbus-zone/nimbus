@@ -18,7 +18,7 @@ const tabs = $computed(() => [
   {
     to: `/${currentServer.value}/explore/users`,
     display: t('tab.for_you'),
-    disabled: !isMastoInitialised.value || !currentUser.value,
+    disabled: !isMastoInitialised.value || isGuest.value,
   },
 ] as const)
 </script>

@@ -16,6 +16,7 @@ import type { PushNotificationPolicy, PushNotificationRequest } from '~/composab
 import { useAsyncIDBKeyval } from '~/composables/idb'
 
 const mock = process.mock
+export const GUEST_ID = '[anonymous]'
 
 const initializeUsers = async (): Promise<Ref<UserLogin[]> | RemovableRef<UserLogin[]>> => {
   let defaultUsers = mock ? [mock.user] : []
@@ -43,22 +44,42 @@ const initializeUsers = async (): Promise<Ref<UserLogin[]> | RemovableRef<UserLo
 const users = await initializeUsers()
 const instances = useLocalStorage<Record<string, Instance>>(STORAGE_KEY_SERVERS, mock ? mock.server : {}, { deep: true })
 const currentUserId = useLocalStorage<string>(STORAGE_KEY_CURRENT_USER, mock ? mock.user.account.id : '')
+const isGuestId = computed(() => !currentUserId.value || currentUserId.value.startsWith(`${GUEST_ID}@`))
+const defaultUser: UserLogin<false> = {
+  server: DEFAULT_SERVER,
+  guest: true,
+}
 
-export const currentUser = computed<UserLogin | undefined>(() => {
-  if (currentUserId.value) {
-    const user = users.value.find(user => user.account?.id === currentUserId.value)
-    if (user)
-      return user
-  }
+export const currentUser = computed<UserLogin>(() => {
+  let user: UserLogin | undefined
+  if (!currentUserId.value) {
   // Fallback to the first account
-  return users.value[0]
+    user = users.value[0]
+  }
+  else if (isGuestId.value) {
+    const server = currentUserId.value.replace(`${GUEST_ID}@`, '')
+    user = users.value.find(user => user.guest && user.server === server)
+  }
+  else {
+    user = users.value.find(user => user.account?.id === currentUserId.value)
+  }
+  return user || defaultUser
 })
 
-const publicInstance = ref<Instance | null>(null)
-export const currentInstance = computed<null | Instance>(() => currentUser.value ? instances.value[currentUser.value.server] ?? null : publicInstance.value)
+export const currentServer = computed<string>(() => currentUser.value.server)
+export const currentInstance = computed<null | Instance>(() => {
+  return instances.value[currentServer.value] ?? null
+})
+export const checkAuth = (val: UserLogin | undefined): val is UserLogin<true> => !!(val && !val.guest)
+export const isGuest = computed(() => !checkAuth(currentUser.value))
+export const getUniqueUserId = (user: UserLogin) =>
+  user.guest ? `${GUEST_ID}@${user.server}` : user.account.id
+export const isSameUser = (a: UserLogin | undefined, b: UserLogin | undefined) =>
+  a && b && getUniqueUserId(a) === getUniqueUserId(b)
 
-export const publicServer = ref(DEFAULT_SERVER)
-export const currentServer = computed<string>(() => currentUser.value?.server || publicServer.value)
+export const currentUserHandle = computed(() =>
+  currentUser.value.guest ? GUEST_ID : currentUser.value.account!.acct,
+)
 
 // when multiple tabs: we need to reload window when sign in, switch account or sign out
 if (process.client) {
@@ -91,73 +112,108 @@ if (process.client) {
   }, { immediate: true, flush: 'post' })
 }
 
-export const currentUserHandle = computed(() => currentUser.value?.account.id
-  ? `${currentUser.value.account.acct}@${currentInstance.value?.uri || currentServer.value}`
-  : '[anonymous]',
-)
-
 export const useUsers = () => users
 
 export const characterLimit = computed(() => currentInstance.value?.configuration.statuses.maxCharacters ?? DEFAULT_POST_CHARS_LIMIT)
 
-async function loginTo(user?: Omit<UserLogin, 'account'> & { account?: AccountCredentials }) {
+async function loginTo({ server, token, vapidKey, pushSubscription, guest = false }: { guest?: boolean } & Omit<UserLogin, 'guest'>) {
   const route = useRoute()
   const router = useRouter()
-  const server = user?.server || route.params.server as string || publicServer.value
+
+  const oldServer = currentUser.value.server
+
+  let user: UserLogin | undefined = token
+    ? users.value.find(u => u.server === server && u.token === token)
+    : ((guest
+        ? undefined
+        : users.value.find(u => u.server === server && u.token))
+      || users.value.find(u => u.server === server && u.guest))
+
+  const needPush = !user
+  if (!user) {
+    if (token) {
+      user = {
+        server,
+        guest: false,
+        token,
+        vapidKey,
+        pushSubscription,
+        account: undefined as any, // to be assigned later
+      }
+    }
+    else {
+      user = { server, guest: true }
+    }
+  }
+
   const masto = await loginMasto({
-    url: `https://${server}`,
-    accessToken: user?.token,
+    url: `https://${user.server}`,
+    accessToken: user.token,
     disableVersionCheck: true,
     // Suppress warning of `masto/fetch` usage
     disableExperimentalWarning: true,
   })
 
-  if (!user?.token) {
-    publicServer.value = server
-    publicInstance.value = await masto.instances.fetch()
+  if (user.guest) {
+    const instance = await masto.instances.fetch()
+    instances.value[server] = instance
   }
-
   else {
-    try {
-      const [me, instance, pushSubscription] = await Promise.all([
-        masto.accounts.verifyCredentials(),
-        masto.instances.fetch(),
-        // if PWA is not enabled, don't get push subscription
-        useRuntimeConfig().public.pwaEnabled
-          // we get 404 response instead empty data
-          ? masto.pushSubscriptions.fetch().catch(() => Promise.resolve(undefined))
-          : Promise.resolve(undefined),
-      ])
+    const [me, instance, pushSubscription] = await Promise.all([
+      masto.accounts.verifyCredentials(),
+      masto.instances.fetch(),
+      // if PWA is not enabled, don't get push subscription
+      useRuntimeConfig().public.pwaEnabled
+      // we get 404 response instead empty data
+        ? masto.pushSubscriptions.fetch().catch(() => Promise.resolve(undefined))
+        : Promise.resolve(undefined),
+    ])
 
-      if (!me.acct.includes('@'))
-        me.acct = `${me.acct}@${instance.uri}`
+    if (!me.acct.includes('@'))
+      me.acct = `${me.acct}@${instance.uri}`
 
-      user.account = me
-      user.pushSubscription = pushSubscription
-      currentUserId.value = me.id
-      instances.value[server] = instance
-
-      if (!users.value.some(u => u.server === user.server && u.token === user.token))
-        users.value.push(user as UserLogin)
-    }
-    catch {
-      await signout()
-    }
+    user.account = me
+    user.pushSubscription = pushSubscription
+    instances.value[server] = instance
   }
+
+  if (needPush)
+    users.value.push(user)
+
+  currentUserId.value = getUniqueUserId(user)
 
   // This only cleans up the URL; page content should stay the same
-  if (route.path === '/signin/callback') {
+  if (!user.guest && (route.path === '/signin/callback' || route.path === '/')) {
     await router.push('/home')
   }
+  else if (isGuest.value && route.meta.middleware === 'auth') {
+    await router.push(`/${server}/public`)
+  }
+  else if ('server' in route.params && user.server !== route.params.server) {
+    if (!route.params.account.includes('@'))
+    // convert to long handle
+      route.params.account += `@${oldServer}`
 
-  else if ('server' in route.params && user?.token && !useNuxtApp()._processingMiddleware) {
     await router.push({
       ...route,
+      params: {
+        ...route.params,
+        server: user.server,
+      },
       force: true,
     })
   }
 
   return masto
+}
+export type LoginTo = typeof loginTo
+
+export const switchUser = (user: UserLogin, masto: ElkMasto) => {
+  const router = useRouter()
+  if (!user.guest && !isGuest.value && user.account.id === currentUser.value.account!.id)
+    router.push(getAccountRoute(user.account))
+  else
+    masto.loginTo(user)
 }
 
 export function setAccountInfo(userId: string, account: AccountCredentials) {
@@ -182,10 +238,10 @@ export function getUsersIndexByUserId(userId: string) {
   return users.value.findIndex(u => u.account?.id === userId)
 }
 
-export async function removePushNotificationData(user: UserLogin, fromSWPushManager = true) {
+export async function removePushNotificationData(user: UserLogin<true>, fromSWPushManager = true) {
   // clear push subscription
   user.pushSubscription = undefined
-  const { acct } = user.account
+  const { acct } = user.account!
   // clear request notification permission
   delete useLocalStorage<PushNotificationRequest>(STORAGE_KEY_NOTIFICATION, {}).value[acct]
   // clear push notification policy
@@ -208,7 +264,7 @@ export async function removePushNotificationData(user: UserLogin, fromSWPushMana
   }
 }
 
-export async function removePushNotifications(user: UserLogin) {
+export async function removePushNotifications(user: UserLogin<true>) {
   if (!user.pushSubscription)
     return
 
@@ -221,45 +277,45 @@ export async function removePushNotifications(user: UserLogin) {
   }
 }
 
+// do not sign out if there is only one guest user
+export const canSignOut = computed(() =>
+  users.value.length > 1 || !users.value[0].guest,
+)
+
 export async function signout() {
   // TODO: confirm
-  if (!currentUser.value)
+
+  if (!canSignOut.value)
     return
 
-  const masto = useMasto()
-
-  const _currentUserId = currentUser.value.account.id
-
-  const index = users.value.findIndex(u => u.account?.id === _currentUserId)
-
+  const index = users.value.findIndex(u => isSameUser(u, currentUser.value))
   if (index !== -1) {
     // Clear stale data
     clearUserLocalStorage()
-    if (!users.value.some((u, i) => u.server === currentUser.value!.server && i !== index))
+    if (!users.value.some((u, i) => u.server === currentUser.value.server && i !== index))
       delete instances.value[currentUser.value.server]
 
-    await removePushNotifications(currentUser.value)
-
-    await removePushNotificationData(currentUser.value)
+    if (checkAuth(currentUser.value)) {
+      await removePushNotifications(currentUser.value)
+      await removePushNotificationData(currentUser.value)
+    }
 
     currentUserId.value = ''
     // Remove the current user from the users
     users.value.splice(index, 1)
   }
 
-  // Set currentUserId to next user if available
-  currentUserId.value = users.value[0]?.account?.id
+  // Set currentUserId to next user
+  currentUserId.value = getUniqueUserId(users.value[0] ? users.value[0] : defaultUser)
 
-  if (!currentUserId.value)
-    await useRouter().push('/')
-
+  const masto = useMasto()
   await masto.loginTo(currentUser.value)
 }
 
 const notifications = reactive<Record<string, undefined | [Promise<WsEvents>, number]>>({})
 
 export const useNotifications = () => {
-  const id = currentUser.value?.account.id
+  const id = $computed(() => currentUser.value.account?.id)
   const masto = useMasto()
 
   const clearNotifications = () => {
@@ -269,7 +325,7 @@ export const useNotifications = () => {
   }
 
   async function connect(): Promise<void> {
-    if (!isMastoInitialised.value || !id || notifications[id] || !currentUser.value?.token)
+    if (!isMastoInitialised.value || !id || notifications[id] || !currentUser.value.token)
       return
 
     const stream = masto.stream.streamUser()
@@ -317,9 +373,9 @@ export function useUserLocalStorage<T extends object>(key: string, initial: () =
   const all = storages.get(key) as Ref<Record<string, T>>
 
   return computed(() => {
-    const id = currentUser.value?.account.id
-      ? currentUser.value.account.acct
-      : '[anonymous]'
+    const id = currentUser.value.guest
+      ? GUEST_ID
+      : currentUser.value.account!.acct
     all.value[id] = Object.assign(initial(), all.value[id] || {})
     return all.value[id]
   })
@@ -330,7 +386,7 @@ export function useUserLocalStorage<T extends object>(key: string, initial: () =
  */
 export function clearUserLocalStorage(account?: Account) {
   if (!account)
-    account = currentUser.value?.account
+    account = currentUser.value.account
   if (!account)
     return
 
@@ -354,10 +410,11 @@ export const createMasto = () => {
 
       if (key === 'loginTo') {
         return (...args: any[]): Promise<MastoClient> => {
-          return apiPromise.value = loginTo(...args).then((r) => {
+          return apiPromise.value = (loginTo as any)(...args).then((r: any) => {
             api.value = r
             return masto
-          }).catch(() => {
+          }).catch((err: any) => {
+            console.error(err)
             // Show error page when Mastodon server is down
             throw createError({
               fatal: true,

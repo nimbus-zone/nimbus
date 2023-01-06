@@ -56,7 +56,7 @@ function mentionHTML(acct: string) {
 
 export function getReplyDraft(status: Status) {
   const accountsToMention: string[] = []
-  const userId = currentUser.value?.account.id
+  const userId = currentUser.value.account!.id
   if (status.account.id !== userId)
     accountsToMention.push(status.account.acct)
   accountsToMention.push(...(status.mentions.filter(mention => mention.id !== userId).map(mention => mention.acct)))
