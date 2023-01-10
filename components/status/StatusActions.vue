@@ -7,6 +7,7 @@ const props = defineProps<{
   command?: boolean
 }>()
 
+const nuxtApp = useNuxtApp()
 const focusEditor = inject<typeof noop>('focus-editor', noop)
 
 const { details, command } = $(props)

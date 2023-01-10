@@ -9,7 +9,10 @@ const { notification } = defineProps<{
 <template>
   <article flex flex-col relative>
     <template v-if="notification.type === 'follow'">
-      <NuxtLink :to="getAccountRoute(notification.account)">
+      <NuxtLink
+        :to="getAccountRoute(notification.account)"
+        @click="$rememberAccountPosition(getAccountRoute(notification.account).fullPath)"
+      >
         <div
           flex items-center absolute
           ps-3 pe-4 inset-is-0

@@ -1,5 +1,6 @@
 import type { Paginator, WsEvents, mastodon } from 'masto'
 import type { PaginatorState } from '~/types'
+import { onReactivated } from '~/composables/vue'
 
 export function usePaginator<T, P, U = T>(
   _paginator: Paginator<T[], P>,
@@ -22,7 +23,10 @@ export function usePaginator<T, P, U = T>(
   const bound = reactive(useElementBounding(endAnchor))
   const isInScreen = $computed(() => bound.top < window.innerHeight * 2)
   const error = ref<unknown | undefined>()
+  const loaded = ref(false)
+
   const deactivated = useDeactivated()
+  const nuxtApp = useNuxtApp()
 
   async function update() {
     (items.value as U[]).unshift(...preprocess(prevItems.value as T[]))
@@ -92,12 +96,36 @@ export function usePaginator<T, P, U = T>(
 
     await nextTick()
     bound.update()
+    if (!loaded.value) {
+      loaded.value = true
+      await nextTick()
+      nuxtApp.$restoreScrollPosition()
+    }
   }
 
   if (process.client) {
+    const timeout = ref()
     useIntervalFn(() => {
       bound.update()
     }, 1000)
+
+    onDeactivated(() => {
+      window.clearTimeout(timeout.value)
+      loaded.value = false
+    })
+    onReactivated(() => {
+      window.clearTimeout(timeout.value)
+      if (isMastoInitialised.value) {
+        if (!loaded.value)
+          loaded.value = true
+
+        // TODO: apply timeout based in items length: be conservative for long lists on slow devices
+        timeout.value = setTimeout(() => nuxtApp.$restoreScrollPosition(), 600)
+      }
+      else {
+        loaded.value = false
+      }
+    })
 
     if (!isMastoInitialised.value) {
       onMastoInit(() => {
