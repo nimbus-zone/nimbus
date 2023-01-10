@@ -23,6 +23,11 @@ const providerName = $computed(() => props.card.providerName ? props.card.provid
 
 const gitHubCards = $(useFeatureFlag('experimentalGitHubCards'))
 
+// checks if title contains a username
+const usernames = props.card.title.match(/@+[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/gi)
+const isMastodonLink = usernames?.length === 1 && props.card.type === 'link'
+const username = isMastodonLink ? usernames[0] : ''
+
 // TODO: handle card.type: 'photo' | 'video' | 'rich';
 const cardTypeIconMap: Record<mastodon.v1.PreviewCardType, string> = {
   link: 'i-ri:profile-line',
@@ -34,6 +39,7 @@ const cardTypeIconMap: Record<mastodon.v1.PreviewCardType, string> = {
 
 <template>
   <StatusPreviewGitHub v-if="gitHubCards && providerName === 'GitHub'" :card="card" />
+  <StatusPreviewMastodon v-else-if="isMastodonLink" :card="card" />
   <NuxtLink
     v-else
     block
@@ -77,6 +83,6 @@ const cardTypeIconMap: Record<mastodon.v1.PreviewCardType, string> = {
     >
       <div :class="cardTypeIconMap[card.type]" w="30%" h="30%" text-secondary />
     </div>
-    <StatusPreviewCardInfo :root="root" :card="card" :provider="providerName" />
+    <StatusPreviewCardInfo :root="root" :card="card" :provider="providerName" :is-square="isSquare" />
   </NuxtLink>
 </template>
