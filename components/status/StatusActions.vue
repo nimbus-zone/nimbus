@@ -94,7 +94,7 @@ const reply = () => {
       </StatusActionButton>
     </div>
 
-    <div flex-none>
+    <div :class="status.localOnly ? 'flex-1' : 'flex-none'">
       <StatusActionButton
         :content="$t('action.bookmark')"
         color="text-yellow" hover="text-yellow" group-hover="bg-yellow/10"
@@ -106,5 +106,19 @@ const reply = () => {
         @click="toggleBookmark()"
       />
     </div>
+
+    <CommonTooltip v-if="status.localOnly" :content="$t('action.local_only')" placement="bottom">
+      <div
+        class="i-ri:link-unlink-m local-only"
+        flex-none
+        text-secondary
+      />
+    </CommonTooltip>
   </div>
 </template>
+
+<style>
+.local-only {
+  margin: 0.5em;
+}
+</style>
