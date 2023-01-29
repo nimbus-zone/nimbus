@@ -11,6 +11,8 @@ export function setupPageHeader() {
     return acc
   }, {} as Record<string, Directions>)
 
+  const publicRuntimeConfig = useRuntimeConfig().public
+
   useHeadFixed({
     htmlAttrs: {
       lang: () => locale.value,
@@ -43,13 +45,18 @@ export function setupPageHeader() {
 
       return titleTemplate
     },
-    link: process.client && useRuntimeConfig().public.pwaEnabled
+    link: process.client && publicRuntimeConfig.pwaEnabled && !publicRuntimeConfig.tauriPlatform
       ? () => [{
           key: 'webmanifest',
           rel: 'manifest',
           href: `/manifest-${locale.value}${colorMode.value === 'dark' ? '-dark' : ''}.webmanifest`,
         }]
-      : [],
+      : process.client && publicRuntimeConfig.pwaEnabled && publicRuntimeConfig.tauriPlatform
+        ? () => [{
+            rel: 'manifest',
+            href: '/manifest.webmanifest',
+          }]
+        : [],
   })
 }
 

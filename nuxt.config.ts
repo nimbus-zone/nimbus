@@ -98,6 +98,7 @@ export default defineNuxtConfig({
       privacyPolicyUrl: '',
       env: '', // set in build-env module
       buildInfo: {} as BuildInfo, // set in build-env module
+      tauriPlatform: !!process.env.TAURI_PLATFORM,
       pwaEnabled: !isDevelopment || process.env.VITE_DEV_PWA === 'true',
       // We use LibreTranslate(https://github.com/LibreTranslate/LibreTranslate) as our default translation server #76
       translateApi: '',

@@ -40,6 +40,9 @@ export default defineNuxtPlugin(() => {
       registrationError.value = true
     },
     onRegisteredSW(swUrl, r) {
+      if (useRuntimeConfig().public.tauriPlatform)
+        return
+
       // should add support in pwa plugin
       if (r?.active?.state === 'activated') {
         swActivated.value = true
