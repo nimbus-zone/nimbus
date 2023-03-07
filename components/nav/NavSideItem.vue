@@ -16,6 +16,23 @@ defineSlots<{
 
 const router = useRouter()
 
+const allowScrollTop = ref(false)
+
+usePageTransition({
+  beforeEach: () => {
+    allowScrollTop.value = false
+  },
+  afterHydrated: () => {
+    if (typeof props.to === 'string')
+      allowScrollTop.value = router.currentRoute.value.fullPath === props.to
+    else
+      allowScrollTop.value = router.currentRoute.value.name === props.to.name
+  },
+  onTransitionError: () => {
+    allowScrollTop.value = false
+  },
+})
+
 useCommand({
   scope: 'Navigation',
 
@@ -51,7 +68,7 @@ const noUserVisual = computed(() => isHydrated.value && props.userOnly && !curre
     :active-class="activeClass"
     group focus:outline-none disabled:pointer-events-none
     :tabindex="noUserDisable ? -1 : null"
-    @click="$scrollToTop"
+    @click="allowScrollTop && $trackScroll.forceScrollToTop()"
   >
     <CommonTooltip :disabled="!isMediumOrLargeScreen" :content="text" placement="right">
       <div

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { ElkTranslationStatus } from '~/types/translation-status'
 
+definePageMeta({
+  noScrollTrack: true,
+})
+
 const { t, locale } = useI18n()
 
 const translationStatus: ElkTranslationStatus = await import('~/elk-translation-status.json').then(m => m.default)
