@@ -265,6 +265,7 @@ declare global {
 declare module 'nuxt/dist/app' {
   interface RuntimeNuxtHooks {
     'elk-logo:click': () => void
+    'elk-timeline-home-filter:change': () => void
   }
 }
 
