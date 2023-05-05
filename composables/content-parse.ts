@@ -17,6 +17,7 @@ export interface ContentParseOptions {
   collapseMentionLink?: boolean
   status?: mastodon.v1.Status
   inReplyToStatus?: mastodon.v1.Status
+  cleanSharedLink?: string | false // this is defined when conditions for cleaning the link are met
 }
 
 const sanitizerBasicClasses = filterClasses(/^(h-\S*|p-\S*|u-\S*|dt-\S*|e-\S*|mention|hashtag|ellipsis|invisible)$/u)
@@ -86,6 +87,7 @@ export function parseMastodonHTML(
     mentions,
     status,
     inReplyToStatus,
+    cleanSharedLink,
   } = options
 
   if (markdown) {
@@ -135,7 +137,29 @@ export function parseMastodonHTML(
   if (collapseMentionLink)
     transforms.push(transformCollapseMentions(status, inReplyToStatus))
 
-  return transformSync(parse(html), transforms)
+  const node = parse(html) as Node
+
+  if (cleanSharedLink) {
+    // filter out invisible spans
+    const filteredNode = node.children.filter((child: Node) => !!child.children)
+    const matchedIndex = lastChildLinkMatchesPreviewUrl(filteredNode, cleanSharedLink)
+
+    if (matchedIndex)
+      filteredNode[filteredNode.length - 1].children.splice(matchedIndex, 1)
+  }
+
+  return transformSync(node, transforms)
+}
+
+/**
+ * Returns the index of the last link node if it matches the previewUrl
+ */
+export function lastChildLinkMatchesPreviewUrl(filteredNode: Node, previewUrl: string) {
+  const filteredLength = filteredNode.length
+  const length = filteredNode[filteredLength - 1].children.length
+  const lastChild = filteredNode[filteredLength - 1].children[length - 1]
+  const sharedHref = lastChild.attributes?.href
+  return sharedHref === previewUrl ? length - 1 : null
 }
 
 /**

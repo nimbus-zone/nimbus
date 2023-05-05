@@ -5,15 +5,18 @@ const {
   status,
   newer,
   withAction = true,
+  cleanSharedLink,
 } = defineProps<{
   status: mastodon.v1.Status | mastodon.v1.StatusEdit
   newer?: mastodon.v1.Status
   withAction?: boolean
+  cleanSharedLink?: string | false
 }>()
 
 const { translation } = useTranslation(status, getLanguageCode())
 
 const emojisObject = useEmojisFallback(() => status.emojis)
+
 const vnode = $computed(() => {
   if (!status.content)
     return null
@@ -24,7 +27,9 @@ const vnode = $computed(() => {
     collapseMentionLink: !!('inReplyToId' in status && status.inReplyToId),
     status: 'id' in status ? status : undefined,
     inReplyToStatus: newer,
+    cleanSharedLink,
   })
+
   return vnode
 })
 </script>

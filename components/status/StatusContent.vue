@@ -22,6 +22,10 @@ const isFiltered = $computed(() => status.account.id !== currentUser.value?.acco
 // check spoiler text or media attachment
 // needed to handle accounts that mark all their posts as sensitive
 const hasSpoilerOrSensitiveMedia = $computed(() => !!status.spoilerText || (status.sensitive && !!status.mediaAttachments.length))
+
+const cleanSharedLink = !status.poll
+  && !status.mediaAttachments.length
+  && status.card?.url
 </script>
 
 <template>
@@ -40,7 +44,7 @@ const hasSpoilerOrSensitiveMedia = $computed(() => !!status.spoilerText || (stat
       <template v-else-if="filterPhrase" #spoiler>
         <p>{{ `${$t('status.filter_hidden_phrase')}: ${filterPhrase}` }}</p>
       </template>
-      <StatusBody v-if="!status.sensitive || status.spoilerText" :status="status" :newer="newer" :with-action="!isDetails" :class="isDetails ? 'text-xl' : ''" />
+      <StatusBody v-if="!status.sensitive || status.spoilerText" :clean-shared-link="cleanSharedLink" :status="status" :newer="newer" :with-action="!isDetails" :class="isDetails ? 'text-xl' : ''" />
       <StatusTranslation :status="status" />
       <StatusPoll v-if="status.poll" :status="status" />
       <StatusMedia
@@ -52,6 +56,7 @@ const hasSpoilerOrSensitiveMedia = $computed(() => !!status.spoilerText || (stat
         v-if="status.card"
         :card="status.card"
         :small-picture-only="status.mediaAttachments?.length > 0"
+        :clean-shared-link="cleanSharedLink"
       />
       <StatusCard
         v-if="status.reblog"
