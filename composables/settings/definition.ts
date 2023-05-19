@@ -35,6 +35,7 @@ export interface UserSettings {
   language: string
   disabledTranslationLanguages: string[]
   themeColors?: ThemeColors
+  editorMode?: 'tiptap' | 'markdown'
 }
 
 export interface ThemeColors {
