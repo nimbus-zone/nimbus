@@ -83,6 +83,10 @@ export function usePublish(options: {
       poll = { ...draft.value.params.poll, options }
     }
 
+    if (draft.value.params.scheduledAt)
+      // TODO: return type become non `Status` object now! what to do?
+      draft.value.params.scheduledAt = new Date(draft.value.params.scheduledAt).toISOString()
+
     const payload = {
       ...draft.value.params,
       spoilerText: publishSpoilerText.value,
