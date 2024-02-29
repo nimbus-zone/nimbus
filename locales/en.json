@@ -719,6 +719,7 @@
     "open_editor_tools": "Editor tools",
     "pick_an_icon": "Pick an icon",
     "publish_failed": "Close failed messages at the top of editor to republish posts",
+    "schedule_post": "Schedule post",
     "toggle_bold": "Toggle bold",
     "toggle_code_block": "Toggle code block",
     "toggle_italic": "Toggle italic"
