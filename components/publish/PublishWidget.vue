@@ -262,11 +262,11 @@ onDeactivated(() => {
           <header id="publish-failed" flex justify-between>
             <div flex items-center gap-x-2 font-bold>
               <div aria-hidden="true" i-ri:error-warning-fill />
-              <p>{{ $t('state.publish_failed') }}</p>
+              <p>{{ scheduleDateTime ? $t('state.schedule_failed') : $t('state.publish_failed') }}</p>
             </div>
-            <CommonTooltip placement="bottom" :content="$t('action.clear_publish_failed')">
+            <CommonTooltip placement="bottom" :content="scheduleDateTime ? $t('state.clear_schedule_failed') : $t('action.clear_publish_failed')">
               <button
-                flex rounded-4 p1 hover:bg-active cursor-pointer transition-100 :aria-label="$t('action.clear_publish_failed')"
+                flex rounded-4 p1 hover:bg-active cursor-pointer transition-100 :aria-label="scheduleDateTime ? $t('state.clear_schedule_failed') : $t('action.clear_publish_failed')"
                 @click="failedMessages = []"
               >
                 <span aria-hidden="true" w="1.75em" h="1.75em" i-ri:close-line />
@@ -491,14 +491,14 @@ onDeactivated(() => {
             </template>
           </PublishVisibilityPicker>
 
-          <CommonTooltip v-if="failedMessages.length > 0" id="publish-failed-tooltip" placement="top" :content="$t('tooltip.publish_failed')" no-auto-focus>
+          <CommonTooltip v-if="failedMessages.length > 0" id="publish-failed-tooltip" placement="top" :content="scheduleDateTime ? $t('state.schedule_failed') : $t('tooltip.publish_failed')" no-auto-focus>
             <button
               btn-danger rounded-3 text-sm w-full flex="~ gap1" items-center md:w-fit aria-describedby="publish-failed-tooltip"
             >
               <span block>
                 <div block i-carbon:face-dizzy-filled />
               </span>
-              <span>{{ $t('state.publish_failed') }}</span>
+              <span>{{ scheduleDateTime ? $t('state.schedule_failed') : $t('state.publish_failed') }}</span>
             </button>
           </CommonTooltip>
 
@@ -519,6 +519,7 @@ onDeactivated(() => {
               </span>
               <span v-if="draft.editingStatus">{{ $t('action.save_changes') }}</span>
               <span v-else-if="draft.params.inReplyToId">{{ $t('action.reply') }}</span>
+              <span v-else-if="scheduleDateTime">{{ !isSending ? $t('action.schedule') : $t('state.scheduling') }}</span>
               <span v-else>{{ !isSending ? $t('action.publish') : $t('state.publishing') }}</span>
             </button>
           </CommonTooltip>
