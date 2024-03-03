@@ -573,10 +573,12 @@ onDeactivated(() => {
     background-color: var(--c-bg-btn-disabled);
     color: var(--c-text-btn-disabled);
   }
+
   .publish-button[aria-disabled=true]:hover {
     background-color: var(--c-bg-btn-disabled);
     color: var(--c-text-btn-disabled);
   }
+
   .option-input:focus + .delete-button {
     display: none;
   }
@@ -590,5 +592,9 @@ onDeactivated(() => {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+  }
+
+  input[name="schedule-datetime"]:invalid {
+    color: var(--c-danger);
   }
 </style>
