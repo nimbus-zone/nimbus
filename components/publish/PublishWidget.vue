@@ -2,6 +2,7 @@
 import { EditorContent } from '@tiptap/vue-3'
 import stringLength from 'string-length'
 import type { mastodon } from 'masto'
+import { useNow } from '@vueuse/core'
 import type { Draft } from '~/types'
 
 const {
@@ -120,6 +121,26 @@ const scheduledTime = ref('')
 watchEffect(() => {
   draft.value.params.scheduledAt = scheduledTime.value
 })
+
+const now = useNow({ interval: 1000 })
+const minimumScheduledTime = ref()
+watchEffect(() => {
+  minimumScheduledTime.value = getMinimumScheduledTime(now.value)
+})
+
+// Calculate the minimum scheduled time.
+// Mastodon API allows to set the scheduled time to 5 minutes in the future
+// but if the specified scheduled time is less than 5 minutes, Mastodon will
+// send the post immediately.
+// To prevent this, we add a buffer and round up the minutes.
+function getMinimumScheduledTime(now: Date): string {
+  const bufferInSec = 5 + 5 * 60 // + 5 minutes and 5 seconds
+  const nowInSec = Math.floor(now.getTime() / 1000)
+  const bufferedTimeInSec
+      = Math.ceil((nowInSec + bufferInSec) / 60) * 60
+  const minimumScheduledTime = new Date(bufferedTimeInSec * 1000)
+  return minimumScheduledTime.toISOString().slice(0, 16)
+}
 
 const characterCount = computed(() => {
   const text = htmlToText(editor.value?.getHTML() || '')
@@ -452,6 +473,7 @@ onDeactivated(() => {
                 p2
                 type="datetime-local"
                 name="schedule-datetime"
+                :min="minimumScheduledTime"
               >
             </template>
           </CommonDropdown>
