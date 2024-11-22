@@ -12,9 +12,9 @@ A nimble Bluesky web client
 
 <br/>
 <p align="center">
-  <a href="https://chat.elk.zone"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord" alt="discord chat"></a>
-  <a href="https://pr.new/elk-zone/elk"><img src="https://developer.stackblitz.com/img/start_pr_dark_small.svg" alt="Start new PR in StackBlitz Codeflow"></a>
-  <a href="https://volta.net/elk-zone/elk?utm_source=elk_readme"><img src="https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg" alt="Open board on Volta"></a>
+  <a href="https://discord.gg/Ac6KWuwwKb"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord" alt="discord chat"></a>
+  <a href="https://pr.new/nimbus-zone/nimbus"><img src="https://developer.stackblitz.com/img/start_pr_dark_small.svg" alt="Start new PR in StackBlitz Codeflow"></a>
+  <a href="https://volta.net/nimbus-zone/nimbus?utm_source=nimbus_readme"><img src="https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg" alt="Open board on Volta"></a>
 </p>
 <br/>
 
@@ -34,8 +34,8 @@ It is already quite usable, but it isn't ready for wide adoption yet. We recomme
 
 The Elk team maintains a deployment at:
 
-- 🦌 Production: [elk.zone](https://elk.zone)
-- 🐙 Canary: [main.elk.zone](https://main.elk.zone) (deploys on every commit to `main` branch)
+- 🦌 Production: [nimbus.zone](https://nimbus.zone)
+- 🐙 Canary: [main.nimbus.zone](https://main.nimbus.zone) (deploys on every commit to `main` branch)
 
 ### Self-Host Docker Deployment
 
@@ -45,8 +45,8 @@ One could put Nimbus behind popular reverse proxies with SSL Handling like Traef
 1. checkout source ```git clone https://github.com/nimbus-zone/nimbus.git```
 2. got into new source dir: ```cd nimbus```
 3. build Docker image: ```docker build .```
-4. create local storage directory for settings: ```mkdir elk-storage```
-5. adjust permissions of storage dir: ```sudo chown 911:911 ./elk-storage```
+4. create local storage directory for settings: ```mkdir nimbus-storage```
+5. adjust permissions of storage dir: ```sudo chown 911:911 ./nimbus-storage```
 6. start container: ```docker-compose up -d```
 
 > [!NOTE]
@@ -136,7 +136,7 @@ nr test
 
 ## 📲 PWA
 
-You can consult the [PWA documentation](https://docs.elk.zone/pwa) to learn more about the PWA capabilities on Elk, how to install Elk PWA in your desktop or mobile device and some hints about PWA stuff on Elk.
+You can consult the [PWA documentation](https://docs.nimbus.zone/pwa) to learn more about the PWA capabilities on Nimbus, how to install Nimbus PWA in your desktop or mobile device and some hints about PWA stuff on Nimbus.
 
 ## 🦄 Stack
 
@@ -150,7 +150,7 @@ You can consult the [PWA documentation](https://docs.elk.zone/pwa) to learn more
 - [Iconify](https://github.com/iconify/icon-sets#iconify-icon-sets-in-json-format) - Iconify icon sets in JSON format
 - [Masto.js](https://neet.github.io/masto.js) - Mastodon API client in TypeScript
 - [shiki](https://shiki.style/) - A beautiful yet powerful syntax highlighter
-- [vite-plugin-pwa](https://github.com/vite-pwa/vite-plugin-pwa) - Prompt for update, Web Push Notifications and Web Share Target API
+- [vite-plugin-pwa](https://github.com/vite-pwa/vite-plugin-pwa) - Prompt for update and Web Share Target API
 
 ## 👨‍💻 Contributors
 
