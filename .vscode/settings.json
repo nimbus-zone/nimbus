@@ -20,9 +20,6 @@
   "i18n-ally.sortKeys": true,
   "i18n-ally.sourceLanguage": "en",
 
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
-
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
