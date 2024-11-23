@@ -41,12 +41,6 @@ useHydratedHead({
     <div flex="~ gap-1" items-center text-secondary text-sm>
       <div flex>
         <div>{{ createdAt }}</div>
-        <StatusEditIndicator
-          :status="status"
-          :inline="false"
-        >
-          <span ms1 font-bold cursor-pointer>{{ $t('state.edited') }}</span>
-        </StatusEditIndicator>
       </div>
       <div aria-hidden="true">
         &middot;

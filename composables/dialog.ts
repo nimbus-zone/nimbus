@@ -9,7 +9,6 @@ export const errorDialogData = ref<ErrorDialogData>()
 export const mediaPreviewList = ref<mastodon.v1.MediaAttachment[]>([])
 export const mediaPreviewIndex = ref(0)
 
-export const statusEdit = ref<mastodon.v1.StatusEdit>()
 export const dialogDraftKey = ref<string>()
 
 export const reportAccount = ref<mastodon.v1.Account>()
@@ -121,11 +120,6 @@ export function closeErrorDialog() {
 
 export function closeMediaPreview() {
   history.back()
-}
-
-export function openEditHistoryDialog(edit: mastodon.v1.StatusEdit) {
-  statusEdit.value = edit
-  isEditHistoryDialogOpen.value = true
 }
 
 export function openPreviewHelp() {

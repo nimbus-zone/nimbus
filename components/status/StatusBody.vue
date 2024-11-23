@@ -6,7 +6,7 @@ const {
   newer,
   withAction = true,
 } = defineProps<{
-  status: mastodon.v1.Status | mastodon.v1.StatusEdit
+  status: mastodon.v1.Status
   newer?: mastodon.v1.Status
   withAction?: boolean
 }>()

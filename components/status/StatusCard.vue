@@ -167,7 +167,6 @@ const forceShow = ref(false)
                       </time>
                     </NuxtLink>
                   </CommonTooltip>
-                  <StatusEditIndicator :status="status" inline />
                 </div>
               </div>
             </div>

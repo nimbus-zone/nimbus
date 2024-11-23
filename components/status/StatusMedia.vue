@@ -2,7 +2,7 @@
 import type { mastodon } from 'masto'
 
 const { status, isPreview = false } = defineProps<{
-  status: mastodon.v1.Status | mastodon.v1.StatusEdit
+  status: mastodon.v1.Status
   fullSize?: boolean
   isPreview?: boolean
 }>()
