@@ -102,4 +102,4 @@ We would also appreciate you sponsoring other contributors to Bluesky and the El
 
 ## 📄 License
 
-[MIT](./LICENSE) &copy; 2024-PRESENT Nimbus contributors
+[MIT](./LICENSE) &copy; 2022-PRESENT Elk contributors, 2024-PRESENT Nimbus contributors
