@@ -87,15 +87,14 @@ There are no house style rules currently. When we add any, they will be found in
 Use the first guide that mentions a usable standard from the order below:
 
 1. Refer to the U.S. Government's [Federal Plain Language Guidelines](https://www.plainlanguage.gov/guidelines/) as a base standard.
-2. For user interface, device, and other technical guidance, refer to [**Google's Developer Style Guide**](https://developers.google.com/style).
+2. For user interface, device, and other technical guidance, refer to [Google's Developer Style Guide](https://developers.google.com/style).
 3. As a secondary reference to the Google guide, refer to [Microsoft's Style Guide](https://docs.microsoft.com/style-guide/welcome/), then the [Chicago Manual of Style, 17th Edition](https://www.chicagomanualofstyle.org/home.html).
 
 We use [Merriam-Webster](https://www.merriam-webster.com/) as the standard dictionary for spelling.
 
 ### Images
 
-Place image files in the `/docs/public/images` folder.
-You can create subfolders to organize the images.
+Place image files in the `/docs/public/images` folder. You can create subfolders to organize the images.
 
 To add an image to a doc, use standard markdown with [alt text](https://accessibility.huit.harvard.edu/describe-content-images):
 
