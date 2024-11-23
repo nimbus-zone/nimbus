@@ -46,7 +46,7 @@ nr dev
 
 ### Testing
 
-Elk uses [Vitest](https://vitest.dev). You can run the test suite with:
+Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
 
 ```
 nr test

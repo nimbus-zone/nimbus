@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Hi! We are excited that you are interested in contributing to Elk. Before submitting your contribution, please make sure to take a moment and read through the following guide.
+Hi! We are excited that you are interested in contributing to Nimbus. Before submitting your contribution, please make sure to take a moment and read through the following guide.
 
 Refer also to https://github.com/antfu/contribute.
 
@@ -14,9 +14,9 @@ You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs o
 
 ### Local Setup
 
-To develop and test the Elk package:
+To develop and test the Nimbus app:
 
-1. Fork the Elk repository to your own GitHub account and then clone it to your local device.
+1. Fork the Nimbus repository to your own GitHub account and then clone it to your local device.
 
 2. Ensure using the latest Node.js (20.x).
 If you have [nvm](https://github.com/nvm-sh/nvm), you can run `nvm i` to install the required version.
@@ -28,11 +28,11 @@ If you have [nvm](https://github.com/nvm-sh/nvm), you can run `nvm i` to install
 git checkout -b my-new-branch
 ```
 
-1. Run `pnpm i` in Elk's root folder
+1. Run `pnpm i` in Nimbus's root folder
 
-2. Run `pnpm nuxi prepare` in Elk's root folder
+2. Run `pnpm nuxi prepare` in Nimbus's root folder
 
-3. Run `pnpm dev` in Elk's root folder to start dev server or `pnpm dev:mocked` to start dev server with `@elkdev@universeodon.com` user.
+3. Run `pnpm dev` in Nimbus's root folder to start dev server or `pnpm dev:mocked` to start dev server with `@elkdev@universeodon.com` user.
 
 We recommend installing [ni](https://github.com/antfu/ni#ni), that will use the right package manager in each of your projects. If `ni` is installed, you can instead run:
 
@@ -43,7 +43,7 @@ nr dev
 
 ### Testing
 
-Elk uses [Vitest](https://vitest.dev). You can run the test suite with:
+Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
 
 ```
 nr test
@@ -51,9 +51,9 @@ nr test
 
 ### Running PWA on dev server
 
-In order to run Elk with PWA enabled, run `pnpm dev:pwa` in Elk's root folder to start dev server or `pnpm dev:mocked:pwa` to start dev server with `@elkdev@universeodon.com` user.
+In order to run Nimbus with PWA enabled, run `pnpm dev:pwa` in Nimbus's root folder to start dev server or `pnpm dev:mocked:pwa` to start dev server with `@elkdev@universeodon.com` user.
 
-You should test the Elk PWA application on private browsing mode on any Chromium-based browser: will not work on Firefox and Safari.
+You should test the Nimbus PWA application on private browsing mode on any Chromium-based browser: will not work on Firefox and Safari.
 
 If not using private browsing mode, you will need to uninstall the PWA application from your browser once you finish testing:
 - Open `Dev Tools` (`Option + ⌘ + J` on macOS, `Shift + CTRL + J` on Windows/Linux)
@@ -76,7 +76,7 @@ You can run the following commands on your local environment to fix CI errors:
 
 ## RTL Support
 
-Elk supports `right-to-left` languages, we need to make sure that the UI is working correctly in both directions.
+Nimbus supports `right-to-left` languages, we need to make sure that the UI is working correctly in both directions.
 
 Simple approach used by most websites of relying on direction set in HTML element does not work because direction for various items, such as timeline, does not always match direction set in HTML.
 
@@ -119,7 +119,7 @@ Check [Pluralization rule callback](https://vue-i18n.intlify.dev/guide/essential
 
 ### Messages interpolation
 
-Most of the messages used in Elk do not require any interpolation, however, some messages require interpolation: check [Message Format Syntax](https://vue-i18n.intlify.dev/guide/essentials/syntax.html) for more info.
+Most of the messages used in Nimbus do not require any interpolation, however, some messages require interpolation: check [Message Format Syntax](https://vue-i18n.intlify.dev/guide/essentials/syntax.html) for more info.
 
 We're using these types of interpolation:
 - [List interpolation](https://vue-i18n.intlify.dev/guide/essentials/syntax.html#list-interpolation)
@@ -133,17 +133,17 @@ You can access the elements of the list using the object notation using the inde
 
 #### Named interpolation
 
-Elk will use named interpolation only to handle plurals for number formatting. We have 2 scenarios for this:
+Nimbus will use named interpolation only to handle plurals for number formatting. We have 2 scenarios for this:
 - using `plural` **with** `i18n-t` component
 - using `plural` **without** `i18n-t` component
 
-Check [Custom Plural Number Formatting Entries](#custom-plural-number-formatting-entries) for custom plural entries in Elk with available values for interpolation.
+Check [Custom Plural Number Formatting Entries](#custom-plural-number-formatting-entries) for custom plural entries in Nimbus with available values for interpolation.
 
 When using plural number formatting, we'll have always `{n}` available in the message, for example, `You have {n} new notifications|You have {n} new notification|You have {n} new notifications` or `You have no new notifications|You have 1 new notification|You have {n} new notifications`.
 
 We've included `v` named parameter, it will be used to pass the formatted number using [Intl.NumberFormat::format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/format): will be the number with separators symbols. The exception to the previous rule is when we're using `plural` **with** `i18n-t` component, in this case, we'll need to use `{0}` instead `{v}` to access the number.
 
-Additionally, Elk will use [compact notation for numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#parameters) for some entries, check `notation` and `compactDisplay` options: for example, `1K` for `1000`, `1M` for `1000000`, `1B` for `1000000000` and so on. That entry will be available in the message using `{v}` named parameter (or `{0}` if using the message **with** `i18n-t` component).
+Additionally, Nimbus will use [compact notation for numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#parameters) for some entries, check `notation` and `compactDisplay` options: for example, `1K` for `1000`, `1M` for `1000000`, `1B` for `1000000000` and so on. That entry will be available in the message using `{v}` named parameter (or `{0}` if using the message **with** `i18n-t` component).
 
 You can run this code in your browser console to see how it works:
 ```ts
@@ -175,7 +175,7 @@ You can run this code in your browser console to see how it works:
 **Warning**:
 Either **{0}** or **{v}** should be used with the exception being custom plurals entries using the `{n}` placeholder.
 
-This is the full list of entries that will be available for number formatting in Elk:
+This is the full list of entries that will be available for number formatting in Nimbus:
 - `action.boost_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**
 - `action.favourite_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**
 - `action.reply_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**

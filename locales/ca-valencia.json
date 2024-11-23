@@ -36,7 +36,7 @@
     "publish": "Publica"
   },
   "app_desc_short": "Un client web Mastodon àgil",
-  "app_logo": "Logo d'Elk",
+  "app_logo": "Logo d'Nimbus",
   "attachment": {
     "remove_label": "Elimina l'adjunt"
   },
@@ -103,19 +103,19 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Estàs veient una versió prèvia d'Elk de la comunitat - {0}.",
+      "desc1": "Estàs veient una versió prèvia d'Nimbus de la comunitat - {0}.",
       "desc2": "Pot contindre canvis no revisats o fins i tot maliciosos.",
       "desc3": "No inicies sessió amb el teu compte real."
     },
     "desc_highlight": "Espereu trobar alguns errors i que falten funcions ací i allà.",
-    "desc_para1": "Gràcies pel teu interès en provar Elk, el nostre client web Mastodon en procés",
+    "desc_para1": "Gràcies pel teu interès en provar Nimbus, el nostre client web Mastodon en procés",
     "desc_para2": "estem treballant de valent en el desenvolupament i en millorar-lo.",
-    "desc_para3": "Per a impulsar el desenvolupament, pots patrocinar l'equip a través dels patrocis de GitHub. Esperem que gaudisques d'Elk!",
-    "desc_para4": "Elk és de codi obert. Si vols ajudar amb proves, comentaris o contribucions,",
+    "desc_para3": "Per a impulsar el desenvolupament, pots patrocinar l'equip a través dels patrocis de GitHub. Esperem que gaudisques d'Nimbus!",
+    "desc_para4": "Nimbus és de codi obert. Si vols ajudar amb proves, comentaris o contribucions,",
     "desc_para5": "troba'ns a GitHub",
     "desc_para6": "i col·labora.",
-    "footer_team": "L'equip d'Elk",
-    "title": "Elk està en proves!"
+    "footer_team": "L'equip d'Nimbus",
+    "title": "Nimbus està en proves!"
   },
   "list": {
     "add_account": "Afig el compte a una llista",
@@ -171,18 +171,18 @@
   "pwa": {
     "dismiss": "Omet",
     "install": "Instal·la",
-    "install_title": "Instal·la Elk",
-    "title": "Hi ha una actualització d'Elk disponible!",
+    "install_title": "Instal·la Nimbus",
+    "title": "Hi ha una actualització d'Nimbus disponible!",
     "update": "Actualitza",
     "webmanifest": {
       "canary": {
         "description": "Un client web àgil de Mastodon (canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Un client web àgil de Mastodon (desenvolupament)",
-        "name": "Elk (desenvolupament)"
+        "name": "Nimbus (desenvolupament)"
       },
       "preview": {
         "description": "Un client web àgil de Mastodon (vista prèvia)"
@@ -200,9 +200,9 @@
     "about": {
       "built_at": "Compilació",
       "label": "Quant a",
-      "sponsor_action_desc": "Per a ajudar l'equip a desenvolupar Elk",
+      "sponsor_action_desc": "Per a ajudar l'equip a desenvolupar Nimbus",
       "sponsors": "Patrocinis",
-      "sponsors_body_2": "I totes les empreses i individus que patrocinen l'equip d'Elk i els membres.",
+      "sponsors_body_2": "I totes les empreses i individus que patrocinen l'equip d'Nimbus i els membres.",
       "sponsors_body_3": "Si t'agrada l'aplicació, considera patrocinar-nos:"
     },
     "account_settings": {
@@ -232,7 +232,7 @@
           "reblog": "Impulsos en publicacions teues",
           "title": "Quines notificacions rebré?"
         },
-        "description": "Rep notificacions fins i tot quan no estigues utilitzant Elk.",
+        "description": "Rep notificacions fins i tot quan no estigues utilitzant Nimbus.",
         "instructions": "No oblides desar els canvis utilitzant el botó de @:settings.notifications.push_notifications.save_settings!",
         "label": "Configuració de les notificacions emergents",
         "policy": {
@@ -245,10 +245,10 @@
         "subscription_error": {
           "invalid_vapid_key": "Sembla que la clau pública VAPID no és vàlida.",
           "permission_denied": "Permís denegat: activa les notificacions al navegador.",
-          "repo_link": "Repositori d'Elk a GitHub",
-          "request_error": "S'ha produït un error en sol·licitar la subscripció, torna-ho a provar i si l'error persisteix, informa del problema al repositori d'Elk.",
+          "repo_link": "Repositori d'Nimbus a GitHub",
+          "request_error": "S'ha produït un error en sol·licitar la subscripció, torna-ho a provar i si l'error persisteix, informa del problema al repositori d'Nimbus.",
           "title": "No s'han pogut activar les notificacions emergents",
-          "too_many_registrations": "A causa de les limitacions del navegador, Elk no pot utilitzar el servei de notificacions emergents per a diversos comptes en diferents servidors. Hauries de desactivar les notificacions emergents de l'altre compte i tornar-ho a provar.",
+          "too_many_registrations": "A causa de les limitacions del navegador, Nimbus no pot utilitzar el servei de notificacions emergents per a diversos comptes en diferents servidors. Hauries de desactivar les notificacions emergents de l'altre compte i tornar-ho a provar.",
           "vapid_not_supported": "El navegador admet les notificacions emergents web, però sembla que no ha implementat el protocol VAPID."
         },
         "title": "Configuració de les notificacions emergents",
@@ -256,10 +256,10 @@
         "unsubscribe": "Desactiva les notificacions emergents",
         "unsupported": "Les notificacions emergents no són compatibles amb el teu navegador.",
         "warning": {
-          "enable_description": "Per a rebre notificacions quan Elk no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents des del botó \"@:settings.notifications.show_btn{'\"'} quan les hages activat.",
-          "enable_description_desktop": "Per a rebre notificacions quan Elk no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents des de \"Configuració > Notificacions > Configuració de les notificacions emergents\" quan les hages activat.",
+          "enable_description": "Per a rebre notificacions quan Nimbus no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents des del botó \"@:settings.notifications.show_btn{'\"'} quan les hages activat.",
+          "enable_description_desktop": "Per a rebre notificacions quan Nimbus no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents des de \"Configuració > Notificacions > Configuració de les notificacions emergents\" quan les hages activat.",
           "enable_description_mobile": "També pots accedir a la configuració de del menú \"Configuració > Notificacions > Configuració de les notificacions emergents\".",
-          "enable_description_settings": "Per a rebre notificacions quan Elk no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents d'esta pantalla quan les hages activat.",
+          "enable_description_settings": "Per a rebre notificacions quan Nimbus no estiga obert, activa les notificacions emergents. Pots definir de quin tipus d'interaccions vols rebre notificacions emergents d'esta pantalla quan les hages activat.",
           "enable_desktop": "Activa les notificacions emergents",
           "enable_title": "No et perdes res",
           "re_auth": "Sembla que les notificacions emergents no són compatibles amb el teu servidor. Prova tancant la sessió i tornant a entrar. Si este missatge encara apreix, posa't en contacte amb l'administració del teu servidor."
@@ -301,8 +301,8 @@
     }
   },
   "share_target": {
-    "description": "Elk es pot configurar perquè pugues compartir contingut d'altres aplicacions, simplement instal·la Elk al teu dispositiu o ordinador i inicia la sessió.",
-    "hint": "Per a compartir contingut amb Elk, Elk ha d'estar instal·lat i has d'iniciar la sessió."
+    "description": "Nimbus es pot configurar perquè pugues compartir contingut d'altres aplicacions, simplement instal·la Nimbus al teu dispositiu o ordinador i inicia la sessió.",
+    "hint": "Per a compartir contingut amb Nimbus, Nimbus ha d'estar instal·lat i has d'iniciar la sessió."
   },
   "state": {
     "attachments_exceed_server_limit": "El nombre d'adjunts supera el límit per publicació.",

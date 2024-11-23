@@ -85,8 +85,8 @@
     "vote": "Bumoto"
   },
   "app_desc_short": "Isang mabilis na web client ng Mastodon",
-  "app_logo": "Logo ng Elk",
-  "app_name": "Elk",
+  "app_logo": "Logo ng Nimbus",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Paglalarawan",
     "remove_label": "Tanggalin ang attachment"
@@ -190,20 +190,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Ikaw ay kasalukuyang nakakakita ng preview version ng Elk mula sa community - {0}.",
+      "desc1": "Ikaw ay kasalukuyang nakakakita ng preview version ng Nimbus mula sa community - {0}.",
       "desc2": "Maaaring mayroon itong hindi pa na-review o kaya malicious changes.",
       "desc3": "Huwag mag-login gamit ang iyong tunay na account.",
       "title": "Preview deploy"
     },
     "desc_highlight": "Maaaring mayroon kang makikitang mga bug at kulang na features.",
-    "desc_para1": "Salamat sa iyong interes sa pagsubok ng Elk, ang aming work-in-progress na Mastodon web client!",
+    "desc_para1": "Salamat sa iyong interes sa pagsubok ng Nimbus, ang aming work-in-progress na Mastodon web client!",
     "desc_para2": "Dedikado kami sa pag-develop at pagpapabuti dito sa mga susunod na panahon.",
-    "desc_para3": "Para mapalago pa ang proyekto, maaari mong i-sponsor ang Team sa pamamagitan ng GitHub Sponsors. Sana magustuhan mo ang Elk!",
-    "desc_para4": "Ang Elk ay Open Source. Kung nais mong tumulong sa pagsubok, magbigay ng feedback, o mag-contribute,",
+    "desc_para3": "Para mapalago pa ang proyekto, maaari mong i-sponsor ang Team sa pamamagitan ng GitHub Sponsors. Sana magustuhan mo ang Nimbus!",
+    "desc_para4": "Ang Nimbus ay Open Source. Kung nais mong tumulong sa pagsubok, magbigay ng feedback, o mag-contribute,",
     "desc_para5": "makipag-ugnayan sa amin sa GitHub",
     "desc_para6": "at makilahok.",
-    "footer_team": "Ang Elk Team",
-    "title": "Ang Elk ay nasa Preview!"
+    "footer_team": "Ang Nimbus Team",
+    "title": "Ang Nimbus ay nasa Preview!"
   },
   "language": {
     "search": "Hanapin"
@@ -358,34 +358,34 @@
   "pwa": {
     "dismiss": "I-dismiss",
     "install": "I-install",
-    "install_title": "I-install ang Elk",
+    "install_title": "I-install ang Nimbus",
     "screenshots": {
-      "dark": "Screenshot of Elk running in dark mode",
-      "light": "Screenshot of Elk running in light mode"
+      "dark": "Screenshot of Nimbus running in dark mode",
+      "light": "Screenshot of Nimbus running in light mode"
     },
-    "title": "May bagong update para sa Elk!",
+    "title": "May bagong update para sa Nimbus!",
     "update": "I-update",
-    "update_available_short": "I-update ang Elk",
+    "update_available_short": "I-update ang Nimbus",
     "webmanifest": {
       "canary": {
         "description": "Isang mabilis na Mastodon web client (canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Isang mabilis na Mastodon web client (dev)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "Isang mabilis na Mastodon web client (preview)",
-        "name": "Elk (preview)",
-        "short_name": "Elk (preview)"
+        "name": "Nimbus (preview)",
+        "short_name": "Nimbus (preview)"
       },
       "release": {
         "description": "Isang mabilis na Mastodon web client",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -435,10 +435,10 @@
       "label": "Tungkol sa",
       "meet_the_team": "Makilala ang team",
       "sponsor_action": "I-sponsor kami",
-      "sponsor_action_desc": "Upang suportahan ang team na nagde-develop ng Elk",
+      "sponsor_action_desc": "Upang suportahan ang team na nagde-develop ng Nimbus",
       "sponsors": "Mga Sponsor",
-      "sponsors_body_1": "Ang Elk ay patuloy na matagumpay dahil sa mga nagbibigay ng malaking suporta at tulong:",
-      "sponsors_body_2": "At lahat ng mga kumpanya at indibidwal na nagbibigay ng suporta sa Elk Team at sa mga miyembro nito.",
+      "sponsors_body_1": "Ang Nimbus ay patuloy na matagumpay dahil sa mga nagbibigay ng malaking suporta at tulong:",
+      "sponsors_body_2": "At lahat ng mga kumpanya at indibidwal na nagbibigay ng suporta sa Nimbus Team at sa mga miyembro nito.",
       "sponsors_body_3": "Kung nag-eenjoy ka sa app, mag-isip-isip na mag-sponsor sa amin:",
       "version": "Bersyon"
     },
@@ -483,7 +483,7 @@
           "reblog": "Mga Reblog ng iyong Post",
           "title": "Anong mga abiso ang nais mong matanggap?"
         },
-        "description": "Makakatanggap ka pa rin ang mga abiso kahit hindi nakabukas ng Elk.",
+        "description": "Makakatanggap ka pa rin ang mga abiso kahit hindi nakabukas ng Nimbus.",
         "instructions": "Huwag kalimutang i-save ang iyong mga pagbabago gamit ang @:settings.notifications.push_notifications.save_settings button!",
         "label": "Mga Setting ng Push Notifications",
         "policy": {
@@ -499,10 +499,10 @@
           "error_hint": "Maari mong konsultahin ang listahan ng mga madalas na tanong upang subukan malutas ang problema: {0}.",
           "invalid_vapid_key": "Tila hindi wasto ang VAPID public key.",
           "permission_denied": "Pagkakaitan ng pahintulot: paganahin ang abiso sa iyong browser.",
-          "repo_link": "Repository ng Elk sa GitHub",
-          "request_error": "May naganap na error habang hinihiling ang subscription. Subukan muli at, kung patuloy pa rin ang error, mangyaring mag-ulat ng isyu sa repository ng Elk.",
+          "repo_link": "Repository ng Nimbus sa GitHub",
+          "request_error": "May naganap na error habang hinihiling ang subscription. Subukan muli at, kung patuloy pa rin ang error, mangyaring mag-ulat ng isyu sa repository ng Nimbus.",
           "title": "Hindi maaring mag-subscribe sa mga push notifications",
-          "too_many_registrations": "Dahil sa mga limitasyon ng browser, hindi magamit ng Elk ang push notification service para sa maraming accounts sa iba't-ibang servers. Dapat kang mag-unsubscribe sa push notifications sa ibang account at subukan muli.",
+          "too_many_registrations": "Dahil sa mga limitasyon ng browser, hindi magamit ng Nimbus ang push notification service para sa maraming accounts sa iba't-ibang servers. Dapat kang mag-unsubscribe sa push notifications sa ibang account at subukan muli.",
           "vapid_not_supported": "Suportado ang Web Push Notifications ng iyong browser, ngunit tila hindi ito nag-i-implement ng VAPID protocol."
         },
         "title": "Mga Setting ng Push Notifications",
@@ -511,10 +511,10 @@
         "unsupported": "Hindi suportado ng iyong browser ang push notifications.",
         "warning": {
           "enable_close": "Isara",
-          "enable_description": "Upang matanggap ng mga abiso kahit hindi bukas ang Elk, paganahin ang push notifications. Maari mong kontrolin kung anong uri ng mga interaksyon ang magpapadala ng push notifications sa pamamagitan ng buton na \"@:settings.notifications.show_btn{'\"'} sa itaas pagkatapos paganahin.",
-          "enable_description_desktop": "Upang makatanggap ng mga abiso kahit hindi nakabukas ang Elk, paganahin ang Push Notifications. Maaari mong kontrolin nang eksaktong anong uri ng mga interaksyon ang naglilikha ng mga abisong itinutulak sa \"Mga Setting > Mga Abiso > Mga Setting ng Push Notifications\" kapag ito ay naka-paganang na.",
+          "enable_description": "Upang matanggap ng mga abiso kahit hindi bukas ang Nimbus, paganahin ang push notifications. Maari mong kontrolin kung anong uri ng mga interaksyon ang magpapadala ng push notifications sa pamamagitan ng buton na \"@:settings.notifications.show_btn{'\"'} sa itaas pagkatapos paganahin.",
+          "enable_description_desktop": "Upang makatanggap ng mga abiso kahit hindi nakabukas ang Nimbus, paganahin ang Push Notifications. Maaari mong kontrolin nang eksaktong anong uri ng mga interaksyon ang naglilikha ng mga abisong itinutulak sa \"Mga Setting > Mga Abiso > Mga Setting ng Push Notifications\" kapag ito ay naka-paganang na.",
           "enable_description_mobile": "Maaari mo ring ma-access ang mga setting gamit ang navigation menu \"Settings > Notifications > Push notification settings\".",
-          "enable_description_settings": "Para makatanggap ng mga notification kahit hindi bukas ang Elk, paganahin ang push notifications. Makakapagkontrol ka ng kung anong mga uri ng interactions ang magbibigay ng push notifications sa parehong screen na ito kapag paganahin mo ito.",
+          "enable_description_settings": "Para makatanggap ng mga notification kahit hindi bukas ang Nimbus, paganahin ang push notifications. Makakapagkontrol ka ng kung anong mga uri ng interactions ang magbibigay ng push notifications sa parehong screen na ito kapag paganahin mo ito.",
           "enable_desktop": "Paganahin ang push notifications",
           "enable_title": "Huwag magpahuli sa anumang bagay",
           "re_auth": "Mukhang hindi sinusuportahan ng iyong server ang push notifications. Subukan mag-sign out at mag-sign in muli, kung patuloy pa rin itong lumalabas, makipag-ugnayan sa administrator ng iyong server."
@@ -583,9 +583,9 @@
     }
   },
   "share_target": {
-    "description": "Maaring i-configure ang Elk upang maishare ang mga nilalaman mula sa ibang aplikasyon, mag-install lamang ng Elk sa iyong device o computer at mag-sign in.",
-    "hint": "Upang maishare ang nilalaman sa Elk, kinakailangan na naka-install ang Elk at nakapag-sign in ka.",
-    "title": "I-share sa Elk"
+    "description": "Maaring i-configure ang Nimbus upang maishare ang mga nilalaman mula sa ibang aplikasyon, mag-install lamang ng Nimbus sa iyong device o computer at mag-sign in.",
+    "hint": "Upang maishare ang nilalaman sa Nimbus, kinakailangan na naka-install ang Nimbus at nakapag-sign in ka.",
+    "title": "I-share sa Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "Nalagpasan na ang bilang ng mga attachments na pinapayagan bawat post.",

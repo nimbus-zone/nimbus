@@ -76,8 +76,8 @@
     "vote": "Zagłosuj"
   },
   "app_desc_short": "Aplikacja webowa dla Mastodon",
-  "app_logo": "Elk Logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus Logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Opis",
     "remove_label": "Usuń załącznik"
@@ -169,20 +169,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Obecnie przeglądasz wersję przedpremierową Elk od społeczności - {0}.",
+      "desc1": "Obecnie przeglądasz wersję przedpremierową Nimbus od społeczności - {0}.",
       "desc2": "Może zawierać niesprawdzone lub nawet złośliwe zmiany.",
       "desc3": "Nie loguj się na swoje prawdziwe konto.",
       "title": "Wdrożenie wersji Preview"
     },
     "desc_highlight": "Możliwe jest napotkanie, tu i ówdzie, pewnych błędów i brakujących funkcjonalności.",
-    "desc_para1": "Dziękujemy za zainteresowanie Elk, naszym wciąż rozwijanym klientem Mastodon!",
+    "desc_para1": "Dziękujemy za zainteresowanie Nimbus, naszym wciąż rozwijanym klientem Mastodon!",
     "desc_para2": "ciężko pracujemy nad rozwojem i ulepszaniem go w miarę upływu czasu.",
-    "desc_para3": "Aby przyspieszyć rozwój, możesz wspomóc Zespół za pośrednictwem GitHub Sponsors. Mamy nadzieję, że spodoba Ci się Elk!",
-    "desc_para4": "Elk jest Open Source. Jeśli chcesz pomóc w testowaniu, przekazać opinię lub wnieść swój wkład,",
+    "desc_para3": "Aby przyspieszyć rozwój, możesz wspomóc Zespół za pośrednictwem GitHub Sponsors. Mamy nadzieję, że spodoba Ci się Nimbus!",
+    "desc_para4": "Nimbus jest Open Source. Jeśli chcesz pomóc w testowaniu, przekazać opinię lub wnieść swój wkład,",
     "desc_para5": "skontaktuj się z nami na GitHub",
     "desc_para6": "i zaangażuj się.",
-    "footer_team": "Zespół Elk",
-    "title": "Elk w wersji Preview!"
+    "footer_team": "Zespół Nimbus",
+    "title": "Nimbus w wersji Preview!"
   },
   "language": {
     "search": "Szukaj"
@@ -309,30 +309,30 @@
   "pwa": {
     "dismiss": "Odrzuć",
     "install": "Zainstaluj",
-    "install_title": "Instalacja Elk",
-    "title": "Dostępna nowa aktualizacja Elk!",
+    "install_title": "Instalacja Nimbus",
+    "title": "Dostępna nowa aktualizacja Nimbus!",
     "update": "Aktualizuj",
-    "update_available_short": "Zaktualizuj Elk",
+    "update_available_short": "Zaktualizuj Nimbus",
     "webmanifest": {
       "canary": {
         "description": "Aplikacja webowa dla Mastodon (canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Aplikacja webowa dla Mastodon (dev)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "Aplikacja webowa dla Mastodon (preview)",
-        "name": "Elk (preview)",
-        "short_name": "Elk (preview)"
+        "name": "Nimbus (preview)",
+        "short_name": "Nimbus (preview)"
       },
       "release": {
         "description": "Aplikacja webowa dla Mastodon",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -346,10 +346,10 @@
       "label": "Informacje",
       "meet_the_team": "Poznaj zespół",
       "sponsor_action": "Wspomóż nas",
-      "sponsor_action_desc": "Aby wesprzeć zespół rozwijający Elk",
+      "sponsor_action_desc": "Aby wesprzeć zespół rozwijający Nimbus",
       "sponsors": "Sponsorzy",
-      "sponsors_body_1": "Elk mógł powstać dzięki hojnemu sponsoringowi i pomocy:",
-      "sponsors_body_2": "Oraz wszystkie firmy i osoby prywatne sponsorujące Elk Team i jego członków.",
+      "sponsors_body_1": "Nimbus mógł powstać dzięki hojnemu sponsoringowi i pomocy:",
+      "sponsors_body_2": "Oraz wszystkie firmy i osoby prywatne sponsorujące Nimbus Team i jego członków.",
       "sponsors_body_3": "Jeśli podoba Ci się aplikacja, rozważ sponsorowanie nas:",
       "version": "Wersja"
     },
@@ -393,7 +393,7 @@
           "reblog": "Udostępniono Twój wpis",
           "title": "Jakie powiadomienia chcesz otrzymywać?"
         },
-        "description": "Otrzymuj powiadomienia nawet wtedy, gdy nie korzystasz z Elk.",
+        "description": "Otrzymuj powiadomienia nawet wtedy, gdy nie korzystasz z Nimbus.",
         "instructions": "Nie zapomnij zapisać zmian za pomocą przycisku \"Zapisz ustawienia\"",
         "label": "Ustawienia powiadomień push",
         "policy": {
@@ -409,10 +409,10 @@
           "error_hint": "Możesz zapoznać się z listą najczęściej zadawanych pytań, aby spróbować rozwiązać problem: {0}.",
           "invalid_vapid_key": "Wydaje się, że klucz publiczny VAPID jest nieprawidłowy.",
           "permission_denied": "Brak uprawnień: włącz powiadomienia w przeglądarce.",
-          "repo_link": "Repozytorium Elk w GitHub",
-          "request_error": "Wystąpił błąd podczas żądania subskrypcji, spróbuj ponownie, a jeśli błąd będzie się powtarzał, zgłoś problem do repozytorium Elk.",
+          "repo_link": "Repozytorium Nimbus w GitHub",
+          "request_error": "Wystąpił błąd podczas żądania subskrypcji, spróbuj ponownie, a jeśli błąd będzie się powtarzał, zgłoś problem do repozytorium Nimbus.",
           "title": "Nie można zasubskrybować powiadomień push",
-          "too_many_registrations": "Ze względu na ograniczenia przeglądarki Elk nie może korzystać z usługi powiadomień push dla wielu kont na różnych serwerach. Powinieneś anulować subskrypcję powiadomień push na innym koncie i spróbować ponownie.",
+          "too_many_registrations": "Ze względu na ograniczenia przeglądarki Nimbus nie może korzystać z usługi powiadomień push dla wielu kont na różnych serwerach. Powinieneś anulować subskrypcję powiadomień push na innym koncie i spróbować ponownie.",
           "vapid_not_supported": "Twoja przeglądarka obsługuje powiadomienia Web Push, ale wydaje się, że nie implementuje protokołu VAPID."
         },
         "title": "Ustawienia powiadomień push",
@@ -421,10 +421,10 @@
         "unsupported": "Twoja przeglądarka nie obsługuje powiadomień push.",
         "warning": {
           "enable_close": "Zamknij",
-          "enable_description": "Aby otrzymywać powiadomienia, gdy Elk nie jest otwarty, włącz powiadomienia push. Możesz dokładnie kontrolować, jakie typy interakcji generują powiadomienia push za pomocą przycisku „@:settings.notifications.show_btn{'”'} powyżej po ich włączeniu.",
-          "enable_description_desktop": "Aby otrzymywać powiadomienia, gdy Elk nie jest otwarty, włącz powiadomienia push. Możesz dokładnie kontrolować, jakie typy interakcji generują powiadomienia push w „Ustawienia> Powiadomienia> Ustawienia powiadomień push” po włączeniu.",
+          "enable_description": "Aby otrzymywać powiadomienia, gdy Nimbus nie jest otwarty, włącz powiadomienia push. Możesz dokładnie kontrolować, jakie typy interakcji generują powiadomienia push za pomocą przycisku „@:settings.notifications.show_btn{'”'} powyżej po ich włączeniu.",
+          "enable_description_desktop": "Aby otrzymywać powiadomienia, gdy Nimbus nie jest otwarty, włącz powiadomienia push. Możesz dokładnie kontrolować, jakie typy interakcji generują powiadomienia push w „Ustawienia> Powiadomienia> Ustawienia powiadomień push” po włączeniu.",
           "enable_description_mobile": "Dostęp do ustawień można również uzyskać za pomocą menu nawigacyjnego „Ustawienia > Powiadomienia > Ustawienia powiadomień push”.",
-          "enable_description_settings": "Aby otrzymywać powiadomienia, gdy Elk nie jest otwarty, włącz powiadomienia push. Będziesz mógł dokładnie kontrolować, jakie typy interakcji generują powiadomienia push na tym samym ekranie po ich włączeniu.",
+          "enable_description_settings": "Aby otrzymywać powiadomienia, gdy Nimbus nie jest otwarty, włącz powiadomienia push. Będziesz mógł dokładnie kontrolować, jakie typy interakcji generują powiadomienia push na tym samym ekranie po ich włączeniu.",
           "enable_desktop": "Włącz powiadomienia push",
           "enable_title": "Nigdy niczego nie przegap",
           "re_auth": "Wygląda na to, że Twój serwer nie obsługuje powiadomień push. Spróbuj wylogować się i zalogować ponownie, jeśli ten komunikat nadal się pojawia, skontaktuj się z administratorem serwera."
@@ -486,9 +486,9 @@
     }
   },
   "share_target": {
-    "description": "Elk można skonfigurować tak, aby można było udostępniać treści z innych aplikacji, wystarczy zainstalować Elk na swoim urządzeniu lub komputerze i zalogować się.",
-    "hint": "Aby udostępniać treści w Elk, aplikacja Elk musi być zainstalowana, a Ty musisz być zalogowany.",
-    "title": "Podziel się z Elk"
+    "description": "Nimbus można skonfigurować tak, aby można było udostępniać treści z innych aplikacji, wystarczy zainstalować Nimbus na swoim urządzeniu lub komputerze i zalogować się.",
+    "hint": "Aby udostępniać treści w Nimbus, aplikacja Nimbus musi być zainstalowana, a Ty musisz być zalogowany.",
+    "title": "Podziel się z Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "Liczba załączników przekroczyła limit na wpis.",

@@ -264,13 +264,13 @@ export default defineNuxtConfig({
       meta: [
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
         // open graph social image
-        { property: 'og:title', content: 'Elk' },
+        { property: 'og:title', content: 'Nimbus' },
         { property: 'og:description', content: 'A nimble Mastodon web client' },
         { property: 'og:type', content: 'website' },
         { property: 'og:image', content: 'https://elk.zone/elk-og.png' },
         { property: 'og:image:width', content: '3800' },
         { property: 'og:image:height', content: '1900' },
-        { property: 'og:site_name', content: 'Elk' },
+        { property: 'og:site_name', content: 'Nimbus' },
         { name: 'twitter:site', content: '@elk_zone' },
         { name: 'twitter:card', content: 'summary_large_image' },
       ],

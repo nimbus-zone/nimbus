@@ -88,8 +88,8 @@
     "vote": "Vote"
   },
   "app_desc_short": "A nimble Mastodon web client",
-  "app_logo": "Elk Logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus Logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Description",
     "remove_label": "Remove attachment"
@@ -193,20 +193,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "You are currently viewing a preview version of Elk from the community - {0}.",
+      "desc1": "You are currently viewing a preview version of Nimbus from the community - {0}.",
       "desc2": "It may contain unreviewed or even malicious changes.",
       "desc3": "Don't log in with your real account.",
       "title": "Preview deploy"
     },
     "desc_highlight": "Expect some bugs and missing features here and there.",
-    "desc_para1": "Elk is a nimble Mastodon web client. You can login to your Mastodon account and use it to interact with the fediverse.",
-    "desc_para2": "Elk is Open Source and we're actively improving it as a community project. Join us and let's build it together!",
-    "desc_para3": "To boost development, you can sponsor the Team through GitHub Sponsors. We hope you enjoy Elk!",
+    "desc_para1": "Nimbus is a nimble Mastodon web client. You can login to your Mastodon account and use it to interact with the fediverse.",
+    "desc_para2": "Nimbus is Open Source and we're actively improving it as a community project. Join us and let's build it together!",
+    "desc_para3": "To boost development, you can sponsor the Team through GitHub Sponsors. We hope you enjoy Nimbus!",
     "desc_para4": "If you'd like to report a bug, help us testing, give feedback, or contribute,",
     "desc_para5": "reach out to us on GitHub",
     "desc_para6": "and get involved.",
-    "footer_team": "The Elk Team",
-    "title": "Welcome to Elk!"
+    "footer_team": "The Nimbus Team",
+    "title": "Welcome to Nimbus!"
   },
   "language": {
     "search": "Search"
@@ -365,34 +365,34 @@
   "pwa": {
     "dismiss": "Dismiss",
     "install": "Install",
-    "install_title": "Install Elk",
+    "install_title": "Install Nimbus",
     "screenshots": {
-      "dark": "Screenshot of Elk running in dark mode",
-      "light": "Screenshot of Elk running in light mode"
+      "dark": "Screenshot of Nimbus running in dark mode",
+      "light": "Screenshot of Nimbus running in light mode"
     },
-    "title": "New Elk update available!",
+    "title": "New Nimbus update available!",
     "update": "Update",
-    "update_available_short": "Update Elk",
+    "update_available_short": "Update Nimbus",
     "webmanifest": {
       "canary": {
         "description": "A nimble Mastodon web client (canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "A nimble Mastodon web client (dev)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "A nimble Mastodon web client (preview)",
-        "name": "Elk (preview)",
-        "short_name": "Elk (preview)"
+        "name": "Nimbus (preview)",
+        "short_name": "Nimbus (preview)"
       },
       "release": {
         "description": "A nimble Mastodon web client",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -442,10 +442,10 @@
       "label": "About",
       "meet_the_team": "Meet the team",
       "sponsor_action": "Sponsor us",
-      "sponsor_action_desc": "To support the team developing Elk",
+      "sponsor_action_desc": "To support the team developing Nimbus",
       "sponsors": "Sponsors",
-      "sponsors_body_1": "Elk is made possible thanks the generous sponsoring and help of:",
-      "sponsors_body_2": "And all the companies and individuals sponsoring Elk Team and the members.",
+      "sponsors_body_1": "Nimbus is made possible thanks the generous sponsoring and help of:",
+      "sponsors_body_2": "And all the companies and individuals sponsoring Nimbus Team and the members.",
       "sponsors_body_3": "If you're enjoying the app, consider sponsoring us:",
       "version": "Version"
     },
@@ -493,7 +493,7 @@
           "reblog": "Boosts",
           "title": "What notifications to receive?"
         },
-        "description": "Receive notifications even when you are not using Elk.",
+        "description": "Receive notifications even when you are not using Nimbus.",
         "instructions": "Don't forget to save your changes using @:settings.notifications.push_notifications.save_settings button!",
         "label": "Push notifications settings",
         "policy": {
@@ -509,10 +509,10 @@
           "error_hint": "You can consult a list of frequently asked questions to try to solve the problem: {0}.",
           "invalid_vapid_key": "The VAPID public key seems to be invalid.",
           "permission_denied": "Permission denied: enable notifications in your browser.",
-          "repo_link": "Elk's repository in GitHub",
-          "request_error": "An error occurred while requesting the subscription, try again and if the error persists, please report the issue to the Elk repository.",
+          "repo_link": "Nimbus's repository in GitHub",
+          "request_error": "An error occurred while requesting the subscription, try again and if the error persists, please report the issue to the Nimbus repository.",
           "title": "Could not subscribe to push notifications",
-          "too_many_registrations": "Due to browser limitations, Elk cannot use the push notifications service for multiple accounts on different servers. You should unsubscribe from push notifications on another account and try again.",
+          "too_many_registrations": "Due to browser limitations, Nimbus cannot use the push notifications service for multiple accounts on different servers. You should unsubscribe from push notifications on another account and try again.",
           "vapid_not_supported": "Your browser supports Web Push Notifications, but does not seem to implement the VAPID protocol."
         },
         "title": "Push notifications settings",
@@ -521,10 +521,10 @@
         "unsupported": "Your browser does not support push notifications.",
         "warning": {
           "enable_close": "Close",
-          "enable_description": "To receive notifications when Elk is not open, enable push notifications. You can control precisely what types of interactions generate push notifications via the \"@:settings.notifications.show_btn{'\"'} button above once enabled.",
-          "enable_description_desktop": "To receive notifications when Elk is not open, enable push notifications. You can control precisely what types of interactions generate push notifications in \"Settings > Notifications > Push notifications settings\" once enabled.",
+          "enable_description": "To receive notifications when Nimbus is not open, enable push notifications. You can control precisely what types of interactions generate push notifications via the \"@:settings.notifications.show_btn{'\"'} button above once enabled.",
+          "enable_description_desktop": "To receive notifications when Nimbus is not open, enable push notifications. You can control precisely what types of interactions generate push notifications in \"Settings > Notifications > Push notifications settings\" once enabled.",
           "enable_description_mobile": "You can also access the settings using the navigation menu \"Settings > Notifications > Push notification settings\".",
-          "enable_description_settings": "To receive notifications when Elk is not open, enable push notifications. You will be able to control precisely what types of interactions generate push notifications on this same screen once you enable them.",
+          "enable_description_settings": "To receive notifications when Nimbus is not open, enable push notifications. You will be able to control precisely what types of interactions generate push notifications on this same screen once you enable them.",
           "enable_desktop": "Enable push notifications",
           "enable_title": "Never miss anything",
           "re_auth": "It seems that your server does not support push notifications. Try sign out and sign in again, if this message still appears contact your server administrator."
@@ -595,9 +595,9 @@
     }
   },
   "share_target": {
-    "description": "Elk can be configured so that you can share content from other applications, simply install Elk on your device or computer and sign in.",
-    "hint": "In order to share content with Elk, Elk must be installed and you must be signed in.",
-    "title": "Share with Elk"
+    "description": "Nimbus can be configured so that you can share content from other applications, simply install Nimbus on your device or computer and sign in.",
+    "hint": "In order to share content with Nimbus, Nimbus must be installed and you must be signed in.",
+    "title": "Share with Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "The number of attachments exceeded the limit per post.",

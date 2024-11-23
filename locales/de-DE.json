@@ -87,8 +87,8 @@
     "vote": "Abstimmen"
   },
   "app_desc_short": "Ein flinker Mastodon Web-Client",
-  "app_logo": "Elk Logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus Logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Beschreibung",
     "remove_label": "Anhang entfernen"
@@ -192,20 +192,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Du betrachtest derzeit eine Vorschauversion von Elk aus der Community - {0}.",
+      "desc1": "Du betrachtest derzeit eine Vorschauversion von Nimbus aus der Community - {0}.",
       "desc2": "Es können unüberprüfte oder sogar bösartige Änderungen enthalten sein.",
       "desc3": "Melde dich nicht mit deinem echten Konto an.",
       "title": "Vorschau bereitstellen"
     },
     "desc_highlight": "Erwarte hier und da einige Bugs und fehlende Funktionen.",
-    "desc_para1": "Danke für dein Interesse an Elk, unser noch in der Bearbeitung befindlicher, generischer Mastodon-Client!",
+    "desc_para1": "Danke für dein Interesse an Nimbus, unser noch in der Bearbeitung befindlicher, generischer Mastodon-Client!",
     "desc_para2": "Wir arbeiten stetig an der Entwicklung und verbessern ihn mit der Zeit. Und wir laden dich schon sehr bald ein uns zu helfen, sobald wir ihn Quelloffen machen!",
     "desc_para3": "Doch in der Zwischenzeit kannst du der Entwicklung aushelfen, indem du unsere Teammitglieder durch die unten stehenden Links unterstützt.",
-    "desc_para4": "Elk ist Open Source. \nWenn du beim Testen helfen, Feedback geben oder einen Beitrag leisten möchtest,",
+    "desc_para4": "Nimbus ist Open Source. \nWenn du beim Testen helfen, Feedback geben oder einen Beitrag leisten möchtest,",
     "desc_para5": "Kontaktiere uns auf GitHub",
     "desc_para6": "und mache mit.",
-    "footer_team": "Das Elk-Team",
-    "title": "Elk ist in der Alpha!"
+    "footer_team": "Das Nimbus-Team",
+    "title": "Nimbus ist in der Alpha!"
   },
   "language": {
     "search": "Suche"
@@ -363,34 +363,34 @@
   "pwa": {
     "dismiss": "Ignorieren",
     "install": "Installieren",
-    "install_title": "Elk installieren",
+    "install_title": "Nimbus installieren",
     "screenshots": {
-      "dark": "Screenshot von Elk im Dunkelmodus",
-      "light": "Screenshot von Elk im Hellmodus"
+      "dark": "Screenshot von Nimbus im Dunkelmodus",
+      "light": "Screenshot von Nimbus im Hellmodus"
     },
-    "title": "Neues Elk-Update verfügbar!",
+    "title": "Neues Nimbus-Update verfügbar!",
     "update": "Aktualisieren",
-    "update_available_short": "Elk aktualisieren",
+    "update_available_short": "Nimbus aktualisieren",
     "webmanifest": {
       "canary": {
         "description": "Ein flinker Mastodon-Webclient (Canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Ein flinker Mastodon-Webclient (dev)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "Ein flinker Mastodon-Webclient (Vorschau)",
-        "name": "Elk (Vorschau)",
-        "short_name": "Elk (Vorschau)"
+        "name": "Nimbus (Vorschau)",
+        "short_name": "Nimbus (Vorschau)"
       },
       "release": {
         "description": "Ein flinker Mastodon-Webclient",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -440,10 +440,10 @@
       "label": "Info",
       "meet_the_team": "Triff das Team",
       "sponsor_action": "Sponsere uns",
-      "sponsor_action_desc": "Um das Team bei der Entwicklung von Elk zu unterstützen",
+      "sponsor_action_desc": "Um das Team bei der Entwicklung von Nimbus zu unterstützen",
       "sponsors": "Sponsoren",
-      "sponsors_body_1": "Elk wird ermöglicht durch das großzügige Sponsoring und die Hilfe von:",
-      "sponsors_body_2": "Und alle Unternehmen und Einzelpersonen, die das Elk Team und die Mitglieder sponsern.",
+      "sponsors_body_1": "Nimbus wird ermöglicht durch das großzügige Sponsoring und die Hilfe von:",
+      "sponsors_body_2": "Und alle Unternehmen und Einzelpersonen, die das Nimbus Team und die Mitglieder sponsern.",
       "sponsors_body_3": "Wenn dir die App gefällt, erwäge uns zu sponsern:",
       "version": "Version"
     },
@@ -489,7 +489,7 @@
           "reblog": "Teilen deiner Beiträge",
           "title": "Welche Benachrichtigungen erhalten?"
         },
-        "description": "Erhalte Benachrichtigungen, auch wenn du Elk nicht verwendest.",
+        "description": "Erhalte Benachrichtigungen, auch wenn du Nimbus nicht verwendest.",
         "instructions": "Vergesse nicht, die Änderungen mit der Schaltfläche @:settings.notifications.push_notifications.save_settings zu speichern!",
         "label": "Einstellungen für Push-Benachrichtigungen",
         "policy": {
@@ -505,10 +505,10 @@
           "error_hint": "Du kannst eine Liste häufig gestellter Fragen konsultieren, um das Problem zu lösen: {0}.",
           "invalid_vapid_key": "Der öffentliche VAPID-Schlüssel scheint ungültig zu sein.",
           "permission_denied": "Berechtigung verweigert: Aktiviere Benachrichtigungen im  Browser.",
-          "repo_link": "Elk-Repository auf GitHub",
-          "request_error": "Beim Anfordern des Abonnements ist ein Fehler aufgetreten. Versuche es bitte erneut. Wenn der Fehler weiterhin besteht, melde das Problem bitte dem Elk-Repository.",
+          "repo_link": "Nimbus-Repository auf GitHub",
+          "request_error": "Beim Anfordern des Abonnements ist ein Fehler aufgetreten. Versuche es bitte erneut. Wenn der Fehler weiterhin besteht, melde das Problem bitte dem Nimbus-Repository.",
           "title": "Push-Benachrichtigungen konnten nicht abonniert werden",
-          "too_many_registrations": "Aufgrund von Browserbeschränkungen kann Elk den Push-Benachrichtigungsdienst nicht für mehrere Konten auf verschiedenen Servern verwenden. \nDu solltest Push-Benachrichtigungen für andere Konten abbestellen und es erneut versuchen.",
+          "too_many_registrations": "Aufgrund von Browserbeschränkungen kann Nimbus den Push-Benachrichtigungsdienst nicht für mehrere Konten auf verschiedenen Servern verwenden. \nDu solltest Push-Benachrichtigungen für andere Konten abbestellen und es erneut versuchen.",
           "vapid_not_supported": "Dein Browser unterstützt Web-Push-Benachrichtigungen, scheint jedoch das VAPID-Protokoll nicht zu implementieren."
         },
         "title": "Einstellungen für Push-Benachrichtigungen",
@@ -517,10 +517,10 @@
         "unsupported": "Ihr Browser unterstützt keine Push-Benachrichtigungen.",
         "warning": {
           "enable_close": "Schließen",
-          "enable_description": "Um Benachrichtigungen zu erhalten, wenn Elk nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen generieren, indem du die Schaltfläche \"@:settings.notifications.show_btn{'\"'} oben aktivierest, sobald sie aktiviert ist.",
-          "enable_description_desktop": "Um Benachrichtigungen zu erhalten, wenn Elk nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst unter „Einstellungen > Benachrichtigungen > Einstellungen für Push-Benachrichtigungen“ genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen generieren, sobald diese aktiviert sind.",
+          "enable_description": "Um Benachrichtigungen zu erhalten, wenn Nimbus nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen generieren, indem du die Schaltfläche \"@:settings.notifications.show_btn{'\"'} oben aktivierest, sobald sie aktiviert ist.",
+          "enable_description_desktop": "Um Benachrichtigungen zu erhalten, wenn Nimbus nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst unter „Einstellungen > Benachrichtigungen > Einstellungen für Push-Benachrichtigungen“ genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen generieren, sobald diese aktiviert sind.",
           "enable_description_mobile": "Du erreichst die Einstellungen auch über das Navigationsmenü „Einstellungen > Benachrichtigungen > Push-Benachrichtigungseinstellungen“.",
-          "enable_description_settings": "Um Benachrichtigungen zu erhalten, wenn Elk nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen auf demselben Bildschirm generieren, sobald du sie aktivierst.",
+          "enable_description_settings": "Um Benachrichtigungen zu erhalten, wenn Nimbus nicht geöffnet ist, aktiviere Push-Benachrichtigungen. \nDu kannst genau steuern, welche Arten von Interaktionen Push-Benachrichtigungen auf demselben Bildschirm generieren, sobald du sie aktivierst.",
           "enable_desktop": "Aktiviere Push-Benachrichtigungen",
           "enable_title": "Verpasse nie wieder Benachrichtigungen",
           "re_auth": "Offenbar unterstützt dein Server keine Push-Benachrichtigungen. \nVersuche dich abzumelden und erneut anzumelden. Wenn diese Meldung weiterhin angezeigt wird, wende dich an dein Serveradministrator."
@@ -591,9 +591,9 @@
     }
   },
   "share_target": {
-    "description": "Elk kann so konfiguriert werden, dass du Inhalte aus anderen Anwendungen teilen kannst, installiere einfach Elk auf deinem Gerät oder Computer und melden dich an.",
-    "hint": "Um Inhalte mit Elk zu teilen, muss Elk installiert sein und du musst angemeldet sein.",
-    "title": "Teile über Elk"
+    "description": "Nimbus kann so konfiguriert werden, dass du Inhalte aus anderen Anwendungen teilen kannst, installiere einfach Nimbus auf deinem Gerät oder Computer und melden dich an.",
+    "hint": "Um Inhalte mit Nimbus zu teilen, muss Nimbus installiert sein und du musst angemeldet sein.",
+    "title": "Teile über Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "Die Anzahl der Anhänge hat das Limit pro Beitrag überschritten.",

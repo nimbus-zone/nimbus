@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       # make sure this directory has the same ownership as the elk user from the Dockerfile
-      # otherwise Elk will not be able to store configs for accounts
+      # otherwise Nimbus will not be able to store configs for accounts
       # e.q. mkdir ./elk-storage; sudo chown 911:911 ./elk-storage
       - './elk-storage:/elk/data'
     ports:

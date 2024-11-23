@@ -71,17 +71,17 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Você está vendo no momento uma versão preliminar do Elk produzida pela comunidade - {0}.",
+      "desc1": "Você está vendo no momento uma versão preliminar do Nimbus produzida pela comunidade - {0}.",
       "desc2": "Ela pode conter alterações não revisadas ou mesmo maliciosas.",
       "desc3": "Não entre com sua conta verdadeira."
     },
     "desc_para2": "Estamos trabalhando duro no seu desenvolvimento e em melhorá-lo com o tempo.",
-    "desc_para3": "Para apoiar o desenvolvimento, você pode patrocinar nossa equipe através do GitHub Sponsors. Esperamos que você curta o Elk!",
-    "desc_para4": "Elk tem o código aberto. Se você quiser ajudar a testar, dar seu feedback ou contribuir,",
+    "desc_para3": "Para apoiar o desenvolvimento, você pode patrocinar nossa equipe através do GitHub Sponsors. Esperamos que você curta o Nimbus!",
+    "desc_para4": "Nimbus tem o código aberto. Se você quiser ajudar a testar, dar seu feedback ou contribuir,",
     "desc_para5": "fale com a gente no GitHub",
     "desc_para6": "e participe.",
-    "footer_team": "A Equipe do Elk",
-    "title": "Elk está em Prévia!"
+    "footer_team": "A Equipe do Nimbus",
+    "title": "Nimbus está em Prévia!"
   },
   "language": {
     "search": "Buscar"
@@ -183,9 +183,9 @@
       "built_at": "Produzido em",
       "meet_the_team": "Conheça a equipe",
       "sponsor_action": "Nos patrocine",
-      "sponsor_action_desc": "Para apoiar a equipe que desenvolve o Elk",
-      "sponsors_body_1": "O Elk é possível graças ao generoso patrocínio e apoio de:",
-      "sponsors_body_2": "E todas as empresas e pessoas que patrocinam a equipe do Elk e seus membros.",
+      "sponsor_action_desc": "Para apoiar a equipe que desenvolve o Nimbus",
+      "sponsors_body_1": "O Nimbus é possível graças ao generoso patrocínio e apoio de:",
+      "sponsors_body_2": "E todas as empresas e pessoas que patrocinam a equipe do Nimbus e seus membros.",
       "sponsors_body_3": "Se estiver curtindo o app, considere nos patrocinar:"
     },
     "account_settings": {
@@ -212,7 +212,7 @@
           "reblog": "Compartilhamentos",
           "title": "Quais notificações quero receber?"
         },
-        "description": "Receba notificações mesmo quando não estiver usando o Elk.",
+        "description": "Receba notificações mesmo quando não estiver usando o Nimbus.",
         "instructions": "Não esqueça de salvar as suas alterações usando o botão @:settings.notifications.push_notifications.save_settings!",
         "label": "Configurações de notificações push",
         "policy": {
@@ -224,19 +224,19 @@
         "subscription_error": {
           "error_hint": "Você pode consultar uma lista de perguntas frequentes para tentar resolver o problema: {0}.",
           "permission_denied": "Permissão negada: habilite as notificações no seu navegador.",
-          "request_error": "Ocorreu um erro ao se inscrever, tente novamente e, se o erro persistir, por favor, reporte o problema no repositório do Elk.",
+          "request_error": "Ocorreu um erro ao se inscrever, tente novamente e, se o erro persistir, por favor, reporte o problema no repositório do Nimbus.",
           "title": "Não foi possível habilitar as notificações push",
-          "too_many_registrations": "Devido a limitações do navegador, o Elk não pode usar o serviço de notificações push para múltiplas contas em diferentes servidores. Você deve desabilitar as notificações em outra conta e tentar novamente.",
+          "too_many_registrations": "Devido a limitações do navegador, o Nimbus não pode usar o serviço de notificações push para múltiplas contas em diferentes servidores. Você deve desabilitar as notificações em outra conta e tentar novamente.",
           "vapid_not_supported": "Seu navegador suporta notificações push web, mas parece não implementar o protocolo VAPID"
         },
         "title": "Configurações de notificações push",
         "undo_settings": "Desfazer alterações",
         "unsupported": "Seu navegador não suporta notificações push.",
         "warning": {
-          "enable_description": "Para receber notificações enquanto o Elk não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações através do botão \"@:settings.notifications.show_btn{'\"'} assim que habilitadas.",
-          "enable_description_desktop": "Para receber notificações enquanto o Elk não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações em \"Configurações > Notificações > Configurações de notificações push\" assim que habilitadas.",
+          "enable_description": "Para receber notificações enquanto o Nimbus não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações através do botão \"@:settings.notifications.show_btn{'\"'} assim que habilitadas.",
+          "enable_description_desktop": "Para receber notificações enquanto o Nimbus não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações em \"Configurações > Notificações > Configurações de notificações push\" assim que habilitadas.",
           "enable_description_mobile": "Você também pode acessar as configurações através do menu \"Configurações > Notificações > Configurações de notificações push\".",
-          "enable_description_settings": "Para receber notificações enquanto o Elk não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações nessa mesma tela assim que habilitadas.",
+          "enable_description_settings": "Para receber notificações enquanto o Nimbus não estiver aberto, habilite notificações push. Você pode controlar exatamente quais interações vão disparar as notificações nessa mesma tela assim que habilitadas.",
           "enable_desktop": "Ativar notificações push",
           "enable_title": "Nunca fique de fora",
           "re_auth": "Parece que o seu servidor não suporta notificações push. Tente desconectar e entrar novamente, se essa mensagem persistir, entre em contato com a administração do seu servidor."
@@ -283,9 +283,9 @@
     }
   },
   "share_target": {
-    "description": "O Elk pode ser configurado para que você possa compartilhar conteúdo de outros apps, basta instalar o Elk no seu dispositivo e entrar.",
-    "hint": "Para compartilhar conteúdo com o Elk, o mesmo deve estar instalado e você deve estar conectado.",
-    "title": "Compartilhar com Elk"
+    "description": "O Nimbus pode ser configurado para que você possa compartilhar conteúdo de outros apps, basta instalar o Nimbus no seu dispositivo e entrar.",
+    "hint": "Para compartilhar conteúdo com o Nimbus, o mesmo deve estar instalado e você deve estar conectado.",
+    "title": "Compartilhar com Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "O número de anexo excedeu o limite permitido por post.",

@@ -74,8 +74,8 @@
     "vote": "Stem"
   },
   "app_desc_short": "Een vlotte Mastodon web client",
-  "app_logo": "Elk Logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus Logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Omschrijving",
     "remove_label": "Verwijder bijlage"
@@ -112,13 +112,13 @@
   },
   "help": {
     "desc_highlight": "Je kunt hier en daar wat bugs of ontbrekende features verwachten.",
-    "desc_para1": "Bedankt voor je interesse in het uitproberen van Elk, onze Mastodon web client in-wording!",
+    "desc_para1": "Bedankt voor je interesse in het uitproberen van Nimbus, onze Mastodon web client in-wording!",
     "desc_para2": "we werken hard aan nieuwe ontwikkelingen en verbeteringen in de loop van de tijd.",
-    "desc_para3": "Om de ontwikkelingen te versnellen, kun je het Team sponsoren via GitHub Sponsors. We hopen dat Elk je bevalt!",
-    "desc_para4": "Elk is Open Source. Wil je meehelpen met testen, feedback of bijdragen,",
+    "desc_para3": "Om de ontwikkelingen te versnellen, kun je het Team sponsoren via GitHub Sponsors. We hopen dat Nimbus je bevalt!",
+    "desc_para4": "Nimbus is Open Source. Wil je meehelpen met testen, feedback of bijdragen,",
     "desc_para5": "zoek ons op via GitHub",
     "desc_para6": "en doe met ons mee.",
-    "title": "Elk is in Preview!"
+    "title": "Nimbus is in Preview!"
   },
   "language": {
     "search": "Opzoeken"
@@ -187,9 +187,9 @@
   },
   "pwa": {
     "dismiss": "Afwijzen",
-    "title": "Er is een nieuwe Elk update!",
+    "title": "Er is een nieuwe Nimbus update!",
     "update": "Update",
-    "update_available_short": "Update Elk"
+    "update_available_short": "Update Nimbus"
   },
   "search": {
     "search_desc": "Zoek naar mensen & hashtags",
@@ -233,7 +233,7 @@
           "reblog": "Herblogt jou post",
           "title": "Welke notificaties wil je krijgen?"
         },
-        "description": "Ontvang meldingen zelfs wanneer je Elk niet gebruikt.",
+        "description": "Ontvang meldingen zelfs wanneer je Nimbus niet gebruikt.",
         "instructions": "Vergeet niet om je wijzigingen op te slaan d.m.v. de @:settings.notifications.push_notifications.save_settings knop!",
         "label": "Pushnotificatie instellingen",
         "policy": {
@@ -247,7 +247,7 @@
         "subscription_error": {
           "clear_error": "Wis error",
           "permission_denied": "Geen toestemming: zet notificaties aan in je browser.",
-          "request_error": "Er is een error tijdens het ophalen van het abonnement, probeer opnieuw en als de error blijft, raporteer het probleem naar de Elk repository.",
+          "request_error": "Er is een error tijdens het ophalen van het abonnement, probeer opnieuw en als de error blijft, raporteer het probleem naar de Nimbus repository.",
           "title": "Kon niet abonneren op de pushnotificaties"
         },
         "undo_settings": "Veranderde instellingen ongedaan maken",
@@ -255,8 +255,8 @@
         "unsupported": "Je browser ondersteunt geen pushnotificaties.",
         "warning": {
           "enable_close": "Sluit",
-          "enable_description": "Om meldingen te krijgen terwijl Elk niet actief is, zet pushnotificaties aan. Je kan precies instellen wat voor type interacties pushnotificaties genereren via de \"@:notification.settings.show_btn{'\"'} knop hierboven wanneer ze aan staan.",
-          "enable_description_settings": "Om meldingen te ontvangen wanneer Elk niet actief is, schakel pushnotificaties in. Je kunt precies instellen welke soorten interacties pushnotificaties genereren in dit venster zodra je ze hebt inschakelt.",
+          "enable_description": "Om meldingen te krijgen terwijl Nimbus niet actief is, zet pushnotificaties aan. Je kan precies instellen wat voor type interacties pushnotificaties genereren via de \"@:notification.settings.show_btn{'\"'} knop hierboven wanneer ze aan staan.",
+          "enable_description_settings": "Om meldingen te ontvangen wanneer Nimbus niet actief is, schakel pushnotificaties in. Je kunt precies instellen welke soorten interacties pushnotificaties genereren in dit venster zodra je ze hebt inschakelt.",
           "enable_desktop": "Zet pushnotificaties aan",
           "enable_title": "Mis niets",
           "re_auth": "Het lijkt erop dat je server geen pushnotificaties ondersteunt. Probeer uitloggen en opnieuw inloggen. Neem contact op met de serverbeheerder als dit bericht nog steeds verschijnt."

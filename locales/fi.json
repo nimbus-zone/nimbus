@@ -88,8 +88,8 @@
     "vote": "Äänestä"
   },
   "app_desc_short": "Ketterä verkkosovellus Mastodonille",
-  "app_logo": "Elk-logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus-logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Kuvaus",
     "remove_label": "Poista liite"
@@ -193,20 +193,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Katselet juuri yhteisön tuottamaa Elkin esiversiota – {0}.",
+      "desc1": "Katselet juuri yhteisön tuottamaa Nimbusin esiversiota – {0}.",
       "desc2": "Se voi sisältää katselmoimattomia tai jopa haitallisia muutoksia.",
       "desc3": "Älä kirjaudu sisään oikealla tililläsi.",
       "title": "Esijulkaisu"
     },
     "desc_highlight": "Saatat löytää bugeja ja puuttuvia ominaisuuksia sieltä täältä.",
-    "desc_para1": "Elk on ketterä verkkosovellus Mastodonille. Voit kirjautua sisään Mastodon-tilillesi ja olla sen avulla vuorovaikutuksessa fediversumin kanssa.",
-    "desc_para2": "Elk on avointa lähdekoodia, ja me parantelemme sitä vilkkaasti yhteisöprojektina. Liity joukkoomme, niin rakennamme sitä yhdessä!",
-    "desc_para3": "Voit auttaa kehityksessä tukemalla tiimiä GitHub-sponsorina. Toivomme, että nautit Elkin käytöstä!",
+    "desc_para1": "Nimbus on ketterä verkkosovellus Mastodonille. Voit kirjautua sisään Mastodon-tilillesi ja olla sen avulla vuorovaikutuksessa fediversumin kanssa.",
+    "desc_para2": "Nimbus on avointa lähdekoodia, ja me parantelemme sitä vilkkaasti yhteisöprojektina. Liity joukkoomme, niin rakennamme sitä yhdessä!",
+    "desc_para3": "Voit auttaa kehityksessä tukemalla tiimiä GitHub-sponsorina. Toivomme, että nautit Nimbusin käytöstä!",
     "desc_para4": "Jos haluat ilmoittaa ohjelmontivirheestä, auttaa testauksessa, antaa palautetta tai osallistua,",
     "desc_para5": "ota meihin yhteyttä GitHubissa",
     "desc_para6": "ja tule mukaan.",
-    "footer_team": "Elk-tiimi",
-    "title": "Tervetuloa Elkiin!"
+    "footer_team": "Nimbus-tiimi",
+    "title": "Tervetuloa Nimbusiin!"
   },
   "language": {
     "search": "Haku"
@@ -365,34 +365,34 @@
   "pwa": {
     "dismiss": "Hylkää",
     "install": "Asenna",
-    "install_title": "Asenna Elk",
+    "install_title": "Asenna Nimbus",
     "screenshots": {
-      "dark": "Näyttökuva Elkistä tummassa tilassa",
-      "light": "Näyttökuva Elkistä vaaleassa tilassa"
+      "dark": "Näyttökuva Nimbusistä tummassa tilassa",
+      "light": "Näyttökuva Nimbusistä vaaleassa tilassa"
     },
-    "title": "Uusi Elk-päivitys saatavilla!",
+    "title": "Uusi Nimbus-päivitys saatavilla!",
     "update": "Päivitä",
-    "update_available_short": "Päivitä Elk",
+    "update_available_short": "Päivitä Nimbus",
     "webmanifest": {
       "canary": {
         "description": "Ketterä verkkosovellus Mastodonille (canary-versio)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Ketterä verkkosovellus Mastodonille (kehitysversio)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "Ketterä verkkosovellus Mastodonille (esijulkaisu)",
-        "name": "Elk (preview)",
-        "short_name": "Elk (preview)"
+        "name": "Nimbus (preview)",
+        "short_name": "Nimbus (preview)"
       },
       "release": {
         "description": "Ketterä verkkosovellus Mastodonille",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -442,10 +442,10 @@
       "label": "Tietoja",
       "meet_the_team": "Tutustu tiimiin",
       "sponsor_action": "Sponsoroi meitä",
-      "sponsor_action_desc": "niin tuet Elkin kehitystiimiä",
+      "sponsor_action_desc": "niin tuet Nimbusin kehitystiimiä",
       "sponsors": "Tukijat",
-      "sponsors_body_1": "Elkin mahdollistaa avokätinen tuki ja apu seuraavilta:",
-      "sponsors_body_2": "sekä kaikki yritykset ja yksilöt, jotka tukevat Elk-tiimiä ja sen jäseniä.",
+      "sponsors_body_1": "Nimbusin mahdollistaa avokätinen tuki ja apu seuraavilta:",
+      "sponsors_body_2": "sekä kaikki yritykset ja yksilöt, jotka tukevat Nimbus-tiimiä ja sen jäseniä.",
       "sponsors_body_3": "Jos pidät sovelluksesta, harkitse tukemistamme:",
       "version": "Versio"
     },
@@ -493,7 +493,7 @@
           "reblog": "Tehostukset",
           "title": "Mitä ilmoituksia haluat saada?"
         },
-        "description": "Vastaanota ilmoituksia silloinkin kun et käytä Elkiä.",
+        "description": "Vastaanota ilmoituksia silloinkin kun et käytä Nimbusiä.",
         "instructions": "Muista tallentaa muutokset painikkeella @:settings.notifications.push_notifications.save_settings!",
         "label": "Puskuilmoitusten asetukset",
         "policy": {
@@ -509,10 +509,10 @@
           "error_hint": "Voit käyttää ongelman ratkaisussa apuna usein kysyttyjen kysymysten luetteloa: {0}.",
           "invalid_vapid_key": "Julkinen VAPID-avain näyttää olevan virheellinen.",
           "permission_denied": "Lupa evätty: ota ilmoitukset käyttöön selaimessasi.",
-          "repo_link": "Elkin ohjelmistolähde GitHubissa",
-          "request_error": "Tapahtui virhe pyydettäessä tilausta. Yritä uudelleen, ja jos virhe toistuu, ilmoita virheestä Elkin ohjelmistolähteeseen.",
+          "repo_link": "Nimbusin ohjelmistolähde GitHubissa",
+          "request_error": "Tapahtui virhe pyydettäessä tilausta. Yritä uudelleen, ja jos virhe toistuu, ilmoita virheestä Nimbusin ohjelmistolähteeseen.",
           "title": "Puskuilmoitusten tilaus epäonnistui",
-          "too_many_registrations": "Selaimen rajoitteiden vuoksi Elk ei voi tilata puskuilmoituksia useilta tileiltä eri palvelimilla. Poista puskuilmoitukset käytöstä toisella tililläsi ja yritä uudelleen.",
+          "too_many_registrations": "Selaimen rajoitteiden vuoksi Nimbus ei voi tilata puskuilmoituksia useilta tileiltä eri palvelimilla. Poista puskuilmoitukset käytöstä toisella tililläsi ja yritä uudelleen.",
           "vapid_not_supported": "Selaimesi tukee puskuilmoituksia mutta ei näytä tukevan VAPID-protokollaa."
         },
         "title": "Puskuilmoitusten asetukset",
@@ -521,10 +521,10 @@
         "unsupported": "Selaimesi ei tue puskuilmoituksia.",
         "warning": {
           "enable_close": "Sulje",
-          "enable_description": "Saadaksesi ilmoituksia, kun Elk ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, käyttämällä painiketta \"@:settings.notifications.show_btn{'\"'} alapuolella.",
-          "enable_description_desktop": "Saadaksesi ilmoituksia, kun Elk ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, kohdassa \"Asetukset > Ilmoitukset > Puskuilmoitusten asetukset\".",
+          "enable_description": "Saadaksesi ilmoituksia, kun Nimbus ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, käyttämällä painiketta \"@:settings.notifications.show_btn{'\"'} alapuolella.",
+          "enable_description_desktop": "Saadaksesi ilmoituksia, kun Nimbus ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, kohdassa \"Asetukset > Ilmoitukset > Puskuilmoitusten asetukset\".",
           "enable_description_mobile": "Pääset asetuksiin myös navigointivalikosta \"Asetukset > Ilmoitukset > Puskuilmoitusten asetukset\".",
-          "enable_description_settings": "Saadaksesi ilmoituksia, kun Elk ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, tällä samalla näytöllä.",
+          "enable_description_settings": "Saadaksesi ilmoituksia, kun Nimbus ei ole auki, ota puskuilmoitukset käyttöön. Sen jälkeen voit valita tarkemmin, millaiset vuorovaikutukset tuottavat ilmoituksia, tällä samalla näytöllä.",
           "enable_desktop": "Ota puskuilmoitukset käyttöön",
           "enable_title": "Älä anna tapahtumien livahtaa ohitsesi",
           "re_auth": "Palvelimesi ei ilmeisesti tue puskuilmoituksia. Yritä kirjautua ulos ja takaisin sisään, ja jos tämä viesti ilmestyy uudelleen, ole yhteydessä palvelimesi ylläpitäjään."
@@ -595,9 +595,9 @@
     }
   },
   "share_target": {
-    "description": "Elkin voi määrittää niin, että voit jakaa sisältöä muista sovelluksista: asenna Elk laitteellesi ja kirjaudu sisään.",
-    "hint": "Jotta voit jakaa sisältöä Elkillä, sen täytyy olla asennettuna ja sinun sisäänkirjautuneena.",
-    "title": "Jaa Elkillä"
+    "description": "Nimbusin voi määrittää niin, että voit jakaa sisältöä muista sovelluksista: asenna Nimbus laitteellesi ja kirjaudu sisään.",
+    "hint": "Jotta voit jakaa sisältöä Nimbusillä, sen täytyy olla asennettuna ja sinun sisäänkirjautuneena.",
+    "title": "Jaa Nimbusillä"
   },
   "state": {
     "attachments_exceed_server_limit": "Julkaisussa on liian monta liitettä.",

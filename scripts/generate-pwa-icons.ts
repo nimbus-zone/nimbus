@@ -193,7 +193,7 @@ async function generatePWAIcons(folders: string[], icons: Icons) {
   })))
 }
 
-console.log('Generating Elk PWA Icons...')
+console.log('Generating Nimbus PWA Icons...')
 
 generatePWAIcons(publicFolders, <Icons>{
   transparent: { ...defaultIcons.transparent, sizes: [64, 192, 512] },
@@ -208,4 +208,4 @@ generatePWAIcons(publicFolders, <Icons>{
         return 'apple-touch-icon-temp.png'
     }
   },
-}).then(() => console.log('Elk PWA Icons generated')).catch(console.error)
+}).then(() => console.log('Nimbus PWA Icons generated')).catch(console.error)

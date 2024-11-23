@@ -1,4 +1,4 @@
-# Welcome to the Elk Docs
+# Welcome to the Nimbus Docs
 
 The documentation site publishes to https://docs.elk.zone.
 We use [Docus](https://docus.dev) as the site generator and deploy through Netlify.
@@ -17,7 +17,7 @@ We use [Docus](https://docus.dev) as the site generator and deploy through Netli
 
 ### Install and Preview
 
-1. [Fork the Elk GitHub project](https://github.com/elk-zone/elk/fork) into your own account
+1. [Fork the Nimbus GitHub project](https://github.com/elk-zone/elk/fork) into your own account
 2. Clone your fork to your local machine
 3. From your terminal, `cd` to the directory you cloned into
 4. `cd docs` to enter the docs folder
@@ -28,7 +28,7 @@ We use [Docus](https://docus.dev) as the site generator and deploy through Netli
 
 ### Contributing
 
-When you are ready to submit work back to the main Elk repo, create a PR.
+When you are ready to submit work back to the main Nimbus repo, create a PR.
 
 1. If it has been a bit, synchronize your fork with the upstream repo on GitHub.
 2. Do your work in a branch on your fork
@@ -36,7 +36,7 @@ When you are ready to submit work back to the main Elk repo, create a PR.
 3. Do your work in your preferred editor
 4. Commit changes often and write meaningful commits
 5. Push the changes from your local machine to your fork on GitHub
-6. Go to your fork of the Elk project in your GitHub account
+6. Go to your fork of the Nimbus project in your GitHub account
 7. Select the **Pull Request** tab
 8. Select **New Pull Request**
 9.  Confirm the repo/branches to compare
@@ -61,7 +61,7 @@ ALWAYS WORK IN YOUR FORK/BRANCH.
 - Refer to the Docus [writing pages](https://docus.dev/introduction/writing-pages) guide
 - Docus provides additional [components](https://docus.dev/api/components) to extend basic markdown
 
-Avoid screenshots until Elk reaches a stable release.
+Avoid screenshots until Nimbus reaches a stable release.
 
 ### Standards
 

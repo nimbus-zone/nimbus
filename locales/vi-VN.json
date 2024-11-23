@@ -88,8 +88,8 @@
     "vote": "Bình chọn"
   },
   "app_desc_short": "Một ứng dụng web Mastodon nhanh nhẹn",
-  "app_logo": "Elk Logo",
-  "app_name": "Elk",
+  "app_logo": "Nimbus Logo",
+  "app_name": "Nimbus",
   "attachment": {
     "edit_title": "Mô tả",
     "remove_label": "Xóa file đính kèm"
@@ -193,20 +193,20 @@
   },
   "help": {
     "build_preview": {
-      "desc1": "Bạn đang dùng bản xem trước của Elk từ cộng đồng - {0}.",
+      "desc1": "Bạn đang dùng bản xem trước của Nimbus từ cộng đồng - {0}.",
       "desc2": "Nó có thể chứa các thay đổi chưa được xem xét hoặc thậm chí có lỗi.",
       "desc3": "Đừng đăng nhập bằng tài khoản chính.",
       "title": "Bản dựng"
     },
     "desc_highlight": "Sẽ có lỗi và một số tính năng bị thiếu.",
-    "desc_para1": "Elk là một ứng dụng web Mastodon nhanh nhẹn. Sử dụng để đăng nhập Mastodon và tương tác với Fediverse.",
-    "desc_para2": "Elk là Mã Nguồn Mở và chúng tôi cải tiến nó như một dự án cộng đồng. Hãy tham gia và cùng xây dựng!",
-    "desc_para3": "Để thúc đẩy sự phát triển, bạn có thể tài trợ cho Nhóm thông qua GitHub Sponsors. Chúng tôi hy vọng bạn thích Elk!",
+    "desc_para1": "Nimbus là một ứng dụng web Mastodon nhanh nhẹn. Sử dụng để đăng nhập Mastodon và tương tác với Fediverse.",
+    "desc_para2": "Nimbus là Mã Nguồn Mở và chúng tôi cải tiến nó như một dự án cộng đồng. Hãy tham gia và cùng xây dựng!",
+    "desc_para3": "Để thúc đẩy sự phát triển, bạn có thể tài trợ cho Nhóm thông qua GitHub Sponsors. Chúng tôi hy vọng bạn thích Nimbus!",
     "desc_para4": "Nếu bạn muốn thử nghiệm, đưa ra phản hồi hoặc đóng góp,",
     "desc_para5": "liên hệ trên GitHub",
     "desc_para6": "và tham gia.",
-    "footer_team": "Elk Team",
-    "title": "Elk xin chào!"
+    "footer_team": "Nimbus Team",
+    "title": "Nimbus xin chào!"
   },
   "language": {
     "search": "Tìm kiếm"
@@ -365,34 +365,34 @@
   "pwa": {
     "dismiss": "Bỏ qua",
     "install": "Cài đặt",
-    "install_title": "Cài đặt Elk",
+    "install_title": "Cài đặt Nimbus",
     "screenshots": {
-      "dark": "Ảnh chụp Elk chế độ tối",
-      "light": "Ảnh chụp Elk chế độ sáng"
+      "dark": "Ảnh chụp Nimbus chế độ tối",
+      "light": "Ảnh chụp Nimbus chế độ sáng"
     },
-    "title": "Có bản cập nhật Elk mới!",
+    "title": "Có bản cập nhật Nimbus mới!",
     "update": "Cập nhật",
-    "update_available_short": "Cập nhật Elk",
+    "update_available_short": "Cập nhật Nimbus",
     "webmanifest": {
       "canary": {
         "description": "Một ứng dụng web Mastodon nhanh nhẹn (canary)",
-        "name": "Elk (canary)",
-        "short_name": "Elk (canary)"
+        "name": "Nimbus (canary)",
+        "short_name": "Nimbus (canary)"
       },
       "dev": {
         "description": "Một ứng dụng web Mastodon nhanh nhẹn (dev)",
-        "name": "Elk (dev)",
-        "short_name": "Elk (dev)"
+        "name": "Nimbus (dev)",
+        "short_name": "Nimbus (dev)"
       },
       "preview": {
         "description": "Một ứng dụng web Mastodon nhanh nhẹn (preview)",
-        "name": "Elk (preview)",
-        "short_name": "Elk (preview)"
+        "name": "Nimbus (preview)",
+        "short_name": "Nimbus (preview)"
       },
       "release": {
         "description": "Một ứng dụng web Mastodon nhanh nhẹn",
-        "name": "Elk",
-        "short_name": "Elk"
+        "name": "Nimbus",
+        "short_name": "Nimbus"
       }
     }
   },
@@ -442,10 +442,10 @@
       "label": "Giới thiệu",
       "meet_the_team": "Đội ngũ",
       "sponsor_action": "Tài trợ",
-      "sponsor_action_desc": "Ủng hộ đội ngũ phát triển Elk",
+      "sponsor_action_desc": "Ủng hộ đội ngũ phát triển Nimbus",
       "sponsors": "Nhà tài trợ",
-      "sponsors_body_1": "Elk được thực hiện nhờ sự tài trợ và giúp đỡ hào phóng của:",
-      "sponsors_body_2": "Và tất cả các công ty, cá nhân tài trợ cho đội ngũ Elk.",
+      "sponsors_body_1": "Nimbus được thực hiện nhờ sự tài trợ và giúp đỡ hào phóng của:",
+      "sponsors_body_2": "Và tất cả các công ty, cá nhân tài trợ cho đội ngũ Nimbus.",
       "sponsors_body_3": "Nếu bạn thích ứng dụng này, hãy tài trợ cho chúng tôi:",
       "version": "Phiên bản"
     },
@@ -493,7 +493,7 @@
           "reblog": "Lượt đăng lại",
           "title": "Bạn muốn nhận những kiểu thông báo nào?"
         },
-        "description": "Nhận thông báo kể cả khi bạn không sử dụng Elk.",
+        "description": "Nhận thông báo kể cả khi bạn không sử dụng Nimbus.",
         "instructions": "Nhớ @:settings.notifications.push_notifications.save_settings sau khi chọn xong!",
         "label": "Cài đặt thông báo đẩy",
         "policy": {
@@ -509,10 +509,10 @@
           "error_hint": "Bạn có thể tham khảo danh sách các câu hỏi thường gặp: {0}.",
           "invalid_vapid_key": "Khóa công khai VAPID dường như không hợp lệ.",
           "permission_denied": "Quyền bị từ chối: bật thông báo trong trình duyệt của bạn.",
-          "repo_link": "Repository Elk trên GitHub",
-          "request_error": "Đã xảy ra lỗi khi yêu cầu, hãy thử lại và nếu lỗi vẫn tiếp diễn, vui lòng báo cáo sự cố với repository Elk.",
+          "repo_link": "Repository Nimbus trên GitHub",
+          "request_error": "Đã xảy ra lỗi khi yêu cầu, hãy thử lại và nếu lỗi vẫn tiếp diễn, vui lòng báo cáo sự cố với repository Nimbus.",
           "title": "Không thể bật thông báo đẩy",
-          "too_many_registrations": "Do giới hạn của trình duyệt, Elk không thể sử dụng dịch vụ thông báo đẩy cho nhiều tài khoản trên các máy chủ khác nhau. Bạn nên hủy đăng ký nhận thông báo đẩy trên một tài khoản khác và thử lại.",
+          "too_many_registrations": "Do giới hạn của trình duyệt, Nimbus không thể sử dụng dịch vụ thông báo đẩy cho nhiều tài khoản trên các máy chủ khác nhau. Bạn nên hủy đăng ký nhận thông báo đẩy trên một tài khoản khác và thử lại.",
           "vapid_not_supported": "Trình duyệt của bạn hỗ trợ thông báo đẩy trên web, nhưng dường như không triển khai giao thức VAPID."
         },
         "title": "Cài đặt thông báo đẩy",
@@ -521,10 +521,10 @@
         "unsupported": "Trình duyệt của bạn không hỗ trợ thông báo đẩy.",
         "warning": {
           "enable_close": "Đóng",
-          "enable_description": "Để nhận thông báo khi không mở Elk, hãy bật thông báo đẩy. Bạn có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy thông qua nút \"@:settings.notifications.show_btn{'\"'} ở trên sau khi đã bật.",
-          "enable_description_desktop": "Để nhận thông báo khi không mở Elk, hãy bật thông báo đẩy. Bạn có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy trong \"Cài đặt > Thông báo > Thông báo đẩy\" sau khi đã bật.",
+          "enable_description": "Để nhận thông báo khi không mở Nimbus, hãy bật thông báo đẩy. Bạn có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy thông qua nút \"@:settings.notifications.show_btn{'\"'} ở trên sau khi đã bật.",
+          "enable_description_desktop": "Để nhận thông báo khi không mở Nimbus, hãy bật thông báo đẩy. Bạn có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy trong \"Cài đặt > Thông báo > Thông báo đẩy\" sau khi đã bật.",
           "enable_description_mobile": "Bạn cũng có thể truy cập menu điều hướng \"Cài đặt > Thông báo > Thông báo đẩy\".",
-          "enable_description_settings": "Để nhận thông báo khi không mở Elk, hãy bật thông báo đẩy. Bạn sẽ có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy trên cùng màn hình này sau khi đã bật.",
+          "enable_description_settings": "Để nhận thông báo khi không mở Nimbus, hãy bật thông báo đẩy. Bạn sẽ có thể kiểm soát chính xác loại tương tác nào sẽ tạo thông báo đẩy trên cùng màn hình này sau khi đã bật.",
           "enable_desktop": "Bật thông báo đẩy",
           "enable_title": "Không bỏ lỡ bất cứ điều gì",
           "re_auth": "Hình như máy chủ của bạn không hỗ trợ thông báo đẩy. Hãy thử đăng xuất và đăng nhập lại, nếu thông báo này vẫn xuất hiện, hãy liên hệ với quản trị viên máy chủ của bạn."
@@ -595,9 +595,9 @@
     }
   },
   "share_target": {
-    "description": "Elk có thể cấu hình để bạn có thể chia sẻ nội dung từ các ứng dụng khác, chỉ cần cài đặt Elk trên thiết bị hoặc máy tính của bạn và đăng nhập.",
-    "hint": "Để chia sẻ nội dung với Elk, Elk phải được cài đặt và bạn phải đăng nhập.",
-    "title": "Chia sẻ với Elk"
+    "description": "Nimbus có thể cấu hình để bạn có thể chia sẻ nội dung từ các ứng dụng khác, chỉ cần cài đặt Nimbus trên thiết bị hoặc máy tính của bạn và đăng nhập.",
+    "hint": "Để chia sẻ nội dung với Nimbus, Nimbus phải được cài đặt và bạn phải đăng nhập.",
+    "title": "Chia sẻ với Nimbus"
   },
   "state": {
     "attachments_exceed_server_limit": "Vượt quá giới hạn số lượng file đính kèm.",

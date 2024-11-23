@@ -47,9 +47,9 @@
     "switch_account": "Přepnout účet",
     "vote": "Hlasovat"
   },
-  "app_desc_short": "Elk - hbitý webklient pro Mastodon.",
-  "app_logo": "logo Elk",
-  "app_name": "Elk",
+  "app_desc_short": "Nimbus - hbitý webklient pro Mastodon.",
+  "app_logo": "logo Nimbus",
+  "app_name": "Nimbus",
   "command": {
     "activate": "Aktivovat",
     "complete": "Dokončit",
@@ -79,10 +79,10 @@
   },
   "help": {
     "desc_highlight": "Z toho důvodu může tu a tam nastat chyba nebo chybět nějaká ta funkce.",
-    "desc_para1": "Těší nás váš zájem o Elk - Mastodoní klient na kterém právě pracujeme.",
-    "desc_para2": "Pracujeme na vývoji a průběžně Elk vylepšujeme. Brzy ho zveřejníme jako open source a budete mít možnost přispět svou troškou do mlýna.",
+    "desc_para1": "Těší nás váš zájem o Nimbus - Mastodoní klient na kterém právě pracujeme.",
+    "desc_para2": "Pracujeme na vývoji a průběžně Nimbus vylepšujeme. Brzy ho zveřejníme jako open source a budete mít možnost přispět svou troškou do mlýna.",
     "desc_para3": "Předtím můžete přispět do klobouku našim vývojářům na níže uvedených odkazech:",
-    "title": "Elk ještě není hotový"
+    "title": "Nimbus ještě není hotový"
   },
   "menu": {
     "block_account": "Zablokovat {0}",
