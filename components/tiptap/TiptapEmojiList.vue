@@ -2,11 +2,10 @@
 import { getEmojiMatchesInText } from '@iconify/utils/lib/emoji/replace/find'
 import { emojiFilename, emojiPrefix, emojiRegEx } from '~~/config/emojis'
 import type { CommandHandler } from '~/composables/command'
-import type { CustomEmoji, Emoji } from '~/composables/tiptap/suggestion'
-import { isCustomEmoji } from '~/composables/tiptap/suggestion'
+import type { Emoji } from '~/composables/tiptap/suggestion'
 
 const { items, command } = defineProps<{
-  items: (CustomEmoji | Emoji)[]
+  items: Emoji[]
   command: CommandHandler<any>
   isPending?: boolean
 }>()
@@ -15,15 +14,7 @@ const emojis = computed(() => {
   if (import.meta.server)
     return []
 
-  return items.map((item: CustomEmoji | Emoji) => {
-    if (isCustomEmoji(item)) {
-      return {
-        title: item.shortcode,
-        src: item.url,
-        emoji: item,
-      }
-    }
-
+  return items.map((item: Emoji) => {
     const skin = item.skins.find(skin => skin.native !== undefined)
     const match = getEmojiMatchesInText(emojiRegEx, skin!.native)[0]
     const file = emojiFilename(match)

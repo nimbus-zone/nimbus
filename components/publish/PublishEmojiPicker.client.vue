@@ -14,8 +14,6 @@ const picker = ref<Picker>()
 const colorMode = useColorMode()
 
 async function openEmojiPicker() {
-  await updateCustomEmojis()
-
   if (picker.value) {
     picker.value.update({
       theme: colorMode,

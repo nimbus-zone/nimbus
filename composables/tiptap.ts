@@ -13,7 +13,7 @@ import Text from '@tiptap/extension-text'
 import { Extension, useEditor } from '@tiptap/vue-3'
 
 import { Plugin } from 'prosemirror-state'
-import { TiptapPluginCustomEmoji } from './tiptap/custom-emoji'
+// import { TiptapPluginCustomEmoji } from './tiptap/custom-emoji'
 import { TiptapPluginEmoji } from './tiptap/emoji'
 import { TiptapPluginCodeBlockShiki } from './tiptap/shiki'
 import { TiptapEmojiSuggestion, TiptapHashtagSuggestion, TiptapMentionSuggestion } from './tiptap/suggestion'
@@ -48,12 +48,14 @@ export function useTiptap(options: UseTiptapOptions) {
       Code,
       Text,
       TiptapPluginEmoji,
+      /*
       TiptapPluginCustomEmoji.configure({
         inline: true,
         HTMLAttributes: {
           class: 'custom-emoji',
         },
       }),
+      */
       Mention.configure({
         renderHTML({ options, node }) {
           return ['span', { 'data-type': 'mention', 'data-id': node.attrs.id }, `${options.suggestion.char}${node.attrs.label ?? node.attrs.id}`]

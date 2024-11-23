@@ -187,9 +187,6 @@ async function handlePaste(evt: ClipboardEvent) {
 function insertEmoji(name: string) {
   editor.value?.chain().focus().insertEmoji(name).run()
 }
-function insertCustomEmoji(image: any) {
-  editor.value?.chain().focus().insertCustomEmoji(image).run()
-}
 
 async function toggleSensitive() {
   draft.value.params.sensitive = !draft.value.params.sensitive
@@ -383,7 +380,7 @@ function stopQuestionMarkPropagation(e: KeyboardEvent) {
             </div>
           </form>
           <div v-if="shouldExpanded" flex="~ gap-1 1 wrap" m="s--1" pt-2 justify="end" max-w-full border="t base">
-            <PublishEmojiPicker @select="insertEmoji" @select-custom="insertCustomEmoji">
+            <PublishEmojiPicker @select="insertEmoji">
               <button btn-action-icon :title="$t('tooltip.emojis')" :aria-label="$t('tooltip.add_emojis')">
                 <div i-ri:emotion-line />
               </button>

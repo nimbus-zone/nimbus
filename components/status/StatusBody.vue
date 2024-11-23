@@ -13,12 +13,10 @@ const {
 
 const { translation } = useTranslation(status, getLanguageCode())
 
-const emojisObject = useEmojisFallback(() => status.emojis)
 const vnode = computed(() => {
   if (!status.content)
     return null
   return contentToVNode(status.content, {
-    emojis: emojisObject.value,
     mentions: 'mentions' in status ? status.mentions : undefined,
     markdown: true,
     collapseMentionLink: !!('inReplyToId' in status && status.inReplyToId),

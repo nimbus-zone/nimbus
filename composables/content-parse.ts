@@ -7,7 +7,6 @@ import { DOCUMENT_NODE, ELEMENT_NODE, h, parse, render, TEXT_NODE } from 'ultrah
 import { emojiRegEx, getEmojiAttributes } from '../config/emojis'
 
 export interface ContentParseOptions {
-  emojis?: Record<string, mastodon.v1.CustomEmoji>
   hideEmojis?: boolean
   mentions?: mastodon.v1.StatusMention[]
   markdown?: boolean
@@ -115,13 +114,10 @@ export function parseMastodonHTML(
 
   if (hideEmojis) {
     transforms.push(removeUnicodeEmoji)
-    transforms.push(removeCustomEmoji(options.emojis ?? {}))
   }
   else {
     if (replaceUnicodeEmoji)
       transforms.push(transformUnicodeEmoji)
-
-    transforms.push(replaceCustomEmoji(options.emojis ?? {}))
   }
 
   if (markdown)
@@ -146,9 +142,8 @@ export function parseMastodonHTML(
  * @param html The content to parse
  * @param customEmojis The custom emojis to use
  */
-export function convertMastodonHTML(html: string, customEmojis: Record<string, mastodon.v1.CustomEmoji> = {}) {
+export function convertMastodonHTML(html: string) {
   const tree = parseMastodonHTML(html, {
-    emojis: customEmojis,
     markdown: true,
     convertMentionLink: true,
   })
@@ -411,73 +406,6 @@ function transformUnicodeEmoji(node: Node) {
 
   matches.push(node.value.slice(start))
   return matches.filter(Boolean)
-}
-
-function removeCustomEmoji(customEmojis: Record<string, mastodon.v1.CustomEmoji>): Transform {
-  return (node) => {
-    if (node.type !== TEXT_NODE)
-      return node
-
-    const split = node.value.split(/\s?:([\w-]+):/g)
-    if (split.length === 1)
-      return node
-
-    return split.map((name, i) => {
-      if (i % 2 === 0)
-        return name
-
-      const emoji = customEmojis[name] as mastodon.v1.CustomEmoji
-      if (!emoji)
-        return `:${name}:`
-
-      return ''
-    }).filter(Boolean)
-  }
-}
-
-function replaceCustomEmoji(customEmojis: Record<string, mastodon.v1.CustomEmoji>): Transform {
-  return (node) => {
-    if (node.type !== TEXT_NODE)
-      return node
-
-    const split = node.value.split(/:([\w-]+):/g)
-    if (split.length === 1)
-      return node
-
-    return split.map((name, i) => {
-      if (i % 2 === 0)
-        return name
-
-      const emoji = customEmojis[name] as mastodon.v1.CustomEmoji
-      if (!emoji)
-        return `:${name}:`
-
-      return h(
-        'picture',
-        {
-          'alt': `:${name}:`,
-          'class': 'custom-emoji',
-          'data-emoji-id': name,
-        },
-        [
-          h(
-            'source',
-            {
-              srcset: emoji.staticUrl,
-              media: '(prefers-reduced-motion: reduce)',
-            },
-          ),
-          h(
-            'img',
-            {
-              src: emoji.url,
-              alt: `:${name}:`,
-            },
-          ),
-        ],
-      )
-    }).filter(Boolean)
-  }
 }
 
 const _markdownReplacements: [RegExp, (c: (string | Node)[]) => Node][] = [

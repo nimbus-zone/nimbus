@@ -1,6 +1,5 @@
 import type { Emoji, EmojiMartData } from '@emoji-mart/data'
 import type { SuggestionOptions } from '@tiptap/suggestion'
-import type { mastodon } from 'masto'
 import type { GetReferenceClientRect, Instance } from 'tippy.js'
 import type { Component } from 'vue'
 import { VueRenderer } from '@tiptap/vue-3'
@@ -9,14 +8,8 @@ import tippy from 'tippy.js'
 import TiptapEmojiList from '~/components/tiptap/TiptapEmojiList.vue'
 import TiptapHashtagList from '~/components/tiptap/TiptapHashtagList.vue'
 import TiptapMentionList from '~/components/tiptap/TiptapMentionList.vue'
-import { currentCustomEmojis, updateCustomEmojis } from '~/composables/emojis'
 
 export type { Emoji }
-
-export type CustomEmoji = (mastodon.v1.CustomEmoji & { custom: true })
-export function isCustomEmoji(emoji: CustomEmoji | Emoji): emoji is CustomEmoji {
-  return !!(emoji as CustomEmoji).custom
-}
 
 export const TiptapMentionSuggestion: Partial<SuggestionOptions> = import.meta.server
   ? {}
@@ -55,38 +48,23 @@ export const TiptapHashtagSuggestion: Partial<SuggestionOptions> = {
 export const TiptapEmojiSuggestion: Partial<SuggestionOptions> = {
   pluginKey: new PluginKey('emoji'),
   char: ':',
-  async items({ query }): Promise<(CustomEmoji | Emoji)[]> {
+  async items({ query }): Promise<Emoji[]> {
     if (import.meta.server || query.length === 0)
       return []
-
-    if (currentCustomEmojis.value.emojis.length === 0)
-      await updateCustomEmojis()
 
     const lowerCaseQuery = query.toLowerCase()
 
     const { data } = await useAsyncData<EmojiMartData>('emoji-data', () => import('@emoji-mart/data').then(r => r.default as EmojiMartData))
     const emojis: Emoji[] = Object.values(data.value?.emojis || []).filter(({ id }) => id.toLowerCase().startsWith(lowerCaseQuery))
 
-    const customEmojis: CustomEmoji[] = currentCustomEmojis.value.emojis
-      .filter(emoji => emoji.shortcode.toLowerCase().startsWith(lowerCaseQuery))
-      .map(emoji => ({ ...emoji, custom: true }))
-
-    return [...emojis, ...customEmojis]
+    return emojis
   },
   command: ({ editor, props, range }) => {
-    const emoji: CustomEmoji | Emoji = props.emoji
+    const emoji: Emoji = props.emoji
     editor.commands.deleteRange(range)
-    if (isCustomEmoji(emoji)) {
-      editor.commands.insertCustomEmoji({
-        title: emoji.shortcode,
-        src: emoji.url,
-      })
-    }
-    else {
-      const skin = emoji.skins.find(skin => skin.native !== undefined)
-      if (skin)
-        editor.commands.insertEmoji(skin.native)
-    }
+    const skin = emoji.skins.find(skin => skin.native !== undefined)
+    if (skin)
+      editor.commands.insertEmoji(skin.native)
   },
   render: createSuggestionRenderer(TiptapEmojiList),
 }

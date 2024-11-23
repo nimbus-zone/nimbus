@@ -1,5 +1,3 @@
-import type { mastodon } from 'masto'
-
 export const UserLinkRE = /^(?:https:\/)?\/([^/]+)\/@([^/]+)$/
 export const TagLinkRE = /^https?:\/\/([^/]+)\/tags\/([^/]+)\/?$/
 export const HTMLTagRE = /<[^>]+>/g
@@ -19,10 +17,6 @@ export function getDataUrlFromArr(arr: Uint8ClampedArray, w: number, h: number) 
   ctx.putImageData(imgData, 0, 0)
 
   return canvas.toDataURL()
-}
-
-export function emojisArrayToObject(emojis: mastodon.v1.CustomEmoji[]) {
-  return Object.fromEntries(emojis.map(i => [i.shortcode, i]))
 }
 
 export function noop() {}

@@ -14,14 +14,6 @@ declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     emoji: {
       /**
-       * Insert a custom emoji.
-       */
-      insertCustomEmoji: (options: {
-        src: string
-        alt?: string
-        title?: string
-      }) => ReturnType
-      /**
        * Insert a emoji.
        */
       insertEmoji: (native: string) => ReturnType
@@ -87,17 +79,6 @@ export const TiptapPluginCustomEmoji = Node.create<EmojiOptions>({
 
   renderHTML({ HTMLAttributes }) {
     return ['img', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)]
-  },
-
-  addCommands() {
-    return {
-      insertCustomEmoji: options => ({ commands }) => {
-        return commands.insertContent({
-          type: this.name,
-          attrs: options,
-        })
-      },
-    }
   },
 
   addInputRules() {

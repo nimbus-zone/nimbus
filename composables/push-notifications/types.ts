@@ -20,11 +20,6 @@ export interface CreatePushNotification {
 export type PushNotificationRequest = Record<string, boolean>
 export type PushNotificationPolicy = Record<string, mastodon.v1.WebPushSubscriptionPolicy>
 
-export interface CustomEmojisInfo {
-  lastUpdate: number
-  emojis: mastodon.v1.CustomEmoji[]
-}
-
 export type PushSubscriptionErrorCode = 'too_many_registrations' | 'vapid_not_supported' | 'invalid_vapid_key'
 
 export class PushSubscriptionError extends Error {
