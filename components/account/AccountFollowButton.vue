@@ -87,24 +87,24 @@ const buttonStyle = computed(() => {
     </template>
     <template v-else>
       <template v-if="relationship?.blocking">
-        <span elk-group-hover="hidden">{{ $t('account.blocking') }}</span>
-        <span hidden elk-group-hover="inline">{{ $t('account.unblock') }}</span>
+        <span nimbus-group-hover="hidden">{{ $t('account.blocking') }}</span>
+        <span hidden nimbus-group-hover="inline">{{ $t('account.unblock') }}</span>
       </template>
       <template v-if="relationship?.muting">
-        <span elk-group-hover="hidden">{{ $t('account.muting') }}</span>
-        <span hidden elk-group-hover="inline">{{ $t('account.unmute') }}</span>
+        <span nimbus-group-hover="hidden">{{ $t('account.muting') }}</span>
+        <span hidden nimbus-group-hover="inline">{{ $t('account.unmute') }}</span>
       </template>
       <template v-else-if="relationship ? relationship.following : context === 'following'">
-        <span elk-group-hover="hidden">{{ relationship?.followedBy ? $t('account.mutuals') : $t('account.following') }}</span>
-        <span hidden elk-group-hover="inline">{{ $t('account.unfollow') }}</span>
+        <span nimbus-group-hover="hidden">{{ relationship?.followedBy ? $t('account.mutuals') : $t('account.following') }}</span>
+        <span hidden nimbus-group-hover="inline">{{ $t('account.unfollow') }}</span>
       </template>
       <template v-else-if="relationship?.requested">
-        <span elk-group-hover="hidden">{{ $t('account.follow_requested') }}</span>
-        <span hidden elk-group-hover="inline">{{ $t('account.withdraw_follow_request') }}</span>
+        <span nimbus-group-hover="hidden">{{ $t('account.follow_requested') }}</span>
+        <span hidden nimbus-group-hover="inline">{{ $t('account.withdraw_follow_request') }}</span>
       </template>
       <template v-else-if="relationship ? relationship.followedBy : context === 'followedBy'">
-        <span elk-group-hover="hidden">{{ $t('account.follows_you') }}</span>
-        <span hidden elk-group-hover="inline">{{ account.locked ? $t('account.request_follow') : $t('account.follow_back') }}</span>
+        <span nimbus-group-hover="hidden">{{ $t('account.follows_you') }}</span>
+        <span hidden nimbus-group-hover="inline">{{ account.locked ? $t('account.request_follow') : $t('account.follow_back') }}</span>
       </template>
       <template v-else>
         <span>{{ account.locked ? $t('account.request_follow') : $t('account.follow') }}</span>

@@ -68,7 +68,7 @@ const noUserVisual = computed(() => isHydrated.value && props.userOnly && !curre
             w-fit rounded-3
             px2 mx3 sm:mxa
             transition-100
-            elk-group-hover-bg-active
+            nimbus-group-hover-bg-active
             group-focus-visible:ring-2
             group-focus-visible:ring-current
           `"

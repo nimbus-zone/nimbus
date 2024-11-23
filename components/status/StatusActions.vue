@@ -38,7 +38,7 @@ function reply() {
       <StatusActionButton
         :content="$t('action.reply')"
         :text="!getPreferences(userSettings, 'hideReplyCount') && status.repliesCount || ''"
-        color="text-blue" hover="text-blue" elk-group-hover="bg-blue/10"
+        color="text-blue" hover="text-blue" nimbus-group-hover="bg-blue/10"
         icon="i-ri:chat-1-line"
         :command="command"
         @click="reply"
@@ -56,7 +56,7 @@ function reply() {
       <StatusActionButton
         :content="$t(status.reblogged ? 'action.boosted' : 'action.boost')"
         :text="!getPreferences(userSettings, 'hideBoostCount') && status.reblogsCount ? status.reblogsCount : ''"
-        color="text-green" hover="text-green" elk-group-hover="bg-green/10"
+        color="text-green" hover="text-green" nimbus-group-hover="bg-green/10"
         icon="i-ri:repeat-line"
         active-icon="i-ri:repeat-fill"
         inactive-icon="i-tabler:repeat-off"
@@ -80,7 +80,7 @@ function reply() {
         :text="!getPreferences(userSettings, 'hideFavoriteCount') && status.favouritesCount ? status.favouritesCount : ''"
         :color="useStarFavoriteIcon ? 'text-yellow' : 'text-rose'"
         :hover="useStarFavoriteIcon ? 'text-yellow' : 'text-rose'"
-        :elk-group-hover="useStarFavoriteIcon ? 'bg-yellow/10' : 'bg-rose/10'"
+        :nimbus-group-hover="useStarFavoriteIcon ? 'bg-yellow/10' : 'bg-rose/10'"
         :icon="useStarFavoriteIcon ? 'i-ri:star-line' : 'i-ri:heart-3-line'"
         :active-icon="useStarFavoriteIcon ? 'i-ri:star-fill' : 'i-ri:heart-3-fill'"
         :active="!!status.favourited"
