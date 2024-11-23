@@ -126,14 +126,14 @@ export async function createI18n(): Promise<LocalizedWebManifest> {
     },
   }
 
-  if (env === 'release') {
+  /* if (env === 'release') {
     manifestEntries.prefer_related_applications = true
     manifestEntries.related_applications = [{
       platform: 'windows',
       url: 'https://www.microsoft.com/store/apps/9PNZMMXQHQZ5',
       id: '53213ElkTeam.Elk_6x2f3wfg7gnst',
     }]
-  }
+  } */
 
   const locales: RequiredWebManifestEntry[] = await Promise.all(
     pwaLocales

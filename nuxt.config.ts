@@ -162,7 +162,7 @@ export default defineNuxtConfig({
       // We use LibreTranslate (https://github.com/LibreTranslate/LibreTranslate) as
       // our default translation server #76
       translateApi: '',
-      // Use the instance where Elk has its Mastodon account as the default
+      // Use the instance where Nimbus has its Bluesky account as the default
       defaultServer: 'm.webtoo.ls',
       singleInstance: false,
     },
@@ -265,13 +265,13 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
         // open graph social image
         { property: 'og:title', content: 'Nimbus' },
-        { property: 'og:description', content: 'A nimble Mastodon web client' },
+        { property: 'og:description', content: 'A nimble Bluesky web client' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: 'https://elk.zone/elk-og.png' },
+        { property: 'og:image', content: 'https://nimbus.zone/nimbus-og.png' },
         { property: 'og:image:width', content: '3800' },
         { property: 'og:image:height', content: '1900' },
         { property: 'og:site_name', content: 'Nimbus' },
-        { name: 'twitter:site', content: '@elk_zone' },
+        { name: 'twitter:site', content: '@nimbus_zone' },
         { name: 'twitter:card', content: 'summary_large_image' },
       ],
     },
@@ -342,7 +342,7 @@ declare module '#app' {
   }
 
   interface RuntimeNuxtHooks {
-    'elk-logo:click': () => void
+    'nimbus-logo:click': () => void
   }
 }
 
