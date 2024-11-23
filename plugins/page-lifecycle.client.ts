@@ -1,11 +1,11 @@
 import lifecycle from 'page-lifecycle/dist/lifecycle.mjs'
-import { ELK_PAGE_LIFECYCLE_FROZEN } from '~/constants'
+import { NIMBUS_PAGE_LIFECYCLE_FROZEN } from '~/constants'
 import { closeDatabases } from '~/utils/elk-idb'
 
 export default defineNuxtPlugin(() => {
   const state = ref(lifecycle.state)
   const frozenListeners: (() => void)[] = []
-  const frozenState = useLocalStorage(ELK_PAGE_LIFECYCLE_FROZEN, false)
+  const frozenState = useLocalStorage(NIMBUS_PAGE_LIFECYCLE_FROZEN, false)
 
   lifecycle.addEventListener('statechange', (evt) => {
     if (evt.newState === 'hidden' && evt.oldState === 'frozen') {
@@ -29,7 +29,7 @@ export default defineNuxtPlugin(() => {
 
   addFrozenListener(() => {
     if (useAppConfig().pwaEnabled && navigator.serviceWorker.controller)
-      navigator.serviceWorker.controller.postMessage(ELK_PAGE_LIFECYCLE_FROZEN)
+      navigator.serviceWorker.controller.postMessage(NIMBUS_PAGE_LIFECYCLE_FROZEN)
 
     closeDatabases()
   })

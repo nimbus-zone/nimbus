@@ -7,7 +7,7 @@ import { NavigationRoute, registerRoute } from 'workbox-routing'
 import { NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies'
 
 import { onShareTarget } from './share-target'
-import { onNotificationClick, onPush } from './web-push-notifications'
+// import { onNotificationClick, onPush } from './web-push-notifications'
 
 declare const self: ServiceWorkerGlobalScope
 
@@ -42,8 +42,7 @@ if (import.meta.env.PROD) {
     // exclude emoji: has its own cache
     /^\/emojis\//,
     // exclude sw: if the user navigates to it, fallback to index.html
-    /^\/sw.js$/,
-    /^\/elk-sw.js$/,
+    /^\/nimbus-sw.js$/,
     // exclude webmanifest: has its own cache
     /^\/manifest-(.*).webmanifest$/,
   ]
@@ -56,7 +55,7 @@ if (import.meta.env.PROD) {
     ({ request, sameOrigin }) =>
       sameOrigin && request.destination === 'manifest',
     new NetworkFirst({
-      cacheName: 'elk-webmanifest',
+      cacheName: 'nimbus-webmanifest',
       plugins: [
         new CacheableResponsePlugin({ statuses: [200] }),
         // we only need a few entries
@@ -71,7 +70,7 @@ if (import.meta.env.PROD) {
       && request.destination === 'image'
       && url.pathname.startsWith('/emojis/'),
     new StaleWhileRevalidate({
-      cacheName: 'elk-emojis',
+      cacheName: 'nimbus-emojis',
       plugins: [
         new CacheableResponsePlugin({ statuses: [200] }),
         // 15 days max
@@ -103,6 +102,6 @@ registerRoute(new NavigationRoute(
   { allowlist, denylist },
 ))
 
-self.addEventListener('push', onPush)
-self.addEventListener('notificationclick', onNotificationClick)
+// self.addEventListener('push', onPush)
+// self.addEventListener('notificationclick', onNotificationClick)
 self.addEventListener('fetch', onShareTarget)

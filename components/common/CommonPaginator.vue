@@ -47,7 +47,7 @@ const nuxtApp = useNuxtApp()
 
 const { items, prevItems, update, state, endAnchor, error } = usePaginator(paginator, toRef(() => stream), eventType, preprocess)
 
-nuxtApp.hook('elk-logo:click', () => {
+nuxtApp.hook('nimbus-logo:click', () => {
   update()
   nuxtApp.$scrollToTop()
 })

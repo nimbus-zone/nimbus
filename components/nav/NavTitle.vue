@@ -6,7 +6,7 @@ const back = ref<any>('')
 const nuxtApp = useNuxtApp()
 
 function onClickLogo() {
-  nuxtApp.hooks.callHook('elk-logo:click')
+  nuxtApp.hooks.callHook('nimbus-logo:click')
 }
 
 onMounted(() => {

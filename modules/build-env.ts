@@ -7,7 +7,7 @@ const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtModule({
   meta: {
-    name: 'elk:build-env',
+    name: 'nimbus:build-env',
   },
   async setup(_options, nuxt) {
     const { env, commit, shortCommit, branch } = await getEnv()

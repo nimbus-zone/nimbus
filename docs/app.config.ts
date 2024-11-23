@@ -1,15 +1,16 @@
 export default defineAppConfig({
   docus: {
-    title: 'Elk',
-    description: 'A nimble Mastodon web client.',
-    image: 'https://docs.elk.zone/elk-screenshot.png',
+    title: 'Nimbus',
+    description: 'A nimble Bluesky web client.',
+    image: 'https://docs.nimbus.zone/nimbus-screenshot.png',
     socials: {
       // twitter: 'elk_zone',
-      github: 'elk-zone/elk',
-      mastodon: {
-        label: 'Mastodon',
-        icon: 'IconMastodon',
-        href: 'https://elk.zone/@elk@webtoo.ls',
+      github: 'nimbus-zone/nimbus',
+      bluesky: {
+        label: 'Bluesky',
+        icon: 'IconBluesky',
+        // change this when Nimbus ready
+        href: 'https://bsky.app/profile/nimbus',
       },
     },
     aside: {
@@ -28,8 +29,9 @@ export default defineAppConfig({
           icon: 'IconNuxtLabs',
         },
         {
-          href: 'https://m.webtoo.ls/@elk',
-          icon: 'IconMastodon',
+          // change this when Nimbus ready
+          href: 'https://bsky.app/profile/nimbus',
+          icon: 'IconBluesky',
         },
       ],
     },
