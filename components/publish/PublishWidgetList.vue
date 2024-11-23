@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
 import type { DraftItem } from '~/types'
 
 const {
@@ -9,13 +8,11 @@ const {
   placeholder,
   dialogLabelledBy,
   inReplyToId,
-  inReplyToVisibility,
 } = defineProps<{
   draftKey: string
   initial?: () => DraftItem
   placeholder?: string
   inReplyToId?: string
-  inReplyToVisibility?: mastodon.v1.StatusVisibility
   expanded?: boolean
   dialogLabelledBy?: string
 }>()
@@ -44,7 +41,6 @@ function isFirstItem(index: number) {
       :placeholder="placeholder"
       :dialog-labelled-by="dialogLabelledBy"
       :in-reply-to-id="isFirstItem(index) ? inReplyToId : undefined"
-      :in-reply-to-visibility="inReplyToVisibility"
     />
   </template>
 </template>

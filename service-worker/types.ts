@@ -117,8 +117,6 @@ export interface Status {
   account: MastoAccount
   /** HTML-encoded status content. */
   content: string
-  /** Visibility of this status. */
-  visibility: mastodon.v1.StatusVisibility
   /** Is this status marked as sensitive content? */
   sensitive: boolean
   /** Subject or summary line, below which status content is collapsed until expanded. */

@@ -45,7 +45,6 @@ useHydratedHead({
       <div aria-hidden="true">
         &middot;
       </div>
-      <StatusVisibilityIndicator :status="status" />
       <div v-if="status.application?.name" aria-hidden="true">
         &middot;
       </div>

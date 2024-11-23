@@ -13,25 +13,12 @@ export const builtinDraftKeys = [
   'home',
 ]
 
-const ALL_VISIBILITY = ['public', 'unlisted', 'private', 'direct'] as const
-
-function getDefaultVisibility(currentVisibility: mastodon.v1.StatusVisibility) {
-  // The default privacy only should be taken into account if it makes
-  // the post more private than the replying to post
-  const preferredVisibility = currentUser.value?.account.source.privacy || 'public'
-  return ALL_VISIBILITY.indexOf(currentVisibility)
-    > ALL_VISIBILITY.indexOf(preferredVisibility)
-    ? currentVisibility
-    : preferredVisibility
-}
-
 export function getDefaultDraftItem(options: Partial<Mutable<mastodon.rest.v1.CreateStatusParams> & Omit<DraftItem, 'params'>> = {}): DraftItem {
   const {
     attachments = [],
     initialText = '',
     status,
     inReplyToId,
-    visibility,
     sensitive,
     spoilerText,
     language,
@@ -46,7 +33,6 @@ export function getDefaultDraftItem(options: Partial<Mutable<mastodon.rest.v1.Cr
       status: status || '',
       poll,
       inReplyToId,
-      visibility: getDefaultVisibility(visibility || 'public'),
       sensitive: sensitive ?? false,
       spoilerText: spoilerText || '',
       language: language || '', // auto inferred from current language on posting
@@ -59,7 +45,6 @@ export function getDefaultDraftItem(options: Partial<Mutable<mastodon.rest.v1.Cr
 export async function getDraftFromStatus(status: mastodon.v1.Status): Promise<DraftItem> {
   const info = {
     status: await convertMastodonHTML(status.content),
-    visibility: status.visibility,
     attachments: status.mediaAttachments,
     sensitive: status.sensitive,
     spoilerText: status.spoilerText,
@@ -104,7 +89,6 @@ export function getReplyDraft(status: mastodon.v1.Status) {
         inReplyToId: status!.id,
         sensitive: status.sensitive,
         spoilerText: status.spoilerText,
-        visibility: status.visibility,
         mentions: accountsToMention,
         language: status.language,
       })
@@ -176,10 +160,7 @@ export function mentionUser(account: mastodon.v1.Account) {
 }
 
 export function directMessageUser(account: mastodon.v1.Account) {
-  openPublishDialog('dialog', getDefaultDraftItem({
-    status: `@${account.acct} `,
-    visibility: 'direct',
-  }))
+  openPublishDialog('dialog', getDefaultDraftItem({ status: `@${account.acct} ` }))
 }
 
 export function clearEmptyDrafts() {

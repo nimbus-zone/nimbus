@@ -26,7 +26,6 @@ export function useThreadComposer(draftKey: string, initial?: () => DraftItem) {
       language: lastItem.params.language,
       sensitive: lastItem.params.sensitive,
       spoilerText: lastItem.params.spoilerText,
-      visibility: lastItem.params.visibility,
     }))
   }
 

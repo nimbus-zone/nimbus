@@ -19,7 +19,6 @@ const {
   threadComposer?: ReturnType<typeof useThreadComposer>
   placeholder?: string
   inReplyToId?: string
-  inReplyToVisibility?: mastodon.v1.StatusVisibility
   expanded?: boolean
   dialogLabelledBy?: string
 }>()
@@ -173,8 +172,6 @@ const isExceedingCharacterLimit = computed(() => {
 
 const postLanguageDisplay = computed(() => languagesNameList.find(i => i.code === (draft.value.params.language || preferredLanguage.value))?.nativeName)
 
-const isDM = computed(() => draft.value.params.visibility === 'direct')
-
 async function handlePaste(evt: ClipboardEvent) {
   const files = evt.clipboardData?.files
   if (!files || files.length === 0)
@@ -301,7 +298,6 @@ function stopQuestionMarkPropagation(e: KeyboardEvent) {
                 :editor="editor" flex max-w-full
                 :class="{
                   'md:max-h-[calc(100vh-200px)] sm:max-h-[calc(100vh-400px)] max-h-35 of-y-auto overscroll-contain': shouldExpanded,
-                  'py2 px3.5 bg-dm rounded-4 me--1 ms--1 mt--1': isDM,
                 }"
                 @keydown="stopQuestionMarkPropagation"
                 @keydown.esc.prevent="editor?.commands.blur()"
@@ -481,18 +477,6 @@ function stopQuestionMarkPropagation(e: KeyboardEvent) {
                 <div v-else i-ri:alarm-warning-line />
               </button>
             </CommonTooltip>
-
-            <PublishVisibilityPicker v-model="draft.params.visibility" :editing="!!draft.editingStatus">
-              <template #default="{ visibility }">
-                <button
-                  :disabled="!!draft.editingStatus" :aria-label="$t('tooltip.change_content_visibility')"
-                  btn-action-icon :class="{ 'w-12': !draft.editingStatus }"
-                >
-                  <div :class="visibility.icon" />
-                  <div v-if="!draft.editingStatus" i-ri:arrow-down-s-line text-sm text-secondary me--1 />
-                </button>
-              </template>
-            </PublishVisibilityPicker>
 
             <PublishThreadTools :draft-item-index="draftItemIndex" :draft-key="draftKey" />
 

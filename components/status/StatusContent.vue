@@ -9,7 +9,6 @@ const { status, context } = defineProps<{
   inNotification?: boolean
 }>()
 
-const isDM = computed(() => status.visibility === 'direct')
 const isDetails = computed(() => context === 'details')
 
 // Content Filter logic
@@ -34,15 +33,9 @@ const allowEmbeddedMedia = computed(() => status.card?.html && embeddedMediaPref
 </script>
 
 <template>
-  <div
-    space-y-3
-    :class="{
-      'py2 px3.5 bg-dm rounded-4 me--1': isDM,
-      'ms--3.5 mt--1 ms--1': isDM && context !== 'details',
-    }"
-  >
+  <div space-y-3>
     <StatusBody v-if="(!isFiltered && isSensitiveNonSpoiler) || hideAllMedia" :status="status" :newer="newer" :with-action="!isDetails" :class="isDetails ? 'text-xl' : ''" />
-    <StatusSpoiler :enabled="hasSpoilerOrSensitiveMedia || isFiltered" :filter="isFiltered" :sensitive-non-spoiler="isSensitiveNonSpoiler || hideAllMedia" :is-d-m="isDM">
+    <StatusSpoiler :enabled="hasSpoilerOrSensitiveMedia || isFiltered" :filter="isFiltered" :sensitive-non-spoiler="isSensitiveNonSpoiler || hideAllMedia">
       <template v-if="spoilerTextPresent" #spoiler>
         <p>
           <ContentRich :content="status.spoilerText" :emojis="status.emojis" :markdown="false" />

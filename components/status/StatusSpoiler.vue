@@ -2,7 +2,6 @@
 const props = defineProps<{
   enabled?: boolean
   filter?: boolean
-  isDM?: boolean
   sensitiveNonSpoiler?: boolean
 }>()
 
@@ -34,8 +33,8 @@ function getToggleText() {
     <div class="content-rich" p="x-4 b-2.5" text-center text-secondary w-full border="~ base" border-0 border-b-dotted border-b-3 mt-2>
       <slot name="spoiler" />
     </div>
-    <div flex="~ gap-1 center" w-full :mb="isDM && !showContent ? '4' : ''" mt="-4.5">
-      <button btn-text px-2 py-1 rounded-lg :bg="isDM ? 'transparent' : 'base'" flex="~ center gap-2" :class="showContent ? '' : 'filter-saturate-0 hover:filter-saturate-100'" :aria-expanded="showContent" @click="toggleContent()">
+    <div flex="~ gap-1 center" w-full mb mt="-4.5">
+      <button btn-text px-2 py-1 rounded-lg bg-base flex="~ center gap-2" :class="showContent ? '' : 'filter-saturate-0 hover:filter-saturate-100'" :aria-expanded="showContent" @click="toggleContent()">
         <div v-if="showContent" i-ri:eye-line />
         <div v-else i-ri:eye-close-line />
         {{ showContent ? $t('status.spoiler_show_less') : $t(getToggleText()) }}

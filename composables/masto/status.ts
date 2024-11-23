@@ -53,10 +53,7 @@ export function useStatusActions(props: StatusActionsProps) {
       status.value[countField] += status.value[action] ? 1 : -1
   }
 
-  const canReblog = computed(() =>
-    status.value.visibility !== 'direct'
-    && (status.value.visibility !== 'private' || status.value.account.id === currentUser.value?.account.id),
-  )
+  const canReblog = computed(() => true) // TODO: repost rules
 
   const toggleReblog = () => toggleStatusAction(
     'reblogged',

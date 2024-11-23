@@ -61,7 +61,6 @@ const timeago = useTimeAgo(() => status.value.createdAt, timeAgoOptions)
 
 const isSelfReply = computed(() => status.value.inReplyToAccountId === status.value.account.id)
 const collapseRebloggedBy = computed(() => rebloggedBy.value?.id === status.value.account.id)
-const isDM = computed(() => status.value.visibility === 'direct')
 
 const showUpperBorder = computed(() => props.newer && !directReply.value)
 const showReplyTo = computed(() => !replyToMain.value && !directReply.value)
@@ -158,7 +157,6 @@ const forceShow = ref(false)
               <AccountLockIndicator v-if="status.account.locked" me-2 />
               <AccountBotIndicator v-if="status.account.bot" me-2 />
               <div flex="~ gap1" items-center>
-                <StatusVisibilityIndicator v-if="status.visibility !== 'public'" :status="status" />
                 <div flex>
                   <CommonTooltip :content="createdAt">
                     <NuxtLink :title="status.createdAt" :href="statusRoute.href" @click.prevent="go($event)">
@@ -180,7 +178,7 @@ const forceShow = ref(false)
             :context="context"
             :is-preview="isPreview"
             :in-notification="inNotification"
-            mb2 :class="{ 'mt-2 mb1': isDM }"
+            mb2
           />
           <StatusActions v-if="actions !== false" v-show="!getPreferences(userSettings, 'zenMode')" :status="status" />
         </div>

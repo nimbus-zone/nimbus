@@ -72,7 +72,7 @@ onReactivated(() => {
           <template v-if="!pendingContext">
             <StatusCard
               v-for="(comment, i) of context?.ancestors" :key="comment.id"
-              :status="comment" :actions="comment.visibility !== 'direct'" context="account"
+              :status="comment" context="account"
               :has-older="true" :newer="context?.ancestors[i - 1]"
             />
           </template>
