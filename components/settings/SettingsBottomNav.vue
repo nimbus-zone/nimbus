@@ -17,7 +17,6 @@ const availableNavButtons: NavButton[] = [
   { name: 'compose', label: 'nav.compose', icon: 'i-ri:quill-pen-line' },
   { name: 'explore', label: 'nav.explore', icon: 'i-ri:compass-3-line' },
   { name: 'local', label: 'nav.local', icon: 'i-ri:group-2-line' },
-  { name: 'federated', label: 'nav.federated', icon: 'i-ri:earth-line' },
   { name: 'list', label: 'nav.lists', icon: 'i-ri:list-check' },
   { name: 'hashtag', label: 'nav.hashtags', icon: 'i-ri:hashtag' },
   { name: 'moreMenu', label: 'nav.more_menu', icon: 'i-ri:more-fill' },
@@ -26,7 +25,7 @@ const availableNavButtons: NavButton[] = [
 const defaultSelectedNavButtonNames = computed<NavButtonName[]>(() =>
   currentUser.value
     ? ['home', 'search', 'notification', 'mention', 'moreMenu']
-    : ['explore', 'local', 'federated', 'moreMenu'],
+    : ['explore', 'local', 'moreMenu'],
 )
 const navButtonNamesSetting = useLocalStorage<NavButtonName[]>(STORAGE_KEY_BOTTOM_NAV_BUTTONS, defaultSelectedNavButtonNames.value)
 const selectedNavButtonNames = ref<NavButtonName[]>([])

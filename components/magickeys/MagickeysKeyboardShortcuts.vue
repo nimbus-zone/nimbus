@@ -69,10 +69,6 @@ const shortcutItemGroups = computed<ShortcutItemGroup[]>(() => [
         shortcut: { keys: ['g', 'l'], isSequence: true },
       },
       {
-        description: t('magic_keys.groups.navigation.go_to_federated'),
-        shortcut: { keys: ['g', 't'], isSequence: true },
-      },
-      {
         description: t('magic_keys.groups.navigation.go_to_lists'),
         shortcut: { keys: ['g', 'i'], isSequence: true },
       },
