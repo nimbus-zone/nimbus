@@ -20,7 +20,9 @@ A nimble Bluesky web client
 
 ## ⚠️ Nimbus is Work In Progress
 
-Nimbus doesn't work at this point. It's just an idea and playground. We welcome PRs if you'd like to help and would like to play too.
+**Nimbus doesn't work at this point. It's just an idea and playground.**
+
+We welcome PRs if you'd like to help and would like to play too.
 
 ## 🧑‍💻 Contributing
 
