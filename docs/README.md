@@ -21,7 +21,7 @@ You need the following to contribute to Nimbus's documentation:
 
 ### Install and Preview
 
-1. [Fork the Nimbus GitHub project](https://github.com/nimbus-zone/nimbus/fork) into your own account.
+1. [Fork the Nimbus GitHub project](https://github.com/nimbus-town/nimbus/fork) into your own account.
 2. Clone your fork to your local machine. See [GitHub's instructions for more information](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
 3. From your terminal, `cd` to the directory you cloned into (`cd nimbus` by default).
 4. Run `pnpm i` or `ni` to install the project dependencies.
@@ -44,7 +44,7 @@ When you are ready to submit work back to the main Nimbus repo, create a pull re
 7. Select the **Pull Request** tab.
 8. Select **New Pull Request**.
 9.  Confirm the repo/branches to compare.
-   - The base repo should be **nimbus-zone/nimbus**.
+   - The base repo should be **nimbus-town/nimbus**.
    - The base branch should be **main**.
    - The head repository should be your fork.
    - Compare branch should be your working branch you want to submit.
