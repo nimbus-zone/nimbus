@@ -1,6 +1,6 @@
 # Welcome to the Nimbus Docs
 
-The documentation site publishes to https://docs.elk.zone. We use [Docus](https://docus.dev) to generate the site and deploy through Netlify.
+The documentation site publishes to https://docs.nimbus.town. We use [Docus](https://docus.dev) to generate the site and deploy through Netlify.
 
 ## Quickstart
 
