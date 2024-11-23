@@ -16,7 +16,7 @@ const scopes = [
   'Languages',
   'Switch account',
   'Settings',
-  'Hashtags',
+  // 'Hashtags',
   'Users',
 ] as const
 

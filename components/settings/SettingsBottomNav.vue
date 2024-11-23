@@ -18,7 +18,7 @@ const availableNavButtons: NavButton[] = [
   { name: 'explore', label: 'nav.explore', icon: 'i-ri:compass-3-line' },
   { name: 'local', label: 'nav.local', icon: 'i-ri:group-2-line' },
   { name: 'list', label: 'nav.lists', icon: 'i-ri:list-check' },
-  { name: 'hashtag', label: 'nav.hashtags', icon: 'i-ri:hashtag' },
+  // { name: 'hashtag', label: 'nav.hashtags', icon: 'i-ri:hashtag' },
   { name: 'moreMenu', label: 'nav.more_menu', icon: 'i-ri:more-fill' },
 ] as const
 
