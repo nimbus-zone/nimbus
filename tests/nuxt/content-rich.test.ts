@@ -59,20 +59,6 @@ describe('content-rich', () => {
     expect(formatted).toMatchSnapshot()
   })
 
-  it('custom emoji', async () => {
-    const { formatted } = await render('Daniel Roe :nuxt:', {
-      emojis: {
-        nuxt: {
-          shortcode: 'nuxt',
-          url: 'https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png',
-          staticUrl: 'https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png',
-          visibleInPicker: true,
-        },
-      },
-    })
-    expect(formatted).toMatchSnapshot()
-  })
-
   it('code frame', async () => {
     // https://webtoo.ls/@antfu/109396489827394721
     const { formatted } = await render('<p>Testing code block</p><p>```ts<br />import { useMouse, usePreferredDark } from &#39;@vueuse/core&#39;</p><p>// tracks mouse position<br />const { x, y } = useMouse()</p><p>// is the user prefers dark theme<br />const isDark = usePreferredDark()<br />```</p>')

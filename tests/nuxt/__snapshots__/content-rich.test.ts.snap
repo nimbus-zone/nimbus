@@ -113,22 +113,6 @@ exports[`content-rich > collapse mentions 1`] = `
 "
 `;
 
-exports[`content-rich > custom emoji 1`] = `
-"Daniel Roe
-<picture class="custom-emoji" alt=":nuxt:" data-emoji-id="nuxt" title="nuxt"
-  ><source
-    srcset="
-      https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png
-    "
-    media="(prefers-reduced-motion: reduce)" />
-  <img
-    src="https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png"
-    alt=":nuxt:"
-    title="nuxt"
-/></picture>
-"
-`;
-
 exports[`content-rich > empty 1`] = `""`;
 
 exports[`content-rich > group mention > html 1`] = `

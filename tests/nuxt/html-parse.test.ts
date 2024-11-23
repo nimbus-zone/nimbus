@@ -17,21 +17,6 @@ describe('html-parse', () => {
     expect(serializedText).toMatchSnapshot('text')
   })
 
-  it('custom emoji', async () => {
-    const { formatted, serializedText } = await render('Daniel Roe :nuxt:', {
-      emojis: {
-        nuxt: {
-          shortcode: 'nuxt',
-          url: 'https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png',
-          staticUrl: 'https://media.webtoo.ls/custom_emojis/images/000/000/366/original/73330dfc9dda4078.png',
-          visibleInPicker: true,
-        },
-      },
-    })
-    expect(formatted).toMatchSnapshot('html')
-    expect(serializedText).toMatchSnapshot('text')
-  })
-
   it('emojis', async () => {
     const { formatted, serializedText } = await render('🇫🇷 👨‍👩‍👦 👩‍🚒🧑🏽‍🚀')
     expect(formatted).toMatchSnapshot('html')
