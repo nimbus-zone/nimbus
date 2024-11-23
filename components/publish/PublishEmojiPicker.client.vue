@@ -17,7 +17,6 @@ async function openEmojiPicker() {
   if (picker.value) {
     picker.value.update({
       theme: colorMode,
-      custom: customEmojisData.value,
     })
   }
   else {
@@ -37,7 +36,6 @@ async function openEmojiPicker() {
       },
       set: 'twitter',
       theme: colorMode,
-      custom: customEmojisData.value,
       i18n,
     })
   }

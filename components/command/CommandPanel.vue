@@ -45,7 +45,6 @@ const searchResult = computed<QueryResult>(() => {
   const accountList = accounts.value.map(toSearchQueryResultItem)
 
   const grouped: QueryResult['grouped'] = new Map()
-  grouped.set('Hashtags', hashtagList)
   grouped.set('Users', accountList)
 
   let index = 0

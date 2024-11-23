@@ -140,7 +140,6 @@ export function parseMastodonHTML(
 /**
  * Converts raw HTML form Mastodon server to HTML for Tiptap editor
  * @param html The content to parse
- * @param customEmojis The custom emojis to use
  */
 export function convertMastodonHTML(html: string) {
   const tree = parseMastodonHTML(html, {
