@@ -3,7 +3,7 @@ import { Buffer } from 'node:buffer'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createResolver } from '@nuxt/kit'
 import { flatten } from 'flat'
-import type { ElkTranslationStatus } from '~/types/translation-status'
+import type { NimbusTranslationStatus } from '~/types/translation-status'
 import { countryLocaleVariants, currentLocales } from '../config/i18n'
 
 export const localeData: [code: string, file: string[], title: string][]
@@ -107,13 +107,15 @@ async function prepareTranslationStatus() {
 
   const resolver = createResolver(import.meta.url)
 
+  console.info('Writing translation status...')
+
   await writeFile(
     resolver.resolve('../docs/translation-status.json'),
     JSON.stringify(sorted, null, 2),
     { encoding: 'utf-8' },
   )
 
-  const translationStatus: ElkTranslationStatus = {
+  const translationStatus: NimbusTranslationStatus = {
     total,
     locales: {
       'en-US': {
@@ -136,8 +138,10 @@ async function prepareTranslationStatus() {
     }
   })
 
+  console.info('Writing nimbus-translation-status.json...')
+
   await writeFile(
-    resolver.resolve('../elk-translation-status.json'),
+    resolver.resolve('../nimbus-translation-status.json'),
     JSON.stringify(translationStatus, null, 2),
     { encoding: 'utf-8' },
   )

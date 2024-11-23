@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   # - name: Discord Chat
-  #   url: https://chat.elk.zone
+  #   url: https://chat.nimbus.town
   #   about: Ask questions and discuss with other users in real time.
   - name: Questions & Discussions
     url: https://github.com/nimbus-zone/nimbus/discussions

@@ -1,4 +1,4 @@
-export interface ElkTranslationStatus {
+export interface NimbusTranslationStatus {
   total: number
   locales: Record<string, {
     percentage: string

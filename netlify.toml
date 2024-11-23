@@ -4,7 +4,7 @@ command = "pnpm run build"
 
 # Redirect to Discord server
 [[redirects]]
-from = "https://chat.elk.zone"
-to = "https://discord.gg/vAZSDU9J"
+from = "https://chat.nimbus.town"
+to = "https://discord.gg/JuFDMrTRSD"
 status = 301
 force = true

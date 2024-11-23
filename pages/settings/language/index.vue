@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ElkTranslationStatus } from '~/types/translation-status'
+import type { NimbusTranslationStatus } from '~/types/translation-status'
 
 const { t, locale } = useI18n()
 
-const translationStatus: ElkTranslationStatus = await import('~/elk-translation-status.json').then(m => m.default)
+const translationStatus: NimbusTranslationStatus = await import('~/nimbus-translation-status.json').then(m => m.default)
 
 useHydratedHead({
   title: () => `${t('settings.language.label')} | ${t('nav.settings')}`,
