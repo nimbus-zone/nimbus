@@ -17,7 +17,6 @@ const focusEditor = inject<typeof noop>('focus-editor', noop)
 const {
   status,
   isLoading,
-  toggleBookmark,
   toggleFavourite,
   togglePin,
   toggleReblog,
@@ -176,19 +175,6 @@ function showFavoritedAndBoostedBy() {
             :command="command"
             :disabled="isLoading.favourited"
             @click="toggleFavourite()"
-          />
-
-          <CommonDropdownItem
-            is="button"
-            :text="status.bookmarked ? $t('action.bookmarked') : $t('action.bookmark')"
-            :icon="status.bookmarked ? 'i-ri:bookmark-fill' : 'i-ri:bookmark-line'"
-            :class="status.bookmarked
-              ? useStarFavoriteIcon ? 'text-rose' : 'text-yellow'
-              : ''
-            "
-            :command="command"
-            :disabled="isLoading.bookmarked"
-            @click="toggleBookmark()"
           />
         </template>
 

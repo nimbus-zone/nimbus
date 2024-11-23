@@ -18,7 +18,6 @@ const {
   status,
   isLoading,
   canReblog,
-  toggleBookmark,
   toggleFavourite,
   toggleReblog,
 } = useStatusActions(props)
@@ -96,21 +95,6 @@ function reply() {
           />
         </template>
       </StatusActionButton>
-    </div>
-
-    <div flex-none>
-      <StatusActionButton
-        :content="$t(status.bookmarked ? 'action.bookmarked' : 'action.bookmark')"
-        :color="useStarFavoriteIcon ? 'text-rose' : 'text-yellow'"
-        :hover="useStarFavoriteIcon ? 'text-rose' : 'text-yellow'"
-        :elk-group-hover="useStarFavoriteIcon ? 'bg-rose/10' : 'bg-yellow/10' "
-        icon="i-ri:bookmark-line"
-        active-icon="i-ri:bookmark-fill"
-        :active="!!status.bookmarked"
-        :disabled="isLoading.bookmarked"
-        :command="command"
-        @click="toggleBookmark()"
-      />
     </div>
   </div>
 </template>

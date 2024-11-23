@@ -3,7 +3,6 @@ import type { Component } from 'vue'
 import type { NavButtonName } from '../../composables/settings'
 
 import {
-  NavButtonBookmark,
   NavButtonCompose,
   NavButtonExplore,
   NavButtonFavorite,
@@ -31,7 +30,6 @@ const navButtons: NavButton[] = [
   { name: 'notification', component: NavButtonNotification },
   { name: 'mention', component: NavButtonMention },
   { name: 'favorite', component: NavButtonFavorite },
-  { name: 'bookmark', component: NavButtonBookmark },
   { name: 'compose', component: NavButtonCompose },
   { name: 'explore', component: NavButtonExplore },
   { name: 'local', component: NavButtonLocal },

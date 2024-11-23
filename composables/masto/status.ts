@@ -1,6 +1,6 @@
 import type { mastodon } from 'masto'
 
-type Action = 'reblogged' | 'favourited' | 'bookmarked' | 'pinned' | 'muted'
+type Action = 'reblogged' | 'favourited' | 'pinned' | 'muted'
 type CountField = 'reblogsCount' | 'favouritesCount'
 
 export interface StatusActionsProps {
@@ -21,7 +21,6 @@ export function useStatusActions(props: StatusActionsProps) {
   const isLoading = ref({
     reblogged: false,
     favourited: false,
-    bookmarked: false,
     pinned: false,
     translation: false,
     muted: false,
@@ -76,11 +75,6 @@ export function useStatusActions(props: StatusActionsProps) {
     'favouritesCount',
   )
 
-  const toggleBookmark = () => toggleStatusAction(
-    'bookmarked',
-    () => client.value.v1.statuses.$select(status.value.id)[status.value.bookmarked ? 'unbookmark' : 'bookmark'](),
-  )
-
   const togglePin = async () => toggleStatusAction(
     'pinned',
     () => client.value.v1.statuses.$select(status.value.id)[status.value.pinned ? 'unpin' : 'pin'](),
@@ -98,7 +92,6 @@ export function useStatusActions(props: StatusActionsProps) {
     toggleMute,
     toggleReblog,
     toggleFavourite,
-    toggleBookmark,
     togglePin,
   }
 }

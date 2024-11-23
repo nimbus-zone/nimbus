@@ -165,8 +165,6 @@ export interface Status {
   reblogged?: boolean | null
   /** Have you muted notifications for this status's conversation? */
   muted?: boolean | null
-  /** Have you bookmarked this status? */
-  bookmarked?: boolean | null
   /** Have you pinned this status? Only appears if the status is pin-able. */
   pinned?: boolean | null
 }

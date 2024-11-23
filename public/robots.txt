@@ -6,7 +6,6 @@ Allow: /
 Disallow: /intent
 Disallow: /settings
 Disallow: /blocks
-Disallow: /bookmarks
 Disallow: /compose
 Disallow: /conversations
 Disallow: /domain_blocks
