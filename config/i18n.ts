@@ -259,11 +259,15 @@ const locales: (LocaleObjectData<LocaleVariantKeys> | LocaleObjectData<Locale>)[
   },
 ]
 
-function isLocaleVariant(val: LocaleObjectData<LocaleVariantKeys | Locale>): val is LocaleObjectData<LocaleVariantKeys> {
-  if (typeof val.code !== 'string')
+export function isLocaleVariantKey(val: string): val is LocaleVariantKeys {
+  if (val in countryLocaleVariants === false)
     return false
 
-  if (val.code in countryLocaleVariants === false)
+  return true
+}
+
+function isLocaleVariant(val: LocaleObjectData<LocaleVariantKeys | Locale>): val is LocaleObjectData<LocaleVariantKeys> {
+  if (!isLocaleVariantKey(val.code))
     return false
 
   return true
@@ -272,23 +276,21 @@ function isLocaleVariant(val: LocaleObjectData<LocaleVariantKeys | Locale>): val
 function buildLocales() {
   const useLocales = Object.values(locales).reduce((acc, data) => {
     if (isLocaleVariant(data)) {
-      const locales = countryLocaleVariants[data.code]
-      if (locales) {
-        locales.forEach((l) => {
-          const entry: LocaleObject = {
-            ...data,
-            code: l.code,
-            name: l.name,
-            files: [data.file as string, `${l.code}.json`],
-          }
-          delete entry.file
-          acc.push(entry)
-        })
-      }
+      countryLocaleVariants[data.code].forEach((l) => {
+        const entry: LocaleObject = {
+          ...data,
+          code: l.code,
+          name: l.name,
+          files: [data.file as string, `${l.code}.json`],
+        }
+        delete entry.file
+        acc.push(entry)
+      })
     }
     else {
       acc.push(data)
     }
+
     return acc
   }, <LocaleObject[]>[])
 
