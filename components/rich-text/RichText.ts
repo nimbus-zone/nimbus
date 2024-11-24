@@ -29,5 +29,5 @@ function renderSegment({ text, features }: RichtextSegment) {
 export default function RichText(props: Props) {
   const segments = segmentize(props.text, props.facets)
 
-  return h('div', segments.map(renderSegment))
+  return h('div', { class: 'content-rich' }, segments.map(renderSegment))
 }
