@@ -58,6 +58,19 @@ If you encounter any issues with the installation, we suggest trying the followi
 
 If the issue persists, please open an issue.
 
+#### Adding a new dependency
+
+Since Nimbus is a monorepo using `pnpm` workspace, it's important to add new dependencies using the correct command:
+
+- With `pnpm`
+  - Development dependencies: `pnpm add -D <dep> -w`
+  - Production dependencies: `pnpm add <dep> -w`
+- With `ni`
+  - Development dependencies: `ni add -D <dep> -w`
+  - Production dependencies: `ni add <dep> -w`
+
+Alternatively, you can manually add the dependency to the corresponding `package.json` file, and then run `pnpm i` or `ni` to install the new dependency.
+
 ### Testing
 
 Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
