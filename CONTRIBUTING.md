@@ -39,19 +39,12 @@ git checkout -b my-new-branch
 
 3. Run `pnpm dev` in Nimbus's root folder to start dev server or `pnpm dev:mocked` to start dev server with `@elkdev@universeodon.com` user.
 
-We recommend installing [ni](https://github.com/antfu/ni#ni), that will use the right package manager in each of your projects. If `ni` is installed, you can instead run:
-
-```
-ni
-nr dev
-```
-
 ### Testing
 
 Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
 
 ```
-nr test
+pnpm test
 ```
 
 ### Running PWA on dev server
