@@ -50,7 +50,7 @@ If you encounter any issues with the installation, we suggest trying the followi
 
 1. Remove the `node_modules` folder in Nimbus's root folder
 2. If the `pnpm-lock.yaml` file was modified, revert the changes
-3. Retry the installation with `pnpm i --frozen-lockfile` or `ni --frozen` if you have it installed
+3. Retry the installation in the root folder with `pnpm i --frozen-lockfile` or `ni --frozen` if you have it installed
 
 - Check that you are using the correct command to start the dev server:
   - `pnpm dev` with `pnpm`
@@ -69,7 +69,7 @@ Since Nimbus is a monorepo using `pnpm` workspace, it's important to add new dep
   - Development dependencies: `ni add -D <dep> -w`
   - Production dependencies: `ni add <dep> -w`
 
-Alternatively, you can manually add the dependency to the corresponding `package.json` file, and then run `pnpm i` or `ni` to install the new dependency.
+Alternatively, you can manually add the dependency to the corresponding `package.json` file, and then run `pnpm i` or `ni` in Nimbus's root folder to install the new dependency.
 
 ### Testing
 
