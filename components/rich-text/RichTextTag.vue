@@ -4,11 +4,11 @@ defineProps<{
   text: string
 }>()
 
-// TODO create link to mentioned tag. Could reimplement dropdown with record author only tag
+// TODO reimplement dropdown with record author only tag / mute tag
 </script>
 
 <template>
-  <NuxtLink href="#">
+  <NuxtLink :to="`/hashtag/${tag}`">
     {{ text }}
   </NuxtLink>
 </template>

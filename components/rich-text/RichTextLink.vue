@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :href="uri">
+  <NuxtLink :href="uri" external>
     {{ text }}
   </NuxtLink>
 </template>

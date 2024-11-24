@@ -4,11 +4,11 @@ defineProps<{
   did: string
 }>()
 
-// TODO create link to mentioned profile. Could also have hover card
+// TODO async loaded profile hovercard
 </script>
 
 <template>
-  <NuxtLink href="#">
+  <NuxtLink :to="`/profile/${did}`">
     {{ text }}
   </NuxtLink>
 </template>
