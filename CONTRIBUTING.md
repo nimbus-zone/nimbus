@@ -55,7 +55,7 @@ If you encounter any issues with the installation, we suggest trying the followi
   - `pnpm dev` with `pnpm`
   - `nr dev` with `ni`
 
-If the issue persists, please open an issue on the repository
+If the issue persists, please open an issue.
 
 ### Testing
 
