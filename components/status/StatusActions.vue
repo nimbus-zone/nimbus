@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyFeedDefs } from '@atproto/api'
 
 const props = defineProps<{
-  status: mastodon.v1.Status
+  status: AppBskyFeedDefs.PostView
   details?: boolean
   command?: boolean
 }>()
@@ -37,16 +37,16 @@ function reply() {
     <div flex-1>
       <StatusActionButton
         :content="$t('action.reply')"
-        :text="!getPreferences(userSettings, 'hideReplyCount') && status.repliesCount || ''"
+        :text="!getPreferences(userSettings, 'hideReplyCount') && status.replyCount || ''"
         color="text-blue" hover="text-blue" nimbus-group-hover="bg-blue/10"
         icon="i-ri:chat-1-line"
         :command="command"
         @click="reply"
       >
-        <template v-if="status.repliesCount && !getPreferences(userSettings, 'hideReplyCount')" #text>
+        <template v-if="status.replyCount && !getPreferences(userSettings, 'hideReplyCount')" #text>
           <CommonLocalizedNumber
             keypath="action.reply_count"
-            :count="status.repliesCount"
+            :count="status.replyCount"
           />
         </template>
       </StatusActionButton>
@@ -55,7 +55,7 @@ function reply() {
     <div flex-1>
       <StatusActionButton
         :content="$t(status.reblogged ? 'action.boosted' : 'action.boost')"
-        :text="!getPreferences(userSettings, 'hideBoostCount') && status.reblogsCount ? status.reblogsCount : ''"
+        :text="!getPreferences(userSettings, 'hideBoostCount') && status.repostCount ? status.repostCount : ''"
         color="text-green" hover="text-green" nimbus-group-hover="bg-green/10"
         icon="i-ri:repeat-line"
         active-icon="i-ri:repeat-fill"
@@ -68,7 +68,7 @@ function reply() {
         <template v-if="status.reblogsCount && !getPreferences(userSettings, 'hideBoostCount')" #text>
           <CommonLocalizedNumber
             keypath="action.boost_count"
-            :count="status.reblogsCount"
+            :count="status.repostCount ?? 0"
           />
         </template>
       </StatusActionButton>
@@ -77,7 +77,7 @@ function reply() {
     <div flex-1>
       <StatusActionButton
         :content="$t(status.favourited ? 'action.favourited' : 'action.favourite')"
-        :text="!getPreferences(userSettings, 'hideFavoriteCount') && status.favouritesCount ? status.favouritesCount : ''"
+        :text="!getPreferences(userSettings, 'hideFavoriteCount') && status.likeCount ? status.likeCount : ''"
         :color="useStarFavoriteIcon ? 'text-yellow' : 'text-rose'"
         :hover="useStarFavoriteIcon ? 'text-yellow' : 'text-rose'"
         :nimbus-group-hover="useStarFavoriteIcon ? 'bg-yellow/10' : 'bg-rose/10'"
@@ -91,7 +91,7 @@ function reply() {
         <template v-if="status.favouritesCount && !getPreferences(userSettings, 'hideFavoriteCount')" #text>
           <CommonLocalizedNumber
             keypath="action.favourite_count"
-            :count="status.favouritesCount"
+            :count="status.likeCount ?? 0"
           />
         </template>
       </StatusActionButton>

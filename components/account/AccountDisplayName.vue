@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs } from '@atproto/api'
 
 const { account, hideEmojis = false } = defineProps<{
-  account: mastodon.v1.Account
+  account: AppBskyActorDefs.ProfileView
   hideEmojis?: boolean
 }>()
 </script>
 
 <template>
   <ContentRich
-    :content="getDisplayName(account, { rich: true })"
+    :content="getDisplayName(account)"
     :emojis="account.emojis"
     :hide-emojis="hideEmojis"
     :markdown="false"

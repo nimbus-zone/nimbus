@@ -1,7 +1,7 @@
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs, AppBskyFeedDefs } from '@atproto/api'
 import { withoutProtocol } from 'ufo'
 
-export function getAccountRoute(account: mastodon.v1.Account) {
+export function getAccountRoute(account: AppBskyActorDefs.ProfileView) {
   return useRouter().resolve({
     name: 'account-index',
     params: {
@@ -10,7 +10,7 @@ export function getAccountRoute(account: mastodon.v1.Account) {
     },
   })
 }
-export function getAccountFollowingRoute(account: mastodon.v1.Account) {
+export function getAccountFollowingRoute(account: AppBskyActorDefs.ProfileView) {
   return useRouter().resolve({
     name: 'account-following',
     params: {
@@ -19,7 +19,7 @@ export function getAccountFollowingRoute(account: mastodon.v1.Account) {
     },
   })
 }
-export function getAccountFollowersRoute(account: mastodon.v1.Account) {
+export function getAccountFollowersRoute(account: AppBskyActorDefs.ProfileView) {
   return useRouter().resolve({
     name: 'account-followers',
     params: {
@@ -33,13 +33,13 @@ export function getReportRoute(id: string | number) {
   return `https://${currentUser.value?.server}/admin/reports/${encodeURIComponent(id)}`
 }
 
-export function getStatusRoute(status: mastodon.v1.Status) {
+export function getStatusRoute(status: AppBskyFeedDefs.PostView) {
   return useRouter().resolve({
     name: 'status',
     params: {
       server: currentServer.value,
-      account: extractAccountHandle(status.account),
-      status: status.id,
+      account: extractAccountHandle(status.author),
+      status: status.uri,
     },
   })
 }
@@ -54,11 +54,12 @@ export function getTagRoute(tag: string) {
   })
 }
 
-export function getStatusPermalinkRoute(status: mastodon.v1.Status) {
-  return status.url ? withoutProtocol(status.url) : null
+export function getStatusPermalinkRoute(status: AppBskyFeedDefs.PostView) {
+  // TODO: Fix this
+  return status.url ? withoutProtocol(status.uri) : null
 }
 
-export function getStatusInReplyToRoute(status: mastodon.v1.Status) {
+export function getStatusInReplyToRoute(status: AppBskyFeedDefs.PostView) {
   return useRouter().resolve({
     name: 'status-by-id',
     params: {
@@ -69,7 +70,7 @@ export function getStatusInReplyToRoute(status: mastodon.v1.Status) {
 }
 
 export function navigateToStatus({ status, focusReply = false }: {
-  status: mastodon.v1.Status
+  status: AppBskyFeedDefs.PostView
   focusReply?: boolean
 }) {
   return navigateTo({

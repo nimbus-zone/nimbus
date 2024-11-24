@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import type { AppBskyFeedGetFeed } from '@atproto/api'
 import type { mastodon } from 'masto'
 // @ts-expect-error missing types
 import { DynamicScrollerItem } from 'vue-virtual-scroller'
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 
 const { paginator, stream, account, buffer = 10, endMessage = true } = defineProps<{
-  paginator: mastodon.Paginator<mastodon.v1.Status[], mastodon.rest.v1.ListAccountStatusesParams>
+  paginator: AppBskyFeedGetFeed.OutputSchema
   stream?: mastodon.streaming.Subscription
   context?: mastodon.v2.FilterContext
   account?: mastodon.v1.Account
@@ -24,11 +25,11 @@ const showOriginSite = computed(() =>
 
 <template>
   <CommonPaginator v-bind="{ paginator, stream, preprocess, buffer, endMessage }" :virtual-scroller="virtualScroller">
-    <template #updater="{ number, update }">
+    <!-- <template #updater="{ number, update }">
       <button id="elk_show_new_items" py-4 border="b base" flex="~ col" p-3 w-full text-primary font-bold @click="update">
         {{ $t('timeline.show_new_items', number, { named: { v: formatNumber(number) } }) }}
       </button>
-    </template>
+    </template> -->
     <template #default="{ item, older, newer, active }">
       <template v-if="virtualScroller">
         <DynamicScrollerItem :item="item" :active="active" tag="article">

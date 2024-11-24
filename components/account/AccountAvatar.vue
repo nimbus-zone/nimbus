@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs } from '@atproto/api'
 
 defineProps<{
-  account: mastodon.v1.Account
+  account: AppBskyActorDefs.ProfileView
   square?: boolean
 }>()
 

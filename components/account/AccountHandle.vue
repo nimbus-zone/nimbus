@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs } from '@atproto/api'
 
 const { account } = defineProps<{
-  account: mastodon.v1.Account
+  account: AppBskyActorDefs.ProfileView
 }>()
 
 const serverName = computed(() => getServerName(account))

@@ -1,4 +1,5 @@
 <script setup lang="ts" generic="T, O, U = T">
+import type { AppBskyFeedGetFeed } from '@atproto/api'
 import type { mastodon } from 'masto'
 // @ts-expect-error missing types
 import { DynamicScroller } from 'vue-virtual-scroller'
@@ -8,12 +9,12 @@ const {
   paginator,
   stream,
   eventType,
-  keyProp = 'id',
+  keyProp = 'uri',
   virtualScroller = false,
   preprocess,
   endMessage = true,
 } = defineProps<{
-  paginator: mastodon.Paginator<T[], O>
+  paginator: AppBskyFeedGetFeed.OutputSchema
   keyProp?: keyof T
   virtualScroller?: boolean
   stream?: mastodon.streaming.Subscription
@@ -42,13 +43,14 @@ defineSlots<{
   done: (props: { items: U[] }) => void
 }>()
 
-const { t } = useI18n()
+// const { t } = useI18n()
 const nuxtApp = useNuxtApp()
 
-const { items, prevItems, update, state, endAnchor, error } = usePaginator(paginator, toRef(() => stream), eventType, preprocess)
+// const { items, prevItems, update, state, endAnchor, error } = usePaginator(paginator, toRef(() => stream), eventType, preprocess)
+const items = ref(paginator.feed.map(item => item.post))
 
 nuxtApp.hook('nimbus-logo:click', () => {
-  update()
+  // update()
   nuxtApp.$scrollToTop()
 })
 
@@ -72,13 +74,12 @@ defineExpose({ createEntry, removeEntry, updateEntry })
 
 <template>
   <div>
-    <slot v-if="prevItems.length" name="updater" v-bind="{ number: prevItems.length, update }" />
     <slot name="items" :items="items as U[]">
       <template v-if="virtualScroller">
         <DynamicScroller
           v-slot="{ item, active, index }"
           :items="items"
-          :min-item-size="200"
+          :min-item-size="30"
           :key-field="keyProp"
           page-mode
         >
@@ -105,17 +106,5 @@ defineExpose({ createEntry, removeEntry, updateEntry })
         />
       </template>
     </slot>
-    <div ref="endAnchor" />
-    <slot v-if="state === 'loading'" name="loading">
-      <TimelineSkeleton />
-    </slot>
-    <slot v-else-if="state === 'done' && endMessage !== false" name="done" :items="items as U[]">
-      <div p5 text-secondary italic text-center>
-        {{ t(typeof endMessage === 'string' && items.length <= 0 ? endMessage : 'common.end_of_list') }}
-      </div>
-    </slot>
-    <div v-else-if="state === 'error'" p5 text-secondary>
-      {{ t('common.error') }}: {{ error }}
-    </div>
   </div>
 </template>
