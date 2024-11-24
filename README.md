@@ -46,6 +46,8 @@ ni
 nr dev
 ```
 
+If you have any issues with the setup, please refer to the [Nimbus Contributing Guide](./CONTRIBUTING.md#troubleshooting).
+
 ### Testing
 
 Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:

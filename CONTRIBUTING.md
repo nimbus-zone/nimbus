@@ -2,7 +2,7 @@
 
 Hi! We are excited that you are interested in contributing to Nimbus. Before submitting your contribution, please make sure to take a moment and read through the following guide.
 
-Refer also to https://github.com/antfu/contribute.
+Refer also to <https://github.com/antfu/contribute>.
 
 For guidelines on contributing to the documentation, refer to the [docs README](./docs/README.md).
 
@@ -24,6 +24,7 @@ If you have [nvm](https://github.com/nvm-sh/nvm), you can run `nvm i` to install
 3. The package manager used to install and link dependencies must be [pnpm](https://pnpm.io/) v9. To use it you must first enable [Corepack](https://github.com/nodejs/corepack) by running `corepack enable`. (Note: on Linux in a standard Node 20+ environment, you should follow the instructions to install via Node's `corepack` rather than using the `curl` command)
 
 4. Check out a branch where you can work and commit your changes:
+
 ```shell
 git checkout -b my-new-branch
 ```
@@ -41,6 +42,21 @@ ni
 nr dev
 ```
 
+#### Troubleshooting
+
+If you encounter any issues with the installation, we suggest trying the following steps:
+
+- Reinstall the dependencies:
+
+1. Remove the `node_modules` folder in Nimbus's root folder
+2. Retry the installation with `pnpm i` or `ni` if you have it installed
+
+- Check that you are using the correct command to start the dev server:
+  - `pnpm dev` with `pnpm`
+  - `nr dev` with `ni`
+
+If the issue persists, please open an issue on the repository
+
 ### Testing
 
 Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
@@ -56,11 +72,12 @@ In order to run Nimbus with PWA enabled, run `pnpm dev:pwa` in Nimbus's root fol
 You should test the Nimbus PWA application on private browsing mode on any Chromium-based browser: will not work on Firefox and Safari.
 
 If not using private browsing mode, you will need to uninstall the PWA application from your browser once you finish testing:
+
 - Open `Dev Tools` (`Option + ⌘ + J` on macOS, `Shift + CTRL + J` on Windows/Linux)
 - Go to `Application > Storage`, you should check the following checkboxes:
-    - Application: [x] Unregister service worker
-    - Storage: [x] IndexedDB and [x] Local and session storage
-    - Cache: [x] Cache storage and [x] Application cache
+  - Application: [x] Unregister service worker
+  - Storage: [x] IndexedDB and [x] Local and session storage
+  - Cache: [x] Cache storage and [x] Application cache
 - Click on `Clear site data` button
 - Go to `Application > Service Workers` and check if the current `service worker` is missing or has the state `deleted` or `redundant`
 
@@ -71,6 +88,7 @@ Sometimes when you push your changes to create a new pull request (PR), the CI c
 If you are getting **Semantic Pull Request** error, please check the [Semantic Pull Request](https://www.conventionalcommits.org/en/v1.0.0/#summary) documentation.
 
 You can run the following commands on your local environment to fix CI errors:
+
 - `pnpm test:unit` to run unit tests, maybe you also need to update snapshots
 - `pnpm test:typecheck` to run TypeScript checks run on CI
 
@@ -81,6 +99,7 @@ Nimbus supports `right-to-left` languages, we need to make sure that the UI is w
 Simple approach used by most websites of relying on direction set in HTML element does not work because direction for various items, such as timeline, does not always match direction set in HTML.
 
 We've added some `UnoCSS` utilities styles to help you with that:
+
 - Do not use `left/right` padding and margin: for example `pl-1`. Use `padding-inline-start/end` instead. So `pl-1` should be `ps-1`, `pr-1` should be `pe-1`. The same rules apply to margin.
 - Do not use `rtl-` classes, such as `rtl-left-0`.
 - For icons that should be rotated for RTL, add `class="rtl-flip"`. This can only be used for icons outside of elements with `dir="auto"`, such as timeline, and is the only exception to the rule above. For icons inside the timeline, it might not work as expected.
@@ -95,6 +114,7 @@ We are using [vue-i18n](https://vue-i18n.intlify.dev/) via [nuxt-i18n](https://i
 You can check the current [translation status](https://docs.nimbus.town/docs/guide/contributing#translation-status): more instructions on the table caption.
 
 If you are updating a translation in your local environment, you can run the following commands to check the status:
+
 - from root folder: `nr prepare-translation-status`
 - change to `docs` folder and run docs dev server `nr dev`
 - open `http://localhost:3000/guide/contributing#translation-status` in your browser
@@ -122,6 +142,7 @@ Check [Pluralization rule callback](https://vue-i18n.intlify.dev/guide/essential
 Most of the messages used in Nimbus do not require any interpolation, however, some messages require interpolation: check [Message Format Syntax](https://vue-i18n.intlify.dev/guide/essentials/syntax.html) for more info.
 
 We're using these types of interpolation:
+
 - [List interpolation](https://vue-i18n.intlify.dev/guide/essentials/syntax.html#list-interpolation)
 - [Named interpolation](https://vue-i18n.intlify.dev/guide/essentials/syntax.html#interpolations)
 - [Linked messages](https://vue-i18n.intlify.dev/guide/essentials/syntax.html#linked-messages)
@@ -134,6 +155,7 @@ You can access the elements of the list using the object notation using the inde
 #### Named interpolation
 
 Nimbus will use named interpolation only to handle plurals for number formatting. We have 2 scenarios for this:
+
 - using `plural` **with** `i18n-t` component
 - using `plural` **without** `i18n-t` component
 
@@ -146,6 +168,7 @@ We've included `v` named parameter, it will be used to pass the formatted number
 Additionally, Nimbus will use [compact notation for numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#parameters) for some entries, check `notation` and `compactDisplay` options: for example, `1K` for `1000`, `1M` for `1000000`, `1B` for `1000000000` and so on. That entry will be available in the message using `{v}` named parameter (or `{0}` if using the message **with** `i18n-t` component).
 
 You can run this code in your browser console to see how it works:
+
 ```ts
 [1, 12, 123, 1234, 12345, 123456, 1234567].forEach((n) => {
   const acc = {}
@@ -176,6 +199,7 @@ You can run this code in your browser console to see how it works:
 Either **{0}** or **{v}** should be used with the exception being custom plurals entries using the `{n}` placeholder.
 
 This is the full list of entries that will be available for number formatting in Nimbus:
+
 - `action.boost_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**
 - `action.favourite_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**
 - `action.reply_count` (no need to be included, we should use always `en-US` entry): `{0}` for formatted number and `{n}` for raw number - **{0} should be used**
