@@ -2,23 +2,27 @@ import type { RichtextSegment } from '@atcute/bluesky-richtext-segmenter'
 import type { AppBskyRichtextFacet } from '@atcute/client/lexicons'
 import { segmentize } from '@atcute/bluesky-richtext-segmenter'
 
+import RichTextLink from './RichTextLink.vue'
+import RichTextMention from './RichTextMention.vue'
+import RichTextTag from './RichTextTag.vue'
+
 interface Props {
   text: string
   facets?: AppBskyRichtextFacet.Main[]
 }
 
-function renderSegment(segment: RichtextSegment) {
-  const feature = segment.features?.at(0)
+function renderSegment({ text, features }: RichtextSegment) {
+  const feature = features?.at(0)
 
   switch (feature?.$type) {
     case 'app.bsky.richtext.facet#link':
-      return h('a', { href: feature.uri }, segment.text) // TODO use NuxtLink and better parse link (internal?)
+      return h(RichTextLink, { text, uri: feature.uri })
     case 'app.bsky.richtext.facet#mention':
-      return h('a', { href: feature.did }, segment.text) // TODO use NuxtLink and create proper profile link
+      return h(RichTextMention, { text, did: feature.did })
     case 'app.bsky.richtext.facet#tag':
-      return h('a', { href: feature.tag }, segment.text) // TODO use NuxtLink and create proper search links (dropdown author-specific tag?)
+      return h(RichTextTag, { text, tag: feature.tag })
     default:
-      return segment.text
+      return text
   }
 }
 
