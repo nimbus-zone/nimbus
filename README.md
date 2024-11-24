@@ -33,7 +33,7 @@ We're really excited that you're interested in contributing to Nimbus! Before su
 Clone the repository and run on the root folder:
 
 ```
-pnpm i
+pnpm i --frozen-lockfile
 pnpm run dev
 ```
 

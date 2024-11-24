@@ -23,7 +23,7 @@ You need the following to contribute to Nimbus's documentation:
 1. [Fork the Nimbus GitHub project](https://github.com/nimbus-town/nimbus/fork) into your own account.
 2. Clone your fork to your local machine. See [GitHub's instructions for more information](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
 3. From your terminal, `cd` to the directory you cloned into (`cd nimbus` by default).
-4. Run `pnpm i` to install the project dependencies.
+4. Run `pnpm i --frozen-lockfile` to install the project dependencies.
 5. Run `pnpm --filter nimbus-docs dev` to run the development server.
 
 Once the server has started up, you can access the live preview at <http://localhost:3000/>. This preview reloads when you save changes to the documentation.
