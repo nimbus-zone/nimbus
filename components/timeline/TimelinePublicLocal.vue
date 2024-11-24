@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const paginator = useMastoClient().v1.timelines.public.list({ limit: 30, local: true })
+const paginator = await useMastoClient().app.bsky.feed.getFeed(
+  {
+    feed: 'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot',
+    limit: 30,
+  },
+  // {
+  //   headers: {
+  //     'Accept-Language': preferredLanguages,
+  //   },
+  // },
+).then(res => res.data)
+
 const stream = useStreaming(client => client.public.local.subscribe())
 </script>
 

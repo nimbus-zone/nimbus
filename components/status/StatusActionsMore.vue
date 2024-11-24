@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
-import { toggleBlockAccount, toggleMuteAccount, useRelationship } from '~~/composables/masto/relationship'
+import type { AppBskyFeedDefs } from '@atproto/api'
+import { toggleBlockAccount, toggleMuteAccount, useRelationship } from '~~/composables/bsky/relationship'
 
 const props = defineProps<{
-  status: mastodon.v1.Status
+  status: AppBskyFeedDefs.PostView
   details?: boolean
   command?: boolean
 }>()
 
-const emit = defineEmits<{
-  (event: 'afterEdit'): void
-}>()
+const emit = defineEmits<(event: 'afterEdit') => void>()
 
 const focusEditor = inject<typeof noop>('focus-editor', noop)
 
@@ -30,31 +28,31 @@ const { t } = useI18n()
 const userSettings = useUserSettings()
 const useStarFavoriteIcon = usePreferences('useStarFavoriteIcon')
 
-const isAuthor = computed(() => status.value.account.id === currentUser.value?.account.id)
+const isAuthor = computed(() => status.value.author.did === currentUser.value?.account.id)
 
 const { client } = useMasto()
 
-function getPermalinkUrl(status: mastodon.v1.Status) {
+function getPermalinkUrl(status: AppBskyFeedDefs.PostView) {
   const url = getStatusPermalinkRoute(status)
   if (url)
     return `${location.origin}/${url}`
   return null
 }
 
-async function copyLink(status: mastodon.v1.Status) {
+async function copyLink(status: AppBskyFeedDefs.PostView) {
   const url = getPermalinkUrl(status)
   if (url)
     await clipboard.copy(url)
 }
 
-async function copyOriginalLink(status: mastodon.v1.Status) {
+async function copyOriginalLink(status: AppBskyFeedDefs.PostView) {
   const url = status.url
   if (url)
     await clipboard.copy(url)
 }
 
 const { share, isSupported: isShareSupported } = useShare()
-async function shareLink(status: mastodon.v1.Status) {
+async function shareLink(status: AppBskyFeedDefs.PostView) {
   const url = getPermalinkUrl(status)
   if (url)
     await share({ url })
@@ -70,7 +68,7 @@ async function deleteStatus() {
   if (confirmDelete.choice !== 'confirm')
     return
 
-  removeCachedStatus(status.value.id)
+  removeCachedStatus(status.value.uri)
   await client.value.v1.statuses.$select(status.value.id).remove()
 
   if (route.name === 'status')
@@ -96,7 +94,7 @@ async function deleteAndRedraft() {
       return
   }
 
-  removeCachedStatus(status.value.id)
+  removeCachedStatus(status.value.uri)
   await client.value.v1.statuses.$select(status.value.id).remove()
   await openPublishDialog('dialog', await getDraftFromStatus(status.value), true)
 

@@ -1,51 +1,52 @@
 <script setup lang="ts">
+import type { AppBskyActorDefs } from '@atproto/api'
 import type { mastodon } from 'masto'
 import { fetchAccountByHandle } from '~/composables/cache'
 
-type WatcherType = [acc?: mastodon.v1.Account | null, h?: string, v?: boolean]
+type WatcherType = [acc?: AppBskyActorDefs.ProfileView | null, h?: string, v?: boolean]
 
 defineOptions({
   inheritAttrs: false,
 })
 
 const props = defineProps<{
-  account?: mastodon.v1.Account | null
+  account?: AppBskyActorDefs.ProfileView | null
   handle?: string
   disabled?: boolean
 }>()
 
 const accountHover = ref()
 const hovered = useElementHover(accountHover)
-const account = ref<mastodon.v1.Account | null | undefined>(props.account)
+const account = ref<AppBskyActorDefs.ProfileView | null | undefined>(props.account)
 
-watch(
-  () => [props.account, props.handle, hovered.value] satisfies WatcherType,
-  ([newAccount, newHandle, newVisible], oldProps) => {
-    if (!newVisible || process.test)
-      return
+// watch(
+//   () => [props.account, props.handle, hovered.value] satisfies WatcherType,
+//   ([newAccount, newHandle, newVisible], oldProps) => {
+//     if (!newVisible || process.test)
+//       return
 
-    if (newAccount) {
-      account.value = newAccount
-      return
-    }
+//     if (newAccount) {
+//       account.value = newAccount
+//       return
+//     }
 
-    if (newHandle) {
-      const [_oldAccount, oldHandle, _oldVisible] = oldProps ?? [undefined, undefined, false]
-      if (!oldHandle || newHandle !== oldHandle || !account.value) {
-        // new handle can be wrong: using server instead of webDomain
-        fetchAccountByHandle(newHandle).then((acc) => {
-          if (newHandle === props.handle)
-            account.value = acc
-        })
-      }
+//     if (newHandle) {
+//       const [_oldAccount, oldHandle, _oldVisible] = oldProps ?? [undefined, undefined, false]
+//       if (!oldHandle || newHandle !== oldHandle || !account.value) {
+//         // new handle can be wrong: using server instead of webDomain
+//         fetchAccountByHandle(newHandle).then((acc) => {
+//           if (newHandle === props.handle)
+//             account.value = acc
+//         })
+//       }
 
-      return
-    }
+//       return
+//     }
 
-    account.value = undefined
-  },
-  { immediate: true, flush: 'post' },
-)
+//     account.value = undefined
+//   },
+//   { immediate: true, flush: 'post' },
+// )
 
 const userSettings = useUserSettings()
 </script>

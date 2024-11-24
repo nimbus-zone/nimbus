@@ -1,10 +1,8 @@
 <script setup lang="ts">
+import type { SearchResult as SearchResultType } from '/composables/bsky/searcbsky/serch'
 import type { CommandScope, QueryResult, QueryResultItem } from '~/composables/command'
-import type { SearchResult as SearchResultType } from '~/composables/masto/search'
 
-const emit = defineEmits<{
-  (event: 'close'): void
-}>()
+const emit = defineEmits<(event: 'close') => void>()
 
 const registry = useCommandRegistry()
 
