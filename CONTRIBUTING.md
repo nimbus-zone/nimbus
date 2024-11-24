@@ -29,7 +29,7 @@ If you have [nvm](https://github.com/nvm-sh/nvm), you can run `nvm i` to install
 git checkout -b my-new-branch
 ```
 
-1. Run `pnpm i` in Nimbus's root folder
+1. Run `pnpm i --frozen-lockfile` in Nimbus's root folder
 
 2. Run `pnpm nuxi prepare` in Nimbus's root folder
 
@@ -38,7 +38,7 @@ git checkout -b my-new-branch
 We recommend installing [ni](https://github.com/antfu/ni#ni), that will use the right package manager in each of your projects. If `ni` is installed, you can instead run:
 
 ```
-ni
+ni --frozen
 nr dev
 ```
 
@@ -49,7 +49,8 @@ If you encounter any issues with the installation, we suggest trying the followi
 - Reinstall the dependencies:
 
 1. Remove the `node_modules` folder in Nimbus's root folder
-2. Retry the installation with `pnpm i` or `ni` if you have it installed
+2. If the `pnpm-lock.yaml` file was modified, revert the changes
+3. Retry the installation with `pnpm i --frozen-lockfile` or `ni --frozen` if you have it installed
 
 - Check that you are using the correct command to start the dev server:
   - `pnpm dev` with `pnpm`

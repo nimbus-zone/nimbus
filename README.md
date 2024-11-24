@@ -33,7 +33,7 @@ We're really excited that you're interested in contributing to Nimbus! Before su
 Clone the repository and run on the root folder:
 
 ```
-pnpm i
+pnpm i --frozen-lockfile
 pnpm run dev
 ```
 
@@ -42,7 +42,7 @@ pnpm run dev
 We recommend installing [ni](https://github.com/antfu/ni#ni), that will use the right package manager in each of your projects. If `ni` is installed, you can instead run:
 
 ```
-ni
+ni --frozen
 nr dev
 ```
 
