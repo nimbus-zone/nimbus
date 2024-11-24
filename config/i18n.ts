@@ -1,13 +1,16 @@
-import type { DateTimeFormats, NumberFormats, PluralizationRule, PluralizationRules } from '@intlify/core-base'
+import type { DateTimeFormats, Locale, NumberFormats, PluralizationRule, PluralizationRules } from '@intlify/core-base'
 import type { LocaleObject } from '@nuxtjs/i18n'
 
-interface LocaleObjectData extends LocaleObject {
+interface LocaleObjectData<T> extends LocaleObject<T> {
   numberFormats?: NumberFormats
   dateTimeFormats?: DateTimeFormats
   pluralRule?: PluralizationRule
 }
 
-export const countryLocaleVariants: Record<string, (LocaleObjectData & { country?: boolean }) []> = {
+type CountryLocaleVariant = LocaleObjectData<Locale> & { country?: boolean }
+type CountryLocaleVariantConfig = Record<string, CountryLocaleVariant[]>
+
+export const countryLocaleVariants = {
   ar: [
     // ar.json contains ar-EG translations
     // { code: 'ar-DZ', name: 'Arabic (Algeria)' },
@@ -71,17 +74,17 @@ export const countryLocaleVariants: Record<string, (LocaleObjectData & { country
     { country: true, code: 'pt-PT', name: 'Português (Portugal)' },
     { code: 'pt-BR', name: 'Português (Brasil)' },
   ],
-}
+} satisfies CountryLocaleVariantConfig
 
-const locales: LocaleObjectData[] = [
+type LocaleVariantKeys = keyof typeof countryLocaleVariants
+
+const locales: (LocaleObjectData<LocaleVariantKeys> | LocaleObjectData<Locale>)[] = [
   {
-    // @ts-expect-error en used as placeholder
     code: 'en',
     file: 'en.json',
     name: 'English',
   },
   ({
-    // @ts-expect-error ar used as placeholder
     code: 'ar',
     file: 'ar.json',
     name: 'العربية',
@@ -90,7 +93,7 @@ const locales: LocaleObjectData[] = [
       const name = new Intl.PluralRules('ar-EG').select(choice)
       return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
     },
-  } satisfies LocaleObjectData),
+  }),
   ({
     code: 'ckb',
     file: 'ckb.json',
@@ -100,7 +103,7 @@ const locales: LocaleObjectData[] = [
       const name = new Intl.PluralRules('ckb').select(choice)
       return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
     },
-  } satisfies LocaleObjectData),
+  }),
   ({
     code: 'fa-IR',
     file: 'fa-IR.json',
@@ -110,9 +113,8 @@ const locales: LocaleObjectData[] = [
       const name = new Intl.PluralRules('fa-IR').select(choice)
       return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
     },
-  } satisfies LocaleObjectData),
+  }),
   {
-    // @ts-expect-error ca used as placeholder
     code: 'ca',
     file: 'ca.json',
     name: 'Català',
@@ -153,7 +155,6 @@ const locales: LocaleObjectData[] = [
     name: 'Nederlands',
   },
   {
-    // @ts-expect-error es used as placeholder
     code: 'es',
     file: 'es.json',
     name: 'Español',
@@ -207,7 +208,6 @@ const locales: LocaleObjectData[] = [
     },
   },
   {
-    // @ts-expect-error pt used as placeholder
     code: 'pt',
     file: 'pt.json',
     name: 'Português',
@@ -259,26 +259,38 @@ const locales: LocaleObjectData[] = [
   },
 ]
 
+function isLocaleVariant(val: LocaleObjectData<LocaleVariantKeys | Locale>): val is LocaleObjectData<LocaleVariantKeys> {
+  if (typeof val.code !== 'string')
+    return false
+
+  if (val.code in countryLocaleVariants === false)
+    return false
+
+  return true
+}
+
 function buildLocales() {
   const useLocales = Object.values(locales).reduce((acc, data) => {
-    const locales = countryLocaleVariants[data.code]
-    if (locales) {
-      locales.forEach((l) => {
-        const entry: LocaleObjectData = {
-          ...data,
-          code: l.code,
-          name: l.name,
-          files: [data.file as string, `${l.code}.json`],
-        }
-        delete entry.file
-        acc.push(entry)
-      })
+    if (isLocaleVariant(data)) {
+      const locales = countryLocaleVariants[data.code]
+      if (locales) {
+        locales.forEach((l) => {
+          const entry: LocaleObject = {
+            ...data,
+            code: l.code,
+            name: l.name,
+            files: [data.file as string, `${l.code}.json`],
+          }
+          delete entry.file
+          acc.push(entry)
+        })
+      }
     }
     else {
       acc.push(data)
     }
     return acc
-  }, <LocaleObjectData[]>[])
+  }, <LocaleObject[]>[])
 
   return useLocales.sort((a, b) => a.code.localeCompare(b.code))
 }
