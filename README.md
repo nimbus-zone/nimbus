@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://nimbus.zone" target="_blank" rel="noopener noreferrer">
+  <a href="https://nimbus.town" target="_blank" rel="noopener noreferrer">
     <img width="160" height="160" src="./public/nimbus.svg" alt="Nimbus logo">
   </a>
 </p>
@@ -13,7 +13,7 @@ A nimble Bluesky web client
 <br/>
 
 <p align="center">
-  <a href="https://nimbus.zone/" target="_blank" rel="noopener noreferrer" >
+  <a href="https://nimbus.town/" target="_blank" rel="noopener noreferrer" >
     <img src="./public/elk-og.png" alt="Nimbus screenshots" width="600" height="auto">
   </a>
 </p>
@@ -56,7 +56,7 @@ nr test
 
 ## 📲 PWA
 
-You can consult the [PWA documentation](https://docs.nimbus.zone/pwa) to learn more about the PWA capabilities on Nimbus, how to install Nimbus PWA in your desktop or mobile device and some hints about PWA stuff on Nimbus.
+You can consult the [PWA documentation](https://docs.nimbus.town/pwa) to learn more about the PWA capabilities on Nimbus, how to install Nimbus PWA in your desktop or mobile device and some hints about PWA stuff on Nimbus.
 
 ## 🦄 Stack
 
@@ -98,8 +98,8 @@ We would also appreciate you sponsoring other contributors to Bluesky and the El
 
 ## 👨‍💻 Contributors
 
-<a href="https://github.com/nimbus-zone/nimbus/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=nimbus-zone/nimbus" />
+<a href="https://github.com/nimbus-town/nimbus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nimbus-town/nimbus" />
 </a>
 
 ## 📄 License

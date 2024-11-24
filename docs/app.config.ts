@@ -2,10 +2,10 @@ export default defineAppConfig({
   docus: {
     title: 'Nimbus',
     description: 'A nimble Bluesky web client.',
-    image: 'https://docs.nimbus.zone/nimbus-screenshot.png',
+    image: 'https://docs.nimbus.town/nimbus-screenshot.png',
     socials: {
       // twitter: 'elk_zone',
-      github: 'nimbus-zone/nimbus',
+      github: 'nimbus-town/nimbus',
       bluesky: {
         label: 'Bluesky',
         icon: 'IconBluesky',
