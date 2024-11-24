@@ -2,12 +2,13 @@ import type { Pausable } from '@vueuse/core'
 import type { mastodon } from 'masto'
 import type { Ref } from 'vue'
 import type { ElkInstance } from '../users'
-import { createRestAPIClient, createStreamingAPIClient } from 'masto'
+import { AtpAgent } from '@atproto/api'
+import { createStreamingAPIClient } from 'masto'
 import type { UserLogin } from '~/types'
 
 export function createMasto() {
   return {
-    client: shallowRef<mastodon.rest.Client>(undefined as never),
+    client: shallowRef<AtpAgent>(undefined as never),
     streamingClient: shallowRef<mastodon.streaming.Client | undefined>(),
   }
 }
@@ -22,7 +23,7 @@ export function useMastoClient() {
 
 export function mastoLogin(masto: ElkMasto, user: Pick<UserLogin, 'server' | 'token'>) {
   const server = user.server
-  const url = `https://${server}`
+  // const url = `https://${server}`
   const instance: ElkInstance = reactive(getInstanceCache(server) || { uri: server, accountDomain: server })
   const accessToken = user.token
 
@@ -31,17 +32,19 @@ export function mastoLogin(masto: ElkMasto, user: Pick<UserLogin, 'server' | 'to
   }
 
   const streamingApiUrl = instance?.urls?.streamingApi
-  masto.client.value = createRestAPIClient({ url, accessToken })
+  masto.client.value = new AtpAgent({
+    service: 'https://api.bsky.app',
+  })
   masto.streamingClient.value = createStreamingClient(streamingApiUrl)
 
   // Refetch instance info in the background on login
-  masto.client.value.v1.instance.fetch().then((newInstance) => {
-    Object.assign(instance, newInstance)
-    if (newInstance.urls.streamingApi !== streamingApiUrl)
-      masto.streamingClient.value = createStreamingClient(newInstance.urls.streamingApi)
+  // masto.client.value.v1.instance.fetch().then((newInstance) => {
+  //   Object.assign(instance, newInstance)
+  //   if (newInstance.urls.streamingApi !== streamingApiUrl)
+  //     masto.streamingClient.value = createStreamingClient(newInstance.urls.streamingApi)
 
-    instanceStorage.value[server] = newInstance
-  })
+  //   instanceStorage.value[server] = newInstance
+  // })
 
   return instance
 }

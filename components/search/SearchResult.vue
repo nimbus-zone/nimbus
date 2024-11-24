@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SearchResult } from '~/composables/masto/search'
+import type { SearchResult } from '~/composables/bsky/search'
 
 defineProps<{
   result: SearchResult

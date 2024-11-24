@@ -1,5 +1,5 @@
 // @unocss-include
-export const accountFieldIcons: Record<string, string> = Object.fromEntries(Object.entries({
+export const profileFieldIcons: Record<string, string> = Object.fromEntries(Object.entries({
   Alipay: 'i-ri:alipay-line',
   Bilibili: 'i-ri:bilibili-line',
   Birth: 'i-ri:calendar-line',
@@ -54,15 +54,15 @@ export const accountFieldIcons: Record<string, string> = Object.fromEntries(Obje
   Zhihu: 'i-ri:zhihu-line',
 }).sort(([a], [b]) => a.localeCompare(b)))
 
-const accountFieldIconsLowercase = Object.fromEntries(
-  Object.entries(accountFieldIcons).map(([k, v]) =>
+const profileFieldIconsLowercase = Object.fromEntries(
+  Object.entries(profileFieldIcons).map(([k, v]) =>
     [k.toLowerCase(), v],
   ),
 )
 
-export function getAccountFieldIcon(value: string) {
+export function getProfileFieldIcon(value: string) {
   const name = value.trim().toLowerCase()
-  return accountFieldIconsLowercase[name] || undefined
+  return profileFieldIconsLowercase[name] || undefined
 }
 
 export const statusVisibilities = [

@@ -72,7 +72,7 @@ export default defineNuxtConfig({
   },
   imports: {
     dirs: [
-      './composables/masto',
+      './composables/bsky',
       './composables/push-notifications',
       './composables/settings',
       './composables/tiptap/index.ts',
@@ -216,15 +216,15 @@ export default defineNuxtConfig({
   },
   sourcemap: isDevelopment,
   hooks: {
-    'prepare:types': function ({ references }) {
+    'prepare:types': ({ references }) => {
       references.push({ types: '@types/wicg-file-system-access' })
     },
-    'nitro:config': function (config) {
+    'nitro:config': (config) => {
       const nuxt = useNuxt()
       config.virtual = config.virtual || {}
       config.virtual['#storage-config'] = `export const driver = ${JSON.stringify(nuxt.options.appConfig.storage.driver)}`
     },
-    'vite:extendConfig': function (config, { isServer }) {
+    'vite:extendConfig': (config, { isServer }) => {
       if (isServer) {
         const alias = config.resolve!.alias as Record<string, string>
         for (const dep of ['eventemitter3', 'isomorphic-ws'])

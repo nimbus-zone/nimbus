@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs } from '@atproto/api'
 
 defineOptions({
   inheritAttrs: false,
 })
 
 const { account, as = 'div' } = defineProps<{
-  account: mastodon.v1.Account
+  account: AppBskyActorDefs.ProfileView
   as?: string
   hoverCard?: boolean
   square?: boolean
@@ -28,7 +28,7 @@ const { account, as = 'div' } = defineProps<{
       </div>
       <AccountHandle :account="account" text-secondary-light />
       <div self-start mt-1>
-        <AccountRolesIndicator v-if="account.roles?.length" :account="account" :limit="1" />
+        <!-- <AccountRolesIndicator v-if="account.roles?.length" :account="account" :limit="1" /> -->
       </div>
     </div>
   </component>

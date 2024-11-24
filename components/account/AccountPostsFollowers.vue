@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyActorDefs } from '@atproto/api'
 
 defineProps<{
-  account: mastodon.v1.Account
+  account: AppBskyActorDefs.ProfileView
   isHoverCard?: boolean
 }>()
 
@@ -20,7 +20,7 @@ const userSettings = useUserSettings()
       <template #default="{ isExactActive }">
         <CommonLocalizedNumber
           keypath="account.posts_count"
-          :count="account.statusesCount"
+          :count="0"
           font-bold
           :class="isExactActive ? 'text-primary' : 'text-base'"
         />

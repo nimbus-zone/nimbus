@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import type { mastodon } from 'masto'
-import { toggleBlockAccount, toggleFollowAccount, toggleMuteAccount, useRelationship } from '~~/composables/masto/relationship'
+import { toggleBlockAccount, toggleFollowAccount, toggleMuteAccount, useRelationship } from '~~/composables/bsky/relationship'
 
 const { account, status } = defineProps<{
   account: mastodon.v1.Account
   status?: mastodon.v1.Status
 }>()
 
-const emit = defineEmits<{
-  (event: 'close'): void
-}>()
+const emit = defineEmits<(event: 'close') => void>()
 
 const { client } = useMasto()
 

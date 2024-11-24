@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { mastodon } from 'masto'
+import type { AppBskyFeedDefs } from '@atproto/api'
 
 const props = defineProps<{
-  status: mastodon.v1.Status
+  status: AppBskyFeedDefs.PostView
   hover?: boolean
 }>()
 
@@ -23,7 +23,7 @@ function go(evt: MouseEvent | KeyboardEvent) {
     window.open(statusRoute.value.href)
   }
   else {
-    cacheStatus(props.status)
+    // cacheStatus(props.status)
     router.push(statusRoute.value)
   }
 }
@@ -39,7 +39,7 @@ function go(evt: MouseEvent | KeyboardEvent) {
     tabindex="0"
     focus:outline-none focus-visible:ring="2 primary inset"
     aria-roledescription="status-card"
-    :lang="status.language ?? undefined"
+    :lang="undefined"
     @click="onclick"
     @keydown.enter="onclick"
   >
