@@ -25,7 +25,7 @@ const vAutoFocus = (el: HTMLElement) => el.focus()
     </p>
     <p>
       {{ $t('help.desc_para4') }}
-      <NuxtLink font-bold text-primary href="https://github.com/elk-zone/elk" target="_blank">
+      <NuxtLink font-bold text-primary href="https://github.com/nimbus-town/nimbus" target="_blank">
         {{ $t('help.desc_para5') }}
       </NuxtLink>
       {{ $t('help.desc_para6') }}
