@@ -41,7 +41,7 @@ const vAutoFocus = (el: HTMLElement) => el.focus()
       </template>
     </p>
     <p italic flex justify-center w-full>
-      <NuxtLink href="https://github.com/sponsors/elk-zone" target="_blank">
+      <NuxtLink href="https://github.com/sponsors/nimbus-town" target="_blank">
         <span text-xl font-script hover:text-primary transition duration-300>{{ $t('help.footer_team') }}</span>
       </NuxtLink>
     </p>
