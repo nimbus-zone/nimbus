@@ -1,10 +1,10 @@
 {
-  "name": "@nimbus-zone/nimbus",
+  "name": "@nimbus-town/nimbus",
   "type": "module",
   "version": "0.15.1",
   "packageManager": "pnpm@9.13.2",
   "license": "MIT",
-  "homepage": "https://github.com/nimbus-zone/nimbus",
+  "homepage": "https://github.com/nimbus-town/nimbus",
   "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxi build",

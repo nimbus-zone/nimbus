@@ -10,7 +10,7 @@ For guidelines on contributing to the documentation, refer to the [docs README](
 
 You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs or implement features. You'll also see a Codeflow button on PRs to review them without a local setup. Once the Nimbus repo has been cloned in Codeflow, the dev server will start automatically and print the URL to open the App. You should receive a prompt in the bottom-right suggesting to open it in the Editor or in another Tab. To learn more, check out the [Codeflow docs](https://developer.stackblitz.com/codeflow/what-is-codeflow).
 
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/nimbus-zone/nimbus)
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/nimbus-town/nimbus)
 
 ### Local Setup
 
@@ -92,7 +92,7 @@ We've added some `UnoCSS` utilities styles to help you with that:
 
 We are using [vue-i18n](https://vue-i18n.intlify.dev/) via [nuxt-i18n](https://i18n.nuxtjs.org/) to handle internationalization.
 
-You can check the current [translation status](https://docs.nimbus.zone/docs/guide/contributing#translation-status): more instructions on the table caption.
+You can check the current [translation status](https://docs.nimbus.town/docs/guide/contributing#translation-status): more instructions on the table caption.
 
 If you are updating a translation in your local environment, you can run the following commands to check the status:
 - from root folder: `nr prepare-translation-status`
