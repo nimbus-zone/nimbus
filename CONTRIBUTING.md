@@ -8,7 +8,7 @@ For guidelines on contributing to the documentation, refer to the [docs README](
 
 ### Finding a way to contribute
 
-Nimbus is still in its early stages, and there are many ways to contribute. If are not sure where to start, check out [this discussion](https://github.com/nimbus-town/nimbus/discussions/23) for some ideas.
+Nimbus is still in its early stages, and there are many ways to contribute. If you are not sure where to start, check out [this discussion](https://github.com/nimbus-town/nimbus/discussions/23) for some ideas.
 
 ### Online
 
@@ -33,25 +33,42 @@ If you have [nvm](https://github.com/nvm-sh/nvm), you can run `nvm i` to install
 git checkout -b my-new-branch
 ```
 
-1. Run `pnpm i` in Nimbus's root folder
+1. Run `pnpm i --frozen-lockfile` in Nimbus's root folder
 
 2. Run `pnpm nuxi prepare` in Nimbus's root folder
 
 3. Run `pnpm dev` in Nimbus's root folder to start dev server or `pnpm dev:mocked` to start dev server with `@elkdev@universeodon.com` user.
 
-We recommend installing [ni](https://github.com/antfu/ni#ni), that will use the right package manager in each of your projects. If `ni` is installed, you can instead run:
+#### Troubleshooting
 
-```
-ni
-nr dev
-```
+If you encounter any issues with the installation, we suggest trying the following steps:
+
+- Reinstall the dependencies:
+
+1. Remove the `node_modules` folder in Nimbus's root folder
+2. If the `pnpm-lock.yaml` file was modified, revert the changes
+3. Retry the installation in the root folder with `pnpm i --frozen-lockfile`
+
+- Check that you are using the correct command to start the dev server:
+  - `pnpm dev` with `pnpm`
+
+If the issue persists, please open an issue.
+
+#### Adding a new dependency
+
+Since Nimbus is a monorepo using `pnpm` workspace, it's important to add new dependencies using the correct command:
+
+- for development dependencies: `pnpm add -D <dep> -w`
+- for production dependencies: `pnpm add <dep> -w`
+
+Alternatively, you can manually add the dependency to the corresponding `package.json` file, and then run `pnpm i` in Nimbus's root folder to install the new dependency.
 
 ### Testing
 
 Nimbus uses [Vitest](https://vitest.dev). You can run the test suite with:
 
 ```
-nr test
+pnpm test
 ```
 
 ### Running PWA on dev server
