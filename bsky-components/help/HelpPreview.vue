@@ -30,7 +30,7 @@ const vAutoFocus = (el: HTMLElement) => el.focus()
       </NuxtLink>
       {{ $t('help.desc_para6') }}
     </p>
-    <NuxtLink hover:text-primary href="https://github.com/sponsors/elk-zone" target="_blank">
+    <NuxtLink hover:text-primary href="https://github.com/sponsors/nimbus-town" target="_blank">
       {{ $t('help.desc_para3') }}
     </NuxtLink>
     <p flex="~ gap-2 wrap justify-center" mxa>
