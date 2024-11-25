@@ -1,12 +1,13 @@
+import type { Locale } from '@intlify/core-base'
 import type { LocaleEntry } from '../docs/types'
 import { Buffer } from 'node:buffer'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createResolver } from '@nuxt/kit'
 import { flatten } from 'flat'
 import type { NimbusTranslationStatus } from '~/types/translation-status'
-import { countryLocaleVariants, currentLocales } from '../config/i18n'
+import { countryLocaleVariants, currentLocales, isLocaleVariantKey } from '../config/i18n'
 
-export const localeData: [code: string, file: string[], title: string][]
+export const localeData: [code: Locale, file: string[], title: string][]
     = currentLocales.map((l: any) => [l.code, l.files ? l.files : [l.file!], l.name ?? l.code])
 
 function merge(src: Record<string, any>, dst: Record<string, any>) {
@@ -79,7 +80,8 @@ async function prepareTranslationStatus() {
   await Promise.all(localeData.filter(l => l[0] !== 'en-US').map(async ([code, file, title]) => {
     console.info(`Comparing ${code}...`, title)
     let useFile = file[file.length - 1]
-    const entry = countryLocaleVariants[file[0].slice(0, file[0].indexOf('.'))]
+    const entryKey = file[0].slice(0, file[0].indexOf('.'))
+    const entry = isLocaleVariantKey(entryKey) ? countryLocaleVariants[entryKey] : undefined
     if (entry) {
       const countryFile = entry.find(e => e.code === code && e.country === true)
       if (countryFile)
