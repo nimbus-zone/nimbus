@@ -1,6 +1,6 @@
 # Welcome to the Nimbus Docs
 
-The documentation site publishes to https://docs.nimbus.town. We use [Docus](https://docus.dev) to generate the site and deploy through Netlify.
+The documentation site publishes to <https://docs.nimbus.town>. We use [Docus](https://docus.dev) to generate the site and deploy through Netlify.
 
 ## Quickstart
 
@@ -17,17 +17,16 @@ You need the following to contribute to Nimbus's documentation:
   - Use `nvm install node` to upgrade to the latest version.
   - Refer to the [nvm docs](https://github.com/nvm-sh/nvm#installing-and-updating) for information on installing `nvm`.
 - pnpm installed on your machine. [See the pnpm documentation for installation instructions](https://pnpm.io/installation).
-- Optionally, install [ni](https://github.com/antfu/ni#ni). See [Local Setup](../README.md#local-setup) for more information.
 
 ### Install and Preview
 
 1. [Fork the Nimbus GitHub project](https://github.com/nimbus-town/nimbus/fork) into your own account.
 2. Clone your fork to your local machine. See [GitHub's instructions for more information](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
 3. From your terminal, `cd` to the directory you cloned into (`cd nimbus` by default).
-4. Run `pnpm i` or `ni` to install the project dependencies.
-5. Run `pnpm --filter nimbus-docs dev` or `nr --filter nimbus-docs dev` to run the development server.
+4. Run `pnpm i --frozen-lockfile` to install the project dependencies.
+5. Run `pnpm --filter nimbus-docs dev` to run the development server.
 
-Once the server has started up, you can access the live preview at http://localhost:3000/. This preview reloads when you save changes to the documentation.
+Once the server has started up, you can access the live preview at <http://localhost:3000/>. This preview reloads when you save changes to the documentation.
 
 ### Contributing
 
@@ -43,13 +42,15 @@ When you are ready to submit work back to the main Nimbus repo, create a pull re
 6. Go to your fork of the Nimbus project in your GitHub account.
 7. Select the **Pull Request** tab.
 8. Select **New Pull Request**.
-9.  Confirm the repo/branches to compare.
-   - The base repo should be **nimbus-town/nimbus**.
-   - The base branch should be **main**.
-   - The head repository should be your fork.
-   - Compare branch should be your working branch you want to submit.
+9. Confirm the repo/branches to compare.
+
+- The base repo should be **nimbus-town/nimbus**.
+- The base branch should be **main**.
+- The head repository should be your fork.
+- Compare branch should be your working branch you want to submit.
 
       If you don't see four drop-downs, be sure you are comparing across forks.
+
 10. Add a description of the changes your request makes.
 11. Select **Add Pull Request**.
 
